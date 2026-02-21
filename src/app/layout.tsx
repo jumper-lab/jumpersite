@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Mono } from "next/font/google";
+import { Space_Grotesk, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -10,7 +10,7 @@ import {
   WebSiteSchema,
 } from "@/components/structured-data";
 
-const dmSans = DM_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="dark">
       <body
-        className={`${dmSans.variable} ${dmMono.variable} font-sans antialiased`}
+        className={`${spaceGrotesk.variable} ${dmMono.variable} font-sans antialiased`}
       >
         <OrganizationSchema />
         <LocalBusinessSchema />
