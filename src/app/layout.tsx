@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Mono } from "next/font/google";
+import { DM_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -10,8 +11,8 @@ import {
   WebSiteSchema,
 } from "@/components/structured-data";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
+const haffer = localFont({
+  src: "../../public/fonts/HafferVF.ttf",
   variable: "--font-sans",
   display: "swap",
 });
@@ -69,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="dark">
       <body
-        className={`${dmSans.variable} ${dmMono.variable} font-sans antialiased`}
+        className={`${haffer.variable} ${dmMono.variable} font-sans antialiased`}
       >
         <OrganizationSchema />
         <LocalBusinessSchema />
