@@ -48,7 +48,7 @@ export function ProcessSection() {
             <div className="relative">
               {/* Connector line */}
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-[calc(100%+1rem)] w-[calc(100%-2rem)] h-px bg-gradient-to-r from-jumper-orange/50 to-transparent" />
+                <div className="hidden lg:block absolute top-6 left-12 right-0 h-px bg-gradient-to-r from-jumper-orange/40 via-jumper-orange/20 to-transparent translate-x-4" />
               )}
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-jumper-orange/10 text-jumper-orange mb-4">
                 <step.icon className="h-6 w-6" />
