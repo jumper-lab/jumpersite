@@ -2,7 +2,6 @@
 
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 import { Section, SectionHeader } from "@/components/sections/section-wrapper";
-import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -29,22 +28,38 @@ export function TestimonialsSection() {
   return (
     <Section>
       <FadeIn>
-        <SectionHeader title="O que dizem nossos clientes" />
+        <SectionHeader
+          label="03 — Depoimentos"
+          title='O que dizem nossos <span class="text-jumper-orange">clientes</span>'
+        />
       </FadeIn>
 
-      <StaggerContainer className="grid gap-6 md:grid-cols-3">
+      <StaggerContainer className="grid gap-4 md:grid-cols-3">
         {testimonials.map((t) => (
           <StaggerItem key={t.quote}>
-            <div className="relative rounded-lg border border-border bg-card p-6 h-full">
-              <Quote className="h-8 w-8 text-jumper-orange/20 mb-4" />
-              <blockquote className="text-foreground leading-relaxed mb-6">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <div className="border-t border-border pt-4">
+            <div
+              className="editorial-card rounded-xl p-6 h-full flex flex-col"
+              style={{
+                background: "var(--bg-card)",
+                border: "1px solid var(--border-subtle)",
+              }}
+            >
+              <div className="editorial-quote !m-0 !mb-6 flex-grow">
+                <p>&ldquo;{t.quote}&rdquo;</p>
+              </div>
+              <div
+                className="pt-4"
+                style={{ borderTop: "1px solid var(--border-subtle)" }}
+              >
                 <p className="text-sm font-medium text-foreground">
                   {t.author}
                 </p>
-                <p className="text-xs text-muted-foreground">{t.company}</p>
+                <p
+                  className="text-xs font-mono"
+                  style={{ color: "var(--text-muted)", letterSpacing: "0.5px" }}
+                >
+                  {t.company}
+                </p>
               </div>
             </div>
           </StaggerItem>

@@ -2,33 +2,32 @@
 
 import { FadeIn } from "@/components/ui/motion";
 import { Section } from "@/components/sections/section-wrapper";
-import { AlertTriangle } from "lucide-react";
 
 export function ProblemSection() {
   return (
-    <Section className="bg-background">
-      <div className="max-w-4xl mx-auto">
+    <Section>
+      <div className="max-w-[720px]">
         <FadeIn>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-jumper-orange/10">
-              <AlertTriangle className="h-5 w-5 text-jumper-orange" />
-            </div>
-            <span className="text-sm font-medium uppercase tracking-wider text-jumper-orange">
-              O Problema
-            </span>
-          </div>
+          <div className="editorial-label--orange mb-6">O Problema</div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h2 className="text-fluid-h2 font-bold text-foreground text-balance">
+          <h2
+            className="font-bold text-foreground"
+            style={{
+              fontSize: "clamp(24px, 3vw, 28px)",
+              letterSpacing: "-0.5px",
+              marginBottom: "32px",
+            }}
+          >
             Você está perdendo até{" "}
             <span className="text-jumper-orange">40% das suas conversões.</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
-            <p>
+          <div className="space-y-5">
+            <p className="editorial-body">
               Pixels client-side não funcionam mais como antes. iOS 17, ad
               blockers e o fim dos cookies de terceiros estão corroendo seus
               dados. Você acha que tem ROAS de 3x — mas o número real pode ser

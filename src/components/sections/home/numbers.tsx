@@ -12,14 +12,22 @@ const stats = [
 
 export function NumbersSection() {
   return (
-    <Section className="border-y border-border">
+    <Section className="border-t border-[var(--border-subtle)]">
       <StaggerContainer className="grid grid-cols-2 gap-8 lg:grid-cols-4">
         {stats.map((stat) => (
-          <StaggerItem key={stat.label} className="text-center">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-jumper-orange">
+          <StaggerItem key={stat.label}>
+            <div
+              className="font-mono text-3xl sm:text-4xl lg:text-5xl font-bold text-jumper-orange"
+              style={{ lineHeight: 1 }}
+            >
               {stat.value}
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+            <p
+              className="mt-3 text-[13px]"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              {stat.label}
+            </p>
           </StaggerItem>
         ))}
       </StaggerContainer>

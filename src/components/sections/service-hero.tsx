@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/motion";
 
@@ -10,7 +9,7 @@ interface ServiceHeroProps {
   subheadline: string;
   ctaText: string;
   ctaHref?: string;
-  gradient?: string;
+  label?: string;
 }
 
 export function ServiceHero({
@@ -18,30 +17,49 @@ export function ServiceHero({
   subheadline,
   ctaText,
   ctaHref = "/diagnostico",
-  gradient = "/assets/gradients/organic-04.png",
+  label,
 }: ServiceHeroProps) {
   return (
-    <section className="relative py-20 sm:py-28 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={gradient}
-          alt=""
-          fill
-          className="object-cover opacity-25"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+    <section
+      className="relative min-h-[50vh] flex items-end overflow-hidden"
+      style={{
+        padding: "80px 60px",
+        background: `
+          radial-gradient(ellipse 80% 60% at 20% 30%, rgba(250,71,33,0.10) 0%, transparent 60%),
+          radial-gradient(ellipse 60% 80% at 80% 70%, rgba(129,67,167,0.07) 0%, transparent 60%),
+          #000
+        `,
+      }}
+    >
+      <div className="relative z-10 max-w-[900px] max-md:px-0">
+        {label && (
+          <FadeIn>
+            <div className="editorial-label--orange mb-6">{label}</div>
+          </FadeIn>
+        )}
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <h1 className="text-fluid-h1 font-bold text-white leading-[1.1] text-balance">
+        <FadeIn delay={0.1}>
+          <h1
+            className="text-white font-bold leading-[1.15]"
+            style={{
+              fontSize: "clamp(36px, 5vw, 56px)",
+              letterSpacing: "-1.5px",
+              marginBottom: "20px",
+            }}
+          >
             {headline}
           </h1>
         </FadeIn>
 
-        <FadeIn delay={0.15}>
-          <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed">
+        <FadeIn delay={0.2}>
+          <p
+            className="max-w-[600px]"
+            style={{
+              fontSize: "17px",
+              color: "var(--text-secondary)",
+              lineHeight: 1.8,
+            }}
+          >
             {subheadline}
           </p>
         </FadeIn>

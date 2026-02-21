@@ -19,7 +19,6 @@ export default function ArquiteturaDePerformancePage() {
         headline="Não é rodar anúncio. É construir a máquina de aquisição inteira."
         subheadline="Arquitetura de Performance = Tráfego Pago + Tracking Server-Side + CRM + JumperChat. Tudo integrado, com dados limpos e otimização real."
         ctaText="Agendar Diagnóstico"
-        gradient="/assets/gradients/organic-02.png"
       />
       <IncludesSection />
       <ComparisonSection />

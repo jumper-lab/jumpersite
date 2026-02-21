@@ -51,17 +51,17 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "var(--font-sans)",
+          "DM Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
-          "Roboto",
           "sans-serif",
         ],
-        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+        mono: ["var(--font-mono)", "DM Mono", "ui-monospace", "monospace"],
       },
       fontSize: {
-        "fluid-h1": "clamp(2rem, 1.5rem + 2.5vw, 3.5rem)",
+        "fluid-h1": "clamp(2.25rem, 1.5rem + 3vw, 3.5rem)",
         "fluid-h2": "clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem)",
         "fluid-h3": "clamp(1.25rem, 1.125rem + 0.625vw, 1.75rem)",
         "fluid-h4": "clamp(1rem, 0.9rem + 0.5vw, 1.25rem)",
@@ -71,6 +71,10 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      spacing: {
+        "section-x": "60px",
+        "section-y": "80px",
       },
       keyframes: {
         "fade-in-up": {

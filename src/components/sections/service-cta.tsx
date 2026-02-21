@@ -16,15 +16,31 @@ export function ServiceCTA({
   ctaHref = "/diagnostico",
 }: ServiceCTAProps) {
   return (
-    <section className="py-20 sm:py-24 bg-[#0a0a0a]">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+    <section
+      className="overflow-hidden"
+      style={{
+        padding: "80px 60px",
+        background: `
+          radial-gradient(ellipse 60% 60% at 30% 50%, rgba(129,67,167,0.06) 0%, transparent 60%),
+          var(--bg-secondary)
+        `,
+      }}
+    >
+      <div className="max-w-[720px] max-md:px-0">
         <FadeIn>
-          <h2 className="text-fluid-h2 font-bold text-white text-balance">
+          <h2
+            className="font-bold text-white"
+            style={{
+              fontSize: "clamp(24px, 3vw, 28px)",
+              letterSpacing: "-0.5px",
+              marginBottom: "32px",
+            }}
+          >
             {title}
           </h2>
         </FadeIn>
         <FadeIn delay={0.15}>
-          <div className="mt-8">
+          <div>
             <Button variant="critical" size="xl" asChild>
               <Link href={ctaHref}>{ctaText}</Link>
             </Button>

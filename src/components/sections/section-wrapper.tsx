@@ -12,22 +12,26 @@ export function Section({ children, className, id, dark }: SectionProps) {
     <section
       id={id}
       className={cn(
-        "py-16 sm:py-20 lg:py-24",
-        dark && "bg-[#0a0a0a]",
+        "py-[80px] border-t border-[#1E1E1E]",
+        dark && "bg-[var(--bg-secondary)]",
         className
       )}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+      <div className="mx-auto max-w-[1100px] px-[60px] max-md:px-6">
+        {children}
+      </div>
     </section>
   );
 }
 
 export function SectionHeader({
+  label,
   title,
   subtitle,
   className,
-  align = "center",
+  align = "left",
 }: {
+  label?: string;
   title: string;
   subtitle?: string;
   className?: string;
@@ -41,11 +45,16 @@ export function SectionHeader({
         className
       )}
     >
-      <h2 className="text-fluid-h2 font-bold text-foreground text-balance">
-        {title}
-      </h2>
+      {label && (
+        <div className="editorial-label mb-3">{label}</div>
+      )}
+      <h2
+        className="text-[28px] font-semibold text-foreground"
+        style={{ letterSpacing: "-0.5px", marginBottom: "32px" }}
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
       {subtitle && (
-        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto text-balance">
+        <p className="text-[15px] leading-[1.85] max-w-[720px]" style={{ color: "var(--text-secondary)" }}>
           {subtitle}
         </p>
       )}

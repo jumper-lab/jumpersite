@@ -18,7 +18,6 @@ export default function TrackingAvancadoPage() {
         headline="Seus dados estão mentindo pra você."
         subheadline="Tracking mal configurado = decisões erradas = dinheiro jogado fora. A gente implementa a infraestrutura de dados que faz suas campanhas funcionarem de verdade."
         ctaText="Solicitar Auditoria de Tracking"
-        gradient="/assets/gradients/organic-05.png"
       />
       <WhatWeDoSection />
       <WhyServerSideSection />

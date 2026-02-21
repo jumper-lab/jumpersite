@@ -19,7 +19,6 @@ export default function JumperChatPage() {
         headline="Cada lead que chega no WhatsApp vira dado no seu CRM."
         subheadline="Plataforma de atendimento via WhatsApp Business API com CRM integrado, atribuição automática de anúncios e múltiplos atendentes num único número."
         ctaText="Agendar Demo"
-        gradient="/assets/gradients/organic-06.png"
       />
       <WhatIsSection />
       <FeaturesSection />
