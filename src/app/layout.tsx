@@ -24,19 +24,19 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jumper Studio — Arquitetura de Performance Digital",
+    default: "Jumper Studio — A.I. Power Studio",
     template: "%s | Jumper Studio",
   },
   description:
-    "Gestão de tráfego pago com tracking server-side, CRM integrado e atendimento via WhatsApp. Arquitetura de Performance que recupera até 40% das conversões perdidas.",
+    "Laboratório criativo de soluções com inteligência artificial. Desenvolvemos AI Agents, automações, estratégia e experiências com IA para empresas que querem operar, crescer e inovar em outro nível.",
   keywords: [
-    "tráfego pago",
-    "tracking server-side",
-    "sGTM",
-    "Meta CAPI",
-    "performance digital",
-    "CRM",
-    "WhatsApp marketing",
+    "inteligência artificial",
+    "AI agents",
+    "automação com IA",
+    "soluções com IA",
+    "AI strategy",
+    "creative prototyping",
+    "AI experiences",
   ],
   authors: [{ name: "Jumper Studio" }],
   openGraph: {
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://jumper.studio",
     siteName: "Jumper Studio",
-    title: "Jumper Studio — Arquitetura de Performance Digital",
+    title: "Jumper Studio — A.I. Power Studio",
     description:
-      "Gestão de tráfego pago com tracking server-side, CRM integrado e atendimento via WhatsApp.",
+      "Laboratório criativo de soluções com IA. Agentes, automações, estratégia e experiências com inteligência artificial.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jumper Studio — Arquitetura de Performance Digital",
+    title: "Jumper Studio — A.I. Power Studio",
     description:
-      "Gestão de tráfego pago com tracking server-side, CRM integrado e atendimento via WhatsApp.",
+      "Laboratório criativo de soluções com IA. Agentes, automações, estratégia e experiências com inteligência artificial.",
   },
   robots: {
     index: true,

@@ -2,17 +2,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, Instagram } from "lucide-react";
 
+const solutions = [
+  "AI Strategy",
+  "AI Agents",
+  "AI Automation",
+  "AI-Powered Growth",
+  "AI Experiences",
+  "Creative Prototyping",
+];
+
 const footerLinks = {
-  servicos: [
-    { label: "Arquitetura de Performance", href: "/servicos/arquitetura-de-performance" },
-    { label: "Tracking Avançado", href: "/servicos/tracking-avancado" },
-    { label: "JumperChat", href: "/servicos/jumperchat" },
-  ],
   empresa: [
     { label: "Sobre", href: "/sobre" },
     { label: "Cases", href: "/cases" },
     { label: "Contato", href: "/contato" },
-    { label: "Diagnóstico", href: "/diagnostico" },
   ],
 };
 
@@ -40,24 +43,20 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Where data becomes performance.
+              A.I. Power Studio — Transformamos problemas complexos em soluções
+              únicas com inteligência artificial.
             </p>
           </div>
 
-          {/* Serviços */}
+          {/* Soluções */}
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">
-              Serviços
+              Soluções
             </h4>
             <ul className="space-y-2">
-              {footerLinks.servicos.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-jumper-orange transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+              {solutions.map((name) => (
+                <li key={name}>
+                  <span className="text-sm text-muted-foreground">{name}</span>
                 </li>
               ))}
             </ul>
@@ -90,7 +89,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5521964369191?text=Ol%C3%A1%2C%20Jumper!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-jumper-orange transition-colors"
@@ -126,7 +125,8 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Jumper Studio. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Jumper Studio. Todos os direitos
+            reservados.
           </p>
           <div className="flex gap-4">
             <Link

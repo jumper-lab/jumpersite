@@ -117,10 +117,10 @@ export function CaseDetailContent({ data }: { data: CaseData }) {
           <FadeIn delay={0.15}>
             <div className="mt-12">
               <h3 className="text-lg font-semibold text-foreground mb-4">
-                Quer resultados assim? Agende seu diagnóstico.
+                Quer resultados assim? Fale com a gente.
               </h3>
               <Button variant="critical" size="xl" asChild>
-                <Link href="/diagnostico">Agendar Diagnóstico Gratuito</Link>
+                <a href="https://wa.me/5521964369191?text=Ol%C3%A1%2C%20Jumper!" target="_blank" rel="noopener noreferrer">Falar com a Jumper</a>
               </Button>
             </div>
           </FadeIn>

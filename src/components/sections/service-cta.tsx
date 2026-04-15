@@ -13,7 +13,7 @@ interface ServiceCTAProps {
 export function ServiceCTA({
   title,
   ctaText,
-  ctaHref = "/diagnostico",
+  ctaHref = "https://wa.me/5521964369191?text=Ol%C3%A1%2C%20Jumper!",
 }: ServiceCTAProps) {
   return (
     <section className="py-20 sm:py-24 bg-[#0a0a0a]">

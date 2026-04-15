@@ -26,35 +26,34 @@ export function HeroSection() {
           <FadeIn delay={0.1}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-jumper-orange/30 bg-jumper-orange/10 px-4 py-1.5 text-sm text-jumper-orange">
               <span className="h-1.5 w-1.5 rounded-full bg-jumper-orange animate-pulse" />
-              +34% de conversões recuperadas com tracking server-side
+              A.I. Power Studio
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <h1 className="text-fluid-h1 font-bold text-white leading-[1.1] text-balance">
-              Seus anúncios estão rodando.{" "}
+              Desenvolvemos soluções com IA para empresas que querem{" "}
               <span className="text-jumper-orange">
-                Suas conversões estão sumindo.
+                operar, crescer e inovar em outro nível.
               </span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.35}>
             <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed">
-              Arquitetura de Performance: gestão de tráfego pago com tracking
-              server-side, CRM integrado e atendimento via WhatsApp. Tudo numa
-              máquina só.
+              A Jumper é um laboratório criativo de soluções com inteligência
+              artificial. Transformamos problemas complexos em soluções únicas.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.5}>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button variant="critical" size="xl" asChild>
-                <Link href="/diagnostico">Agendar Diagnóstico Gratuito</Link>
+                <a href="https://wa.me/5521964369191?text=Ol%C3%A1%2C%20Jumper!" target="_blank" rel="noopener noreferrer">Falar com a Jumper</a>
               </Button>
               <Button variant="ghost" size="xl" asChild>
-                <a href="#como-funciona" className="text-white border-white/20 hover:bg-white/10">
-                  Ver como funciona <ArrowDown className="ml-2 h-4 w-4" />
+                <a href="#o-que-fazemos" className="text-white border-white/20 hover:bg-white/10">
+                  Ver soluções <ArrowDown className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>

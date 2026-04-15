@@ -12,7 +12,7 @@ const channels = [
     icon: Phone,
     label: "WhatsApp",
     value: "Fale conosco",
-    href: "https://wa.me/5511999999999",
+    href: "https://wa.me/5521964369191?text=Ol%C3%A1%2C%20Jumper!",
   },
   {
     icon: Mail,

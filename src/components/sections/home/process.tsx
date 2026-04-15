@@ -2,7 +2,7 @@
 
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 import { Section, SectionHeader } from "@/components/sections/section-wrapper";
-import { Search, Wrench, BarChart3, RefreshCcw } from "lucide-react";
+import { Search, PenTool, FlaskConical, Plug, RefreshCcw } from "lucide-react";
 
 const steps = [
   {
@@ -10,28 +10,35 @@ const steps = [
     step: "01",
     title: "Diagnóstico",
     description:
-      "Analisamos seu tracking atual, suas campanhas e seu funil. Identificamos onde estão os vazamentos de dados e as oportunidades.",
+      "Entendemos a operação, os gargalos, o contexto e as oportunidades mais relevantes.",
   },
   {
-    icon: Wrench,
+    icon: PenTool,
     step: "02",
-    title: "Setup Técnico",
+    title: "Arquitetura",
     description:
-      "Implementamos tracking server-side (sGTM), Meta CAPI, Enhanced Conversions e integramos seu CRM com as plataformas de ads.",
+      "Definimos o que vale construir, priorizamos casos de uso e desenhamos a solução.",
   },
   {
-    icon: BarChart3,
+    icon: FlaskConical,
     step: "03",
-    title: "Gestão Ativa",
+    title: "Prototipagem",
     description:
-      "Estruturamos e gerenciamos suas campanhas com dados limpos. Criativos, audiências, budget — tudo otimizado com sinal de qualidade.",
+      "Criamos provas de conceito, fluxos ou experiências para validação rápida.",
+  },
+  {
+    icon: Plug,
+    step: "04",
+    title: "Implementação",
+    description:
+      "Conectamos a solução ao negócio, às ferramentas e à rotina da empresa.",
   },
   {
     icon: RefreshCcw,
-    step: "04",
-    title: "Otimização Contínua",
+    step: "05",
+    title: "Evolução",
     description:
-      "Relatórios com dados reais, reuniões regulares, ajustes constantes. O algoritmo aprende com dados melhores, e o resultado compõe mês a mês.",
+      "Refinamos, ampliamos e transformamos o que funciona em vantagem contínua.",
   },
 ];
 
@@ -39,10 +46,10 @@ export function ProcessSection() {
   return (
     <Section id="como-funciona" className="bg-[#0a0a0a]">
       <FadeIn>
-        <SectionHeader title="Como funciona" />
+        <SectionHeader title="Do problema à solução" subtitle="Como funciona" />
       </FadeIn>
 
-      <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
         {steps.map((step, i) => (
           <StaggerItem key={step.title}>
             <div className="relative">

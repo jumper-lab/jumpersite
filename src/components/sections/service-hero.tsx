@@ -17,7 +17,7 @@ export function ServiceHero({
   headline,
   subheadline,
   ctaText,
-  ctaHref = "/diagnostico",
+  ctaHref = "https://wa.me/5521964369191?text=Ol%C3%A1%2C%20Jumper!",
   gradient = "/assets/gradients/organic-04.png",
 }: ServiceHeroProps) {
   return (
