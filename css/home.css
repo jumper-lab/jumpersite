@@ -1,0 +1,49 @@
+/* ============================================
+   home.css — extras for home v2
+   ============================================ */
+
+/* ---- LOGOS SECTION ---- */
+.logos-section {
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.logos-carousel {
+  overflow: hidden;
+  margin-top: 20px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  animation: scroll-logos 30s linear infinite;
+  width: max-content;
+}
+
+.logos-track img {
+  height: 36px;
+  width: auto;
+  opacity: 0.45;
+  filter: brightness(2) grayscale(1);
+  transition: opacity 0.3s ease;
+}
+.logos-track img:hover {
+  opacity: 0.8;
+}
+
+@keyframes scroll-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logos-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+  }
+}
