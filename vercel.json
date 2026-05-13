@@ -1,3 +1,7 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {"source": "/politica-de-privacidade", "destination": "/privacy-policy", "permanent": true},
+    {"source": "/termos", "destination": "/terms-of-service", "permanent": true}
+  ]
 }
