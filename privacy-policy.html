@@ -8,65 +8,112 @@
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="css/site.css">
 <style>
-  .legal-content {
-    max-width: 800px;
-    margin: 0 auto;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-    font-size: 16px;
+  .legal-hero {
+    padding: 120px 0 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .legal-content .doc-title {
+  .legal-hero .doc-title {
     font-size: clamp(32px, 4vw, 48px);
     line-height: 1.05;
     letter-spacing: -0.03em;
-    margin: 0 0 16px;
+    margin: 0 0 12px;
     font-variation-settings: 'wght' 700;
+    color: #FFFFFF;
   }
-  .legal-content .updated {
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 32px;
+  .legal-hero .updated {
+    color: #A0A0A0;
+    font-size: 14px;
+    letter-spacing: 0.02em;
   }
-  .legal-content h2 {
-    font-size: 24px;
-    line-height: 1.2;
-    margin: 40px 0 16px;
-    font-variation-settings: 'wght' 650;
-  }
-  .legal-content h3 {
-    font-size: 18px;
-    line-height: 1.3;
-    margin: 24px 0 12px;
+  .legal-hero .updated strong {
+    color: #FFFFFF;
     font-variation-settings: 'wght' 600;
   }
+  .legal-body {
+    background: #111111;
+    padding: clamp(40px, 6vw, 80px) 0;
+  }
+  .legal-content {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .legal-content h2 {
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 48px 0 20px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-variation-settings: 'wght' 650;
+    color: #FFFFFF;
+  }
+  .legal-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .legal-content h3 {
+    font-size: 17px;
+    line-height: 1.35;
+    margin: 32px 0 12px;
+    font-variation-settings: 'wght' 600;
+    color: rgba(255,255,255,0.9);
+  }
   .legal-content p, .legal-content li {
-    margin: 0 0 14px;
+    margin: 0 0 16px;
+    color: rgba(255,255,255,0.88);
   }
   .legal-content ul {
-    padding-left: 20px;
-    margin: 0 0 18px;
+    padding-left: 24px;
+    margin: 0 0 20px;
+    list-style: none;
   }
   .legal-content li {
-    margin-bottom: 8px;
+    position: relative;
+    padding-left: 4px;
+    margin-bottom: 10px;
   }
-  .legal-content strong { color: rgba(255,255,255,0.95); }
-  .legal-content hr {
-    border: 0;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    margin: 32px 0;
+  .legal-content li::before {
+    content: '\2014';
+    position: absolute;
+    left: -20px;
+    color: #FA4721;
+    font-weight: 600;
   }
-  .legal-content .secondary { color: rgba(255,255,255,0.6); }
+  .legal-content strong { color: #FFFFFF; }
+  .legal-content code {
+    background: rgba(255,255,255,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+  .legal-content .contact-block {
+    background: #1A1A1A;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .legal-content .contact-block p { margin-bottom: 8px; }
+  .legal-content .contact-block p:last-child { margin-bottom: 0; }
 </style>
 </head>
 <body>
 <header class="site-header"><div class="wrap bar"><a class="brand" href="/"><img src="assets/logos/jumper-white.png" alt="Jumper"></a></div></header>
-<section class="sec" style="padding-top:120px;">
+<section class="legal-hero">
+  <div class="wrap">
+    <h1 class="doc-title">Política de Privacidade</h1>
+    <p class="updated"><strong>Última atualização:</strong> 13 de maio de 2026</p>
+  </div>
+</section>
+<section class="legal-body">
   <div class="wrap">
     <div class="legal-content">
-      <h1 class="doc-title">Política de Privacidade</h1>
-      <p class="updated"><strong>Última atualização:</strong> 13 de maio de 2026</p>
       <p>Esta Política de Privacidade descreve como a <strong>Maya Company</strong>, inscrita no CNPJ sob o nº 55.876.581/0001-11, com sede em Rua Barão do Flamengo, 22, Sala 402, Rio de Janeiro, RJ, CEP 22220-080, titular da marca <strong>Jumper Studio</strong> (doravante "Jumper", "nós" ou "nossa"), coleta, utiliza, armazena, compartilha e protege dados pessoais no contexto de suas atividades de marketing de performance, gestão de tráfego pago e operação da ferramenta interna <strong>Jumper Flow</strong>.</p>
       <p>Esta política está em conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong> e, quando aplicável, com o <strong>Regulamento Geral de Proteção de Dados da União Europeia (GDPR)</strong>.</p>
-      <hr>
       <h2>1. A quem se aplica esta política</h2>
       <p>Esta política aplica-se a:</p>
       <ul>
@@ -205,14 +252,16 @@
       <p>Alterações substanciais serão comunicadas previamente aos clientes e usuários autorizados por canais apropriados.</p>
       <h2>14. Encarregado pelo Tratamento de Dados (DPO) e canais de contato</h2>
       <p>A Maya Company designa como Encarregado pelo Tratamento de Dados Pessoais (DPO):</p>
-      <p><strong>Nome:</strong> Bruno Maya<br>
-      <strong>E-mail:</strong> privacidade@jumper.studio</p>
+      <div class="contact-block">
+        <p><strong>Nome:</strong> Bruno Maya</p>
+        <p><strong>E-mail:</strong> <a href="mailto:privacidade@jumper.studio" style="color:#FA4721;">privacidade@jumper.studio</a></p>
+      </div>
       <p>Para qualquer questão relativa a esta Política de Privacidade, ao exercício de seus direitos como titular ou ao tratamento de seus dados pessoais, entre em contato:</p>
-      <ul>
-        <li><strong>E-mail (privacidade e proteção de dados):</strong> privacidade@jumper.studio</li>
-        <li><strong>E-mail (geral):</strong> contato@jumper.studio</li>
-        <li><strong>Endereço postal:</strong> Rua Barão do Flamengo, 22, Sala 402, Rio de Janeiro, RJ, CEP 22220-080</li>
-      </ul>
+      <div class="contact-block">
+        <p><strong>E-mail (privacidade e proteção de dados):</strong> <a href="mailto:privacidade@jumper.studio" style="color:#FA4721;">privacidade@jumper.studio</a></p>
+        <p><strong>E-mail (geral):</strong> <a href="mailto:contato@jumper.studio" style="color:#FA4721;">contato@jumper.studio</a></p>
+        <p><strong>Endereço postal:</strong> Rua Barão do Flamengo, 22, Sala 402, Rio de Janeiro, RJ, CEP 22220-080</p>
+      </div>
       <h2>15. Lei aplicável e foro</h2>
       <p>Esta Política de Privacidade é regida pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca de Rio de Janeiro para dirimir quaisquer controvérsias decorrentes desta política, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
     </div>
