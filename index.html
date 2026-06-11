@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="colors_and_type.css?v=1776698900000">
 <link rel="stylesheet" href="css/site.css?v=1776698900000">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/machine.css">
 </head>
 <body>
 
@@ -18,6 +19,7 @@
     <a class="brand is-hidden" href="/"><img src="assets/logos/jumper-white.png" alt="Jumper"></a>
     <nav>
       <a href="#solucoes">Soluções</a>
+      <a href="#operacao">Operação</a>
       <a href="cases/index.html">Cases</a>
       <a href="pensamento/index.html">Pensamento</a>
       <a href="sobre.html">Time</a>
@@ -74,6 +76,19 @@
         </a>
       </div>
     </div>
+
+    <!-- Sala de Máquinas — telemetria ao vivo do próprio visitante -->
+    <aside class="machine-console" aria-label="Demonstração de rastreamento ao vivo">
+      <div class="mr-head">
+        <span class="mr-title"><span class="pulse" aria-hidden="true"></span>Sala de máquinas · ao vivo</span>
+        <span class="mr-emq">EMQ <b data-mr-emq>0.0</b>/10</span>
+      </div>
+      <div class="mr-stream" data-mr-stream aria-hidden="true"></div>
+      <div class="mr-foot">
+        <span>Sua visita, medida agora. Nenhum dado sai do seu navegador.</span>
+        <a href="#solucoes">Como funciona ↗</a>
+      </div>
+    </aside>
 
     <div class="hero-rail">
       <div class="meta">
@@ -205,6 +220,115 @@
   </div>
 </section>
 
+<!-- ============ A OPERAÇÃO — frota de agentes ============ -->
+<section class="sec" id="operacao">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow"><span class="dot"></span>A operação</div>
+        <h2 class="sec-title">Um fundador. <em>Uma frota de agentes.</em></h2>
+      </div>
+      <p class="sec-lede">
+        A Jumper é AI-native de verdade: um operador humano e agentes de IA construídos in-house, que monitoram contas, auditam rastreamento e produzem análises — todos os dias, inclusive agora. Sem mística. É assim que funciona por dentro.
+      </p>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-card is-human" data-ops-agent data-ops-min="2"
+           data-ops-outputs='["revisão de estratégia · conta em escala","diagnóstico de funil · novo cliente","call de alinhamento · plano Q3"]'>
+        <div class="top">
+          <span class="ops-status"><span class="dot" aria-hidden="true"></span>Operando</span>
+          <span class="ops-kind">Humano</span>
+        </div>
+        <h3>Bruno Maya</h3>
+        <p class="role">Fundador. Estratégia, arquitetura de performance e a decisão final em tudo que os agentes produzem.</p>
+        <div class="ops-log">
+          <span class="k">Última atividade</span>
+          <span class="v">revisão de estratégia · conta em escala</span>
+          <span class="when">há 2 min</span>
+        </div>
+      </div>
+
+      <div class="ops-card" data-ops-agent data-ops-min="7"
+           data-ops-outputs='["análise de performance · 14 campanhas","redistribuição de verba sugerida · CPA −12%","alerta: criativo saturando · frequência 3.4"]'>
+        <div class="top">
+          <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+          <span class="ops-kind">Agente</span>
+        </div>
+        <h3>Newton</h3>
+        <p class="role">Engenheiro de performance. Lê cada conta de mídia todos os dias e aponta onde a verba rende mais.</p>
+        <div class="ops-log">
+          <span class="k">Último output</span>
+          <span class="v">análise de performance · 14 campanhas</span>
+          <span class="when">há 7 min</span>
+        </div>
+      </div>
+
+      <div class="ops-card" data-ops-agent data-ops-min="12"
+           data-ops-outputs='["auditoria de tracking · EMQ 8.9 → 9.4","dedup CAPI verificado · 0 eventos duplicados","pixel novo validado em staging"]'>
+        <div class="top">
+          <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+          <span class="ops-kind">Agente</span>
+        </div>
+        <h3>Dorian</h3>
+        <p class="role">Auditor de rastreamento. Vigia pixels, CAPI e deduplicação — o sinal que alimenta o algoritmo.</p>
+        <div class="ops-log">
+          <span class="k">Último output</span>
+          <span class="v">auditoria de tracking · EMQ 8.9 → 9.4</span>
+          <span class="when">há 12 min</span>
+        </div>
+      </div>
+
+      <div class="ops-card" data-ops-agent data-ops-min="4"
+           data-ops-outputs='["deploy: integração CRM → data layer","fix em produção · checkout instrumentado","nova automação de atendimento no ar"]'>
+        <div class="top">
+          <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+          <span class="ops-kind">Agente</span>
+        </div>
+        <h3>Santiago</h3>
+        <p class="role">Engenharia. Constrói e mantém portais, integrações e a infraestrutura que sustenta os funis.</p>
+        <div class="ops-log">
+          <span class="k">Último output</span>
+          <span class="v">deploy: integração CRM → data layer</span>
+          <span class="when">há 4 min</span>
+        </div>
+      </div>
+
+      <div class="ops-card" data-ops-agent data-ops-min="21"
+           data-ops-outputs='["report semanal entregue · 3 contas","documentação de processo atualizada","resumo executivo · reunião de ontem"]'>
+        <div class="top">
+          <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+          <span class="ops-kind">Agente</span>
+        </div>
+        <h3>Sabrina</h3>
+        <p class="role">Entregáveis. Transforma dados e decisões em reports e documentação que o cliente entende.</p>
+        <div class="ops-log">
+          <span class="k">Último output</span>
+          <span class="v">report semanal entregue · 3 contas</span>
+          <span class="when">há 21 min</span>
+        </div>
+      </div>
+
+      <div class="ops-card" data-ops-agent data-ops-min="9"
+           data-ops-outputs='["dashboard atualizado · funil completo","anomalia detectada: queda de conversão 18%","previsão de budget · próximos 30 dias"]'>
+        <div class="top">
+          <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+          <span class="ops-kind">Agente</span>
+        </div>
+        <h3>Darla</h3>
+        <p class="role">Dados. Consolida métricas de todas as fontes e levanta a mão quando algo foge da curva.</p>
+        <div class="ops-log">
+          <span class="k">Último output</span>
+          <span class="v">dashboard atualizado · funil completo</span>
+          <span class="when">há 9 min</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="ops-note">// Protótipo: atividade simulada a partir de rotinas reais da operação. Em produção, este painel liga no barramento real dos agentes — mesma infraestrutura que entregamos aos clientes.</p>
+  </div>
+</section>
+
 <!-- ============ CTA FINAL ============ -->
 <section class="cta-final" id="contato">
   <div class="bg"><canvas data-jumper-gradient aria-hidden="true"></canvas></div>
@@ -285,5 +409,6 @@
   })();
 </script>
 <script src="js/gradient.js"></script>
+<script src="js/machine-room.js"></script>
 </body>
 </html>
