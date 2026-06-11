@@ -154,6 +154,30 @@
 /* ================================================
    2. A OPERAÇÃO — frota de agentes
    ================================================ */
+.ops-group { margin-top: 40px; }
+.ops-group:first-of-type { margin-top: 0; }
+.ops-group-label {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-family: var(--mr-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 16px;
+}
+.ops-group-label .n { color: var(--jumper-orange); }
+.ops-group-label .line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  align-self: center;
+}
+
+.ops-status.idle { color: rgba(255, 255, 255, 0.45); }
+.ops-status.idle .dot { background: rgba(255, 255, 255, 0.45); animation: none; }
+
 .ops-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -163,6 +187,25 @@
 }
 @media (min-width: 720px)  { .ops-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1080px) { .ops-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 720px)  { .ops-grid--2 { grid-template-columns: repeat(2, 1fr); } }
+
+/* ghost card — vaga aberta na frota */
+.ops-card.is-ghost {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  margin: -1px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.ops-card.is-ghost:hover { background: rgba(255, 255, 255, 0.02); }
+.ops-card.is-ghost .ops-status { color: rgba(255, 255, 255, 0.4); }
+.ops-card.is-ghost .ops-status .dot {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: none;
+}
+.ops-card.is-ghost .role { flex: 0; }
 
 .ops-card {
   background: #000;
