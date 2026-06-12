@@ -146,6 +146,67 @@
 }
 .mr-foot a:hover { color: var(--jumper-orange); }
 
+/* último evento — visível só no modo pill */
+.mr-last {
+  display: none;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+/* ---- modo docked: widget flutuante fora do hero ---- */
+.machine-console.is-docked {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  width: 340px;
+  margin: 0;
+  z-index: 60;
+  background: rgba(7, 7, 8, 0.94);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.6);
+  animation: mr-dock-in 0.45s var(--ease-jumper);
+}
+@keyframes mr-dock-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.machine-console.is-docked .mr-head { cursor: pointer; }
+.machine-console.is-docked .mr-title { white-space: nowrap; }
+.machine-console.is-docked .mr-title .live { display: none; }
+.machine-console.is-docked .mr-stream {
+  height: 108px;
+  transition: height 0.3s var(--ease-jumper), padding 0.3s var(--ease-jumper);
+}
+.machine-console.is-docked .mr-foot { display: none; }
+
+/* pill: minimizado, só a barra com último evento + EMQ */
+.machine-console.is-docked.is-min .mr-stream {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.machine-console.is-docked.is-min .mr-head { border-bottom: none; }
+.machine-console.is-docked.is-min .mr-last { display: block; }
+.machine-console.is-docked.is-min .mr-title .label { display: none; }
+
+@media (max-width: 719px) {
+  .machine-console.is-docked {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+  }
+  .mr-last { max-width: none; flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .machine-console.is-docked { animation: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mr-title .pulse { animation: none; }
   .mr-row { animation: none; }

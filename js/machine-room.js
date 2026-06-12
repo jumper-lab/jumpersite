@@ -21,7 +21,10 @@
       return d.toTimeString().slice(0, 8) + '.' + String(d.getMilliseconds()).padStart(3, '0');
     };
 
+    const lastEl = document.querySelector('[data-mr-last]');
+
     function push(evt, params, ok) {
+      if (lastEl) lastEl.textContent = evt + (params ? ' · ' + params : '');
       const row = document.createElement('div');
       row.className = 'mr-row';
       const t = document.createElement('span'); t.className = 't'; t.textContent = ts();
@@ -110,6 +113,32 @@
       beats++;
       push('heartbeat', 't=' + beats * 20 + 's · sessão ativa', '✓');
     }, 20000);
+
+    // ---- dock: fora do hero, o console vira widget flutuante ----
+    const consoleEl = document.querySelector('.machine-console');
+    const hero = document.querySelector('.hero');
+    if (consoleEl && hero) {
+      const compact = window.matchMedia('(max-width: 719px)');
+      const heroInner = hero.querySelector('.hero-inner');
+      const heroRail = hero.querySelector('.hero-rail');
+      const dockIO = new IntersectionObserver((entries) => {
+        const inHero = entries[0].isIntersecting;
+        if (!inHero) {
+          // re-parenta no <body>: o isolation:isolate do hero prende o z-index
+          consoleEl.classList.add('is-docked');
+          if (compact.matches) consoleEl.classList.add('is-min');
+          document.body.appendChild(consoleEl);
+        } else {
+          consoleEl.classList.remove('is-docked', 'is-min');
+          heroInner.insertBefore(consoleEl, heroRail);
+        }
+      }, { threshold: 0.15 });
+      dockIO.observe(hero);
+
+      consoleEl.querySelector('.mr-head').addEventListener('click', () => {
+        if (consoleEl.classList.contains('is-docked')) consoleEl.classList.toggle('is-min');
+      });
+    }
   }
 
   /* ============================================================
