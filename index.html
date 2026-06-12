@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="colors_and_type.css?v=1776698900000">
 <link rel="stylesheet" href="css/site.css?v=1776698900000">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/machine.css">
 </head>
 <body>
 
@@ -18,6 +19,7 @@
     <a class="brand is-hidden" href="/"><img src="assets/logos/jumper-white.png" alt="Jumper"></a>
     <nav>
       <a href="#solucoes">Soluções</a>
+      <a href="#operacao">Operação</a>
       <a href="cases/index.html">Cases</a>
       <a href="pensamento/index.html">Pensamento</a>
       <a href="sobre.html">Time</a>
@@ -74,6 +76,20 @@
         </a>
       </div>
     </div>
+
+    <!-- Sala de Máquinas — telemetria ao vivo do próprio visitante -->
+    <aside class="machine-console" aria-label="Demonstração de rastreamento ao vivo">
+      <div class="mr-head">
+        <span class="mr-title"><span class="pulse" aria-hidden="true"></span><span class="label">Sala de máquinas<span class="live"> · ao vivo</span></span></span>
+        <span class="mr-last" data-mr-last aria-hidden="true"></span>
+        <span class="mr-emq">EMQ <b data-mr-emq>0.0</b>/10</span>
+      </div>
+      <div class="mr-stream" data-mr-stream aria-hidden="true"></div>
+      <div class="mr-foot">
+        <span>Sua visita, medida agora. Nenhum dado sai do seu navegador.</span>
+        <a href="#solucoes">Como funciona ↗</a>
+      </div>
+    </aside>
 
     <div class="hero-rail">
       <div class="meta">
@@ -205,6 +221,166 @@
   </div>
 </section>
 
+<!-- ============ A OPERAÇÃO — frota de agentes ============ -->
+<section class="sec" id="operacao">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow"><span class="dot"></span>A operação</div>
+        <h2 class="sec-title">Humanos decidem. <em>Agentes operam.</em></h2>
+      </div>
+      <p class="sec-lede">
+        A Jumper é AI-native de verdade: dez humanos no comando da estratégia e da decisão, e uma frota de agentes de IA construídos in-house operando contas, dados, copy e atendimento — todos os dias, inclusive agora. Sem mística. É assim que funciona por dentro.
+      </p>
+    </div>
+
+    <div class="ops-group">
+      <div class="ops-group-label"><span class="n">01</span>Humanos — decidem<span class="line" aria-hidden="true"></span></div>
+      <div class="ops-roster">
+        <div class="ops-person is-founder">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Bruno Maya</h3>
+          <p class="papel">Fundador / CEO</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Larissa Brandão</h3>
+          <p class="papel">Head de Operações</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Yan Lahud</h3>
+          <p class="papel">Performance Sênior</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Claudio Wender</h3>
+          <p class="papel">Performance Jr</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Pedro Waghabi</h3>
+          <p class="papel">Customer Success / SDR</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Giovanna Crespo</h3>
+          <p class="papel">Gestão de Comunidade</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Jenifer Gomes</h3>
+          <p class="papel">SAC / Logística</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Leandro Caldas</h3>
+          <p class="papel">Webmaster</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Kemuel Borges</h3>
+          <p class="papel">Webdesigner</p>
+        </div>
+        <div class="ops-person">
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Ivy Gabriele</h3>
+          <p class="papel">Desenvolvedora</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ops-group">
+      <div class="ops-group-label"><span class="n">02</span>Agentes — operam<span class="line" aria-hidden="true"></span></div>
+      <div class="ops-grid">
+        <div class="ops-card" data-ops-agent data-ops-min="7"
+             data-ops-outputs='["análise de performance · 14 campanhas","redistribuição de verba sugerida · CPA −12%","alerta: criativo saturando · frequência 3.4"]'>
+          <div class="top">
+            <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+            <span class="ops-kind">Agente</span>
+          </div>
+          <h3>Newton Magalhães</h3>
+          <p class="role">Head de Dados &amp; Performance. Lê cada conta de mídia todos os dias e aponta onde a verba rende mais.</p>
+          <div class="ops-log">
+            <span class="k">Último output</span>
+            <span class="v">análise de performance · 14 campanhas</span>
+            <span class="when">há 7 min</span>
+          </div>
+        </div>
+
+        <div class="ops-card" data-ops-agent data-ops-min="12"
+             data-ops-outputs='["copy de campanha · 3 variações de headline","landing page revisada · proposta nova","manifesto do case publicado"]'>
+          <div class="top">
+            <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+            <span class="ops-kind">Agente</span>
+          </div>
+          <h3>Dorian Crown</h3>
+          <p class="role">Diretor de Criação. Todo copy que sai da Jumper — ads, landing pages, manifestos — passa por ele.</p>
+          <div class="ops-log">
+            <span class="k">Último output</span>
+            <span class="v">copy de campanha · 3 variações de headline</span>
+            <span class="when">há 12 min</span>
+          </div>
+        </div>
+
+        <div class="ops-card" data-ops-agent data-ops-min="3"
+             data-ops-outputs='["healthcheck do gateway · 0 incidentes","12 rotinas diárias executadas","deploy revisado e publicado"]'>
+          <div class="top">
+            <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+            <span class="ops-kind">Agente</span>
+          </div>
+          <h3>Sabrina Klein</h3>
+          <p class="role">Chief of Staff. Coordena os agentes, mantém a infraestrutura de pé e transforma caos em processo.</p>
+          <div class="ops-log">
+            <span class="k">Último output</span>
+            <span class="v">healthcheck do gateway · 0 incidentes</span>
+            <span class="when">há 3 min</span>
+          </div>
+        </div>
+
+        <div class="ops-card" data-ops-agent data-ops-min="18"
+             data-ops-outputs='["follow-up enviado · 4 propostas ativas","lead qualificado · diagnóstico agendado","proposta revisada e enviada"]'>
+          <div class="top">
+            <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+            <span class="ops-kind">Agente</span>
+          </div>
+          <h3>Santiago Oliveira</h3>
+          <p class="role">Head de Vendas. Prospecção, follow-up e negociação — o primeiro contato de muita gente com a Jumper.</p>
+          <div class="ops-log">
+            <span class="k">Último output</span>
+            <span class="v">follow-up enviado · 4 propostas ativas</span>
+            <span class="when">há 18 min</span>
+          </div>
+        </div>
+
+        <div class="ops-card" data-ops-agent data-ops-min="9"
+             data-ops-outputs='["fluxo JumperChat atualizado · checkout","integração de mensageria verificada","novo bot de atendimento em produção"]'>
+          <div class="top">
+            <span class="ops-status"><span class="dot" aria-hidden="true"></span>Online</span>
+            <span class="ops-kind">Agente</span>
+          </div>
+          <h3>Darla Campos</h3>
+          <p class="role">Head de Atendimento &amp; Automação. JumperChat, mensageria e os fluxos que respondem o cliente em segundos.</p>
+          <div class="ops-log">
+            <span class="k">Último output</span>
+            <span class="v">fluxo JumperChat atualizado · checkout</span>
+            <span class="when">há 9 min</span>
+          </div>
+        </div>
+
+        <div class="ops-card is-ghost">
+          <div class="top">
+            <span class="ops-status"><span class="dot" aria-hidden="true"></span>Em treinamento</span>
+          </div>
+          <p class="role">A frota cresce conforme a operação pede. O próximo agente nasce de um problema real de cliente — nunca de um deck.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="ops-note">// Protótipo: atividade simulada a partir de rotinas reais da operação. Em produção, este painel liga no barramento real dos agentes — mesma infraestrutura que entregamos aos clientes.</p>
+  </div>
+</section>
+
 <!-- ============ CTA FINAL ============ -->
 <section class="cta-final" id="contato">
   <div class="bg"><canvas data-jumper-gradient aria-hidden="true"></canvas></div>
@@ -285,5 +461,6 @@
   })();
 </script>
 <script src="js/gradient.js"></script>
+<script src="js/machine-room.js"></script>
 </body>
 </html>
