@@ -1295,3 +1295,25 @@ body.has-track .model-card { width: 380px; flex: 0 0 auto; }
 }
 .cut-switch button[aria-pressed="true"] { background: var(--jumper-orange); color: #fff; }
 @media (max-width: 720px) { .cut-switch { display: none; } }
+
+/* ============ SOBREVOO — captions HTML sobrepostas (não baked no vídeo) ============ */
+.sv-caption {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  font-size: clamp(32px, 4vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-variation-settings: 'wght' 780;
+  color: #fff;
+  max-width: 15ch;
+  text-shadow: 0 8px 60px rgba(0, 0, 0, 0.9), 0 2px 12px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+.sv-caption .hot { color: var(--jumper-orange); }
+.sv-caption-in { left: clamp(24px, 6vw, 96px); }
+.sv-caption-out { right: clamp(24px, 6vw, 96px); text-align: right; }
+/* corte traffic (poster estático): mostra só a caption de abertura, fixa */
+[data-cut="traffic"] .sv-caption-in { opacity: 1; }

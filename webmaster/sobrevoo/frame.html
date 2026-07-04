@@ -110,13 +110,19 @@
   document.documentElement.style.setProperty('--cam', p);
   document.documentElement.style.setProperty('--sweep', p);
 
-  /* trailer: a legenda muda em 3 atos */
+  /* trailer: a legenda muda em 3 atos.
+     ?notext=1 → sem texto baked (a copy vira overlay HTML na LP; evita a IA
+     borrar/alucinar o texto ao gerar vídeo). */
+  var noText = new URLSearchParams(location.search).get('notext') === '1';
   var t = document.getElementById('titletext');
   var card = document.getElementById('titlecard');
-  if (p < 0.30) { t.innerHTML = 'Cada site,<br><mark>construído pela mesma IA.</mark>'; card.classList.remove('end'); }
-  else if (p < 0.70) { t.innerHTML = ''; }
-  else { t.innerHTML = 'O seu é<br><mark>o próximo.</mark>'; card.classList.add('end'); }
-  card.style.opacity = (p < 0.30 || p >= 0.70) ? '1' : '0';
+  if (noText) { card.style.opacity = '0'; }
+  else {
+    if (p < 0.30) { t.innerHTML = 'Cada site,<br><mark>construído pela mesma IA.</mark>'; card.classList.remove('end'); }
+    else if (p < 0.70) { t.innerHTML = ''; }
+    else { t.innerHTML = 'O seu é<br><mark>o próximo.</mark>'; card.classList.add('end'); }
+    card.style.opacity = (p < 0.30 || p >= 0.70) ? '1' : '0';
+  }
 
   /* reusa os mini-sites REAIS da LP: busca os <template> do index e clona */
   fetch('../index.html').then(function (r) { return r.text(); }).then(function (html) {

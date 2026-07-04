@@ -239,7 +239,7 @@
     var canvas = document.getElementById('sv-canvas');
     if (!sec || !canvas) return;
     var ctx = canvas.getContext('2d');
-    var FRAMES = 46;
+    var FRAMES = 48;
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var imgs = [];
     var state = { i: 0 };
@@ -263,12 +263,21 @@
       ctx.drawImage(img, dx, dy, dw, dh);
     }
 
+    /* captions HTML: abertura fade-out no 1º quarto, fecho fade-in no último */
+    var capIn = document.getElementById('sv-cap-in');
+    var capOut = document.getElementById('sv-cap-out');
+    function driveCaptions(p) {
+      if (capIn) capIn.style.opacity = String(Math.max(0, 1 - p / 0.22));
+      if (capOut) capOut.style.opacity = String(Math.max(0, (p - 0.74) / 0.22));
+    }
+
     var booted = false;
     function boot() {
       if (booted) return;
       booted = true;
       sec.classList.add('is-live');   /* .sv-pin passa a 100vh → refresh obrigatório */
       sizeCanvas();
+      driveCaptions(0);
       gsap.to(state, {
         i: FRAMES - 1,
         ease: 'none',
@@ -280,6 +289,7 @@
           pin: '.sv-pin',
           scrub: 0.5,
           anticipatePin: 1,
+          onUpdate: function (self) { driveCaptions(self.progress); },
           onEnter: function () { var h = sec.querySelector('.sv-hint'); if (h) h.classList.add('gone'); }
         }
       });
