@@ -8,301 +8,239 @@
 <meta property="og:title" content="Jumper Webmaster — Site profissional em 14 dias">
 <meta property="og:description" content="Site profissional feito com IA. Lote de portfólio: de R$ 7.000 por R$ 2.980. 50 sites em 50 dias.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://jumper.studio/webmaster/">
+<!-- TODO: og:image — gerar card 1200×630 (recorte de gradiente + wordmark) antes de publicar -->
 <link rel="icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../colors_and_type.css?v=2">
 <link rel="stylesheet" href="../css/site.css?v=2">
-<link rel="stylesheet" href="css/webmaster.css?v=1">
+<link rel="stylesheet" href="css/webmaster.css?v=2">
 
 <!-- Meta Pixel — substituir PIXEL_ID antes de publicar -->
 <!-- <script>...pixel...</script> -->
 
 </head>
-<body>
+<body data-niche="food">
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="wrap bar">
-    <a class="brand" href="../index.html"><img src="../assets/logos/jumper-white.png" alt="Jumper"></a>
-    <nav>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#comparativo">Comparativo</a>
-      <a href="#faq">Perguntas</a>
-      <a href="../sobre.html">A Jumper</a>
-    </nav>
+    <span class="brand"><img src="../assets/logos/jumper-white.png" alt="Jumper"></span>
+    <div class="header-lot" aria-hidden="true">
+      Lote de portfólio · <b class="js-vagas">47</b> de 50 vagas
+    </div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#hero-cta" data-cta>Quero meu site</a>
+      <a class="btn btn-primary js-wa" href="#" target="_blank" rel="noopener" data-cta="header">Quero meu site</a>
     </div>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <div class="hero-witness" aria-hidden="true">
-    <canvas data-jumper-gradient></canvas>
-  </div>
-  <div class="hero-scrim" aria-hidden="true"></div>
+<!-- ============ HERO — bipartido lateral: conteúdo × gradiente+telefone ============ -->
+<section class="wm-hero" id="hero">
+  <div class="wm-hero-content">
+    <div class="wm-hero-stack">
+      <div class="sec-eyebrow"><span class="dot"></span>Lote de portfólio · 50 sites em 50 dias</div>
 
-  <div class="hero-inner">
-    <div class="hero-bar">
-      <div class="mark">
-        <img src="../assets/logos/jumper-white.png" alt="Jumper">
-      </div>
-      <div class="hero-index">
-        Jumper Webmaster<br>
-        <b>Lote de portfólio · 50/50</b>
-      </div>
-    </div>
-
-    <div class="hero-stage">
-      <div class="hero-kicker">
-        <span class="dot"></span>
-        Lote de portfólio · 50 sites em 50 dias
-      </div>
-
-      <h1 class="hero-statement">
-        Seu site profissional.<br>
-        Pronto em <em>14 dias</em>.<br>
-        Por <mark>R$ 2.980</mark>
+      <h1 class="wm-headline">
+        Em 14 dias, quem procurar seu negócio <span class="hot">encontra isto.</span>
       </h1>
 
-      <p class="hero-claim">
-        A Jumper cobra R$ 7.000 por um site institucional. Durante o lote de portfólio, fazemos por R$ 2.980. Você envia os dados em 7 dias. Entregamos em mais 7.
+      <div class="wm-price-pair">
+        <div class="wm-price"><span class="cur">R$</span>2.980<span class="ast">*</span></div>
+        <div class="wm-price-cap">em vez dos R$ 7.000 de tabela — enquanto durar o lote de portfólio</div>
+      </div>
+
+      <p class="wm-claim">
+        Site profissional construído pela Jumper com inteligência artificial.
+        Você envia os dados em 7 dias. O time entrega em mais 7.
       </p>
 
-      <div class="hero-ctas">
-        <a class="btn btn-primary btn-lg" id="hero-cta"
-           href="https://wa.me/5521964369191?text=Ol%C3%A1%21%20Vi%20o%20Jumper%20Webmaster%20e%20quero%20meu%20site%20por%20R%24%202.980.%20Tenho%20um%20%5Btipo%20de%20neg%C3%B3cio%5D."
-           target="_blank" rel="noopener" data-cta>
-          Quero meu site por R$ 2.980
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="wm-picker" role="group" aria-label="Escolha o tipo do seu negócio">
+        <span class="wm-picker-label">O seu negócio:</span>
+        <div class="wm-chips">
+          <button class="chip" data-niche-btn="food" type="button" aria-pressed="true">Restaurante</button>
+          <button class="chip" data-niche-btn="clean" type="button" aria-pressed="false">Clínica</button>
+          <button class="chip" data-niche-btn="fit" type="button" aria-pressed="false">Academia</button>
+          <button class="chip" data-niche-btn="legal" type="button" aria-pressed="false">Advocacia</button>
+          <button class="chip" data-niche-btn="shop" type="button" aria-pressed="false">Loja</button>
+          <button class="chip" data-niche-btn="beauty" type="button" aria-pressed="false">Beleza</button>
+        </div>
+      </div>
+
+      <div class="wm-ctas">
+        <a class="btn btn-primary btn-lg js-wa" href="#" target="_blank" rel="noopener" data-cta="hero">
+          Quero meu site por R$ 2.980*
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a class="btn btn-ghost btn-lg" href="#como-funciona">
-          Como funciona
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+          Ver como funciona
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </a>
       </div>
 
-      <p class="hero-fineprint" aria-hidden="true">*R$ 2.980,00 + impostos (12%). Total: R$ 3.337,60.</p>
+      <p class="wm-fineprint">*R$ 2.980,00 + impostos (12%). Total: R$ 3.337,60. 50% na assinatura, 50% na entrega.</p>
 
-      <div class="hero-proof">
-        <span>Tecnologia Next.js</span>
-        <span class="sep">·</span>
-        <span>Deploy Vercel</span>
-        <span class="sep">·</span>
-        <span>Otimizado para mobile</span>
-        <span class="sep">·</span>
-        <span>SEO configurado</span>
-      </div>
-
-      <div class="hero-counter" aria-live="polite">
-        <span class="counter-label">Vagas restantes neste lote</span>
-        <span class="counter-value"><b id="vagas-restantes">47</b> de 50</span>
-      </div>
-    </div>
-
-    <div class="hero-rail">
-      <div class="meta">
-        <span><span class="k">Produto</span><span class="v">Webmaster v1</span></span>
-        <span><span class="k">Entrega</span><span class="v">14 dias</span></span>
+      <div class="wm-hero-rail">
         <span><span class="k">Stack</span><span class="v">IA + Next.js</span></span>
-      </div>
-      <div class="x">
-        <img src="../assets/logos/x-white.png" alt="">
+        <span><span class="k">Deploy</span><span class="v">Vercel</span></span>
+        <span><span class="k">Mobile</span><span class="v">Otimizado</span></span>
+        <span><span class="k">SEO</span><span class="v">Configurado</span></span>
       </div>
     </div>
   </div>
+
+  <div class="wm-hero-visual" aria-hidden="true">
+    <canvas data-jumper-gradient></canvas>
+    <div class="wm-phone">
+      <div class="wm-phone-notch"></div>
+      <div class="wm-phone-screen" id="hero-screen"><!-- mini-site injetado por JS --></div>
+    </div>
+    <div class="wm-phone-tag">Modelo <b class="js-model-name">Food Menu</b> · ponto de partida <span class="js-model-for">pra restaurantes</span></div>
+  </div>
 </section>
 
-<!-- ============ PROBLEMA ============ -->
-<section class="sec problem" id="problema">
+<!-- ============ 01 O PROBLEMA — o espelho ============ -->
+<section class="sec wm-mirror" id="problema">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="sec-eyebrow"><span class="dot"></span>O problema</div>
-        <h2 class="sec-title">75% das pessoas julgam a credibilidade do seu negócio pelo <em>site</em>.</h2>
-      </div>
-      <p class="sec-lede">
-        Site antigo, lento ou feio não é estética. É dinheiro na mesa todo dia. O cliente pesquisa, encontra seu site, não confia, e vai pro concorrente com página decente. Você nunca sabe que perdeu.
-      </p>
-    </div>
+    <div class="sec-eyebrow mono-eyebrow"><span class="num">01</span>O problema</div>
+    <p class="wm-scene rv">
+      Sexta, 21h. Alguém procura <b class="js-niche-search">um restaurante</b> no celular.
+      Encontra três. Abre os três sites. Escolhe o que parece mais profissional.
+      <em>Você nem fica sabendo que perdeu.</em>
+    </p>
+    <p class="wm-scene-foot rv">75% das pessoas julgam a credibilidade de um negócio pelo site. As alternativas de sempre não resolvem:</p>
 
-    <div class="bad-options">
+    <div class="bad-options rv">
       <div class="bad-card">
-        <div class="bad-num">01</div>
+        <div class="bad-num">A</div>
         <h3>WIX e construtores</h3>
-        <p>Ficam genéricos. Demoram pra carregar. Não passam credibilidade. Cliente sente que é amador.</p>
+        <p>Ficam genéricos. Demoram pra carregar. Não passam credibilidade.</p>
       </div>
       <div class="bad-card">
-        <div class="bad-num">02</div>
+        <div class="bad-num">B</div>
         <h3>Agência tradicional</h3>
-        <p>Cobra R$ 7.000 a R$ 15.000. Demora 30 a 60 dias. Você fica refém do prazo deles.</p>
+        <p>Cobra R$ 7.000 a R$ 15.000. Demora 30 a 60 dias. Você fica refém do prazo.</p>
       </div>
       <div class="bad-card">
-        <div class="bad-num">03</div>
+        <div class="bad-num">C</div>
         <h3>O sobrinho</h3>
-        <p>Nunca termina. Some no meio. Você fica com um site pela metade e sem prazo pra acabar.</p>
+        <p>Nunca termina. Some no meio. Você fica com um site pela metade.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SOLUÇÃO ============ -->
-<section class="sec solution" id="solucao">
+<!-- ============ 02 A DIFERENÇA — antes/depois ============ -->
+<section class="sec wm-ba" id="diferenca">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-eyebrow"><span class="dot"></span>A solução</div>
-        <h2 class="sec-title">Um site que respeita seu <em>dinheiro</em> e seu <em>tempo</em>.</h2>
-      </div>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-icon">◐</div>
-        <h3>Rápido</h3>
-        <p>14 dias do contrato à entrega. Não 30. Não 60. Não "estamos trabalhando nisso".</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">◇</div>
-        <h3>Profissional</h3>
-        <p>Design premium, responsivo, feito pra mobile. Construído com tecnologia de ponta — não template de painel.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">△</div>
-        <h3>Honesto</h3>
-        <p>R$ 2.980, não R$ 7.000. Hospedagem grátis. Sem mensalidade escondida.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COMO FUNCIONA (7+7) ============ -->
-<section class="sec how-it-works" id="como-funciona">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="sec-eyebrow"><span class="dot"></span>Como funciona</div>
-        <h2 class="sec-title">Três passos. <em>Sem complicação</em>.</h2>
+        <div class="sec-eyebrow mono-eyebrow"><span class="num">02</span>A diferença</div>
+        <h2 class="sec-title">Arraste. <em>É o mesmo negócio.</em></h2>
       </div>
       <p class="sec-lede">
-        O processo foi desenhado pra ser rápido dos dois lados. 7 dias pra você organizar tudo. 7 dias pra gente construir. Pronto.
+        À esquerda, o site que o sobrinho nunca terminou.
+        À direita, o modelo <b class="js-model-name">Food Menu</b> da Jumper — pronto em 14 dias.
       </p>
     </div>
 
-    <div class="timeline">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-name">Contrato</div>
-        <div class="step-body">
-          Escolha um modelo de base. Assine o contrato. Pague 50% de entrada pra reservar sua vaga no lote.
+    <div class="ba rv" id="ba">
+      <div class="ba-after" id="ba-after"><!-- mini-site injetado por JS --></div>
+      <div class="ba-before" id="ba-before">
+        <div class="ugly">
+          <div class="ugly-top">meusiteoficial2019.blogspot.com.br</div>
+          <h4 class="ugly-h">Bem vindo ao nosso site!!</h4>
+          <p class="ugly-p">Estamos em <span class="ugly-hl">CONSTRUÇÃO</span> mas ja pode conferir nossos serviços ligando no telefone</p>
+          <div class="ugly-img">imagem_final_v2 (1).jpg</div>
+          <p class="ugly-link">&gt;&gt;&gt; CLIQUE AQUI para saber mais &lt;&lt;&lt;</p>
+          <div class="ugly-marquee"><span>PROMOÇÃO IMPERDÍVEL ··· FALE CONOSCO ··· VISITE NOSSA PÁGINA NO ORKUT ···&nbsp;</span></div>
+          <p class="ugly-count">Você é o visitante nº 003.412</p>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-name">Seus dados</div>
-        <div class="step-body">
-          7 dias pra enviar tudo que precisamos: logo, textos, fotos, contatos, redes sociais.
-        </div>
+      <div class="ba-handle" id="ba-handle" aria-hidden="true"><span class="ba-grip"></span></div>
+      <input type="range" class="ba-range" id="ba-range" min="0" max="100" value="50" aria-label="Comparar o site antigo com o site novo">
+      <span class="ba-label ba-label-l" aria-hidden="true">O site que você tem</span>
+      <span class="ba-label ba-label-r" aria-hidden="true">O site que você terá</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 COMO FUNCIONA — três datas reais ============ -->
+<section class="sec wm-how" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow mono-eyebrow"><span class="num">03</span>Como funciona</div>
+        <h2 class="sec-title">Três datas. <em>Sem complicação.</em></h2>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-name">Seu site</div>
-        <div class="step-body">
-          7 dias depois de receber seus dados, seu site está no ar. Você paga os outros 50% na entrega.
-        </div>
+      <p class="sec-lede">
+        Não é uma promessa vaga de "duas semanas". São datas no calendário —
+        contando a partir de hoje.
+      </p>
+    </div>
+
+    <div class="cal rv">
+      <div class="cal-card">
+        <div class="cal-when">Hoje · <span class="js-d0">—</span></div>
+        <div class="cal-day js-d0-day">—</div>
+        <div class="cal-name">Contrato</div>
+        <p class="cal-body">Escolha um modelo. Assine o contrato. Pague 50% de entrada pra reservar sua vaga no lote.</p>
+      </div>
+      <div class="cal-sep" aria-hidden="true">7 dias seus</div>
+      <div class="cal-card">
+        <div class="cal-when">Até <span class="js-d7">—</span></div>
+        <div class="cal-day js-d7-day">—</div>
+        <div class="cal-name">Seus dados</div>
+        <p class="cal-body">Logo, textos, fotos, contatos, redes sociais. Um formulário organiza tudo — e se faltar algo, o time resolve com você.</p>
+      </div>
+      <div class="cal-sep" aria-hidden="true">7 dias nossos</div>
+      <div class="cal-card cal-hot">
+        <div class="cal-when"><span class="js-d14">—</span></div>
+        <div class="cal-day js-d14-day">—</div>
+        <div class="cal-name">Seu site no ar</div>
+        <p class="cal-body">Entrega com o site publicado. Você paga os outros 50% quando vê o site funcionando.</p>
       </div>
     </div>
 
-    <div class="deal-box">
+    <div class="deal-box rv">
       <div class="deal-eyebrow">O acordo do lote de portfólio</div>
-      <p>
-        Cobramos R$ 7.000 por um site. Durante este lote, fazemos por R$ 2.980.
-      </p>
-      <p>
-        A condição é simples: você tem 7 dias pra nos enviar tudo que precisamos. Se enviar a tempo, entregamos seu site em mais 7 dias.
-      </p>
-      <p>
-        Se precisar de mais tempo, tudo bem — oferecemos 48 horas extras por R$ 500 adicionais. Depois disso, o preço do lote não vale mais.
-      </p>
-      <p class="deal-closer">
-        Assim todo mundo cumpre o prazo. Você recebe rápido. A gente entrega com qualidade.
-      </p>
+      <p>Cobramos R$ 7.000 por um site. Durante este lote, fazemos por R$ 2.980*.</p>
+      <p>A condição é simples: você tem 7 dias pra nos enviar tudo que precisamos. Se enviar a tempo, entregamos seu site em mais 7 dias.</p>
+      <p>Se precisar de mais tempo, tudo bem — oferecemos 48 horas extras por R$ 500 adicionais. Depois disso, o preço do lote não vale mais.</p>
+      <p class="deal-closer">Assim todo mundo cumpre o prazo. Você recebe rápido. A gente entrega com qualidade.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ MODELOS ============ -->
-<section class="sec models" id="modelos">
+<!-- ============ 04 MODELOS — a vitrine acesa ============ -->
+<section class="sec wm-models" id="modelos">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-eyebrow"><span class="dot"></span>Modelos</div>
-        <h2 class="sec-title">Escolha seu <em>ponto de partida</em>.</h2>
+        <div class="sec-eyebrow mono-eyebrow"><span class="num">04</span>Modelos</div>
+        <h2 class="sec-title">Escolha seu <em>ponto de partida.</em></h2>
       </div>
       <p class="sec-lede">
-        Modelos de base que aceleram a entrega. Seu site é customizado a partir da estrutura escolhida — cores, textos, fotos e identidade são seus.
+        Modelos de base que aceleram a entrega. Seu site é customizado a partir da
+        estrutura escolhida — cores, textos, fotos e identidade são seus.
       </p>
     </div>
 
-    <div class="models-grid">
-      <!-- PLACEHOLDER — web designer preenche com previews reais -->
-      <div class="model-card placeholder">
-        <div class="model-preview"><span>preview</span></div>
-        <div class="model-info">
-          <h3>Clean Service</h3>
-          <p>Prestadores de serviço, consultórios</p>
-        </div>
-      </div>
-      <div class="model-card placeholder">
-        <div class="model-preview"><span>preview</span></div>
-        <div class="model-info">
-          <h3>Shop Front</h3>
-          <p>Lojas físicas, comércio</p>
-        </div>
-      </div>
-      <div class="model-card placeholder">
-        <div class="model-preview"><span>preview</span></div>
-        <div class="model-info">
-          <h3>Food Menu</h3>
-          <p>Restaurantes, padarias, delivery</p>
-        </div>
-      </div>
-      <div class="model-card placeholder">
-        <div class="model-preview"><span>preview</span></div>
-        <div class="model-info">
-          <h3>Fit Studio</h3>
-          <p>Academias, estúdios, personal</p>
-        </div>
-      </div>
-      <div class="model-card placeholder">
-        <div class="model-preview"><span>preview</span></div>
-        <div class="model-info">
-          <h3>Pro Legal</h3>
-          <p>Advogados, contadores, consultores</p>
-        </div>
-      </div>
-      <div class="model-card placeholder">
-        <div class="model-preview"><span>preview</span></div>
-        <div class="model-info">
-          <h3>Beauty Clinic</h3>
-          <p>Estética, clínicas, salões</p>
-        </div>
-      </div>
-    </div>
+    <div class="models-grid rv" id="models-grid"><!-- cards injetados por JS --></div>
+    <p class="models-note">Estruturas de referência — cada site do lote é construído sob a identidade do cliente.</p>
   </div>
 </section>
 
-<!-- ============ COMPARATIVO ============ -->
-<section class="sec compare" id="comparativo">
+<!-- ============ 05 A CONTA — comparativo ============ -->
+<section class="sec wm-compare" id="comparativo">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-eyebrow"><span class="dot"></span>Comparativo</div>
-        <h2 class="sec-title">Por que pagar R$ 7.000 <em>em outro lugar</em>?</h2>
+        <div class="sec-eyebrow mono-eyebrow"><span class="num">05</span>A conta</div>
+        <h2 class="sec-title">Por que pagar R$ 7.000 <em>em outro lugar?</em></h2>
       </div>
     </div>
 
-    <div class="table-wrap">
+    <div class="table-wrap rv">
       <table class="compare-table">
         <thead>
           <tr>
@@ -326,28 +264,10 @@
             <td class="col-highlight"><strong>14 dias</strong></td>
           </tr>
           <tr>
-            <td class="row-label">Design</td>
-            <td>Bom, às vezes</td>
-            <td>Genérico</td>
-            <td class="col-highlight"><strong>Premium IA</strong></td>
-          </tr>
-          <tr>
             <td class="row-label">Hospedagem</td>
             <td>R$ 50 — R$ 150/mês</td>
             <td>R$ 30 — R$ 80/mês</td>
             <td class="col-highlight"><strong>Grátis</strong></td>
-          </tr>
-          <tr>
-            <td class="row-label">SEO básico</td>
-            <td>Nem sempre incluso</td>
-            <td>Você configura</td>
-            <td class="col-highlight"><strong>Incluso</strong></td>
-          </tr>
-          <tr>
-            <td class="row-label">Mobile</td>
-            <td>Geralmente ok</td>
-            <td>Depende</td>
-            <td class="col-highlight"><strong>Otimizado</strong></td>
           </tr>
           <tr>
             <td class="row-label">Manutenção</td>
@@ -364,27 +284,55 @@
         </tbody>
       </table>
     </div>
-
     <p class="compare-footnote">
-      O custo real de um site WIX barato: R$ 1.500 de setup + R$ 50/mês de hospedagem + seu tempo — que vale mais que isso.
+      O custo real de um site WIX barato: R$ 1.500 de setup + R$ 50/mês de hospedagem
+      + seu tempo — que vale mais que isso.
     </p>
   </div>
 </section>
 
-<!-- ============ SOBRE A JUMPER ============ -->
-<section class="sec about" id="sobre">
+<!-- ============ 06 A PROVA — esta página ============ -->
+<section class="sec wm-proof" id="prova">
+  <div class="wrap">
+    <div class="sec-eyebrow mono-eyebrow"><span class="num">06</span>A prova</div>
+    <h2 class="wm-proof-statement rv">
+      Esta página que você está lendo foi construída pela mesma IA
+      que vai construir o seu site. <em>Ela é o portfólio.</em>
+    </h2>
+    <div class="proof-stats rv">
+      <div class="proof-stat">
+        <div class="proof-val js-load">—</div>
+        <div class="proof-cap">foi o que esta página levou pra carregar no seu aparelho</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-val js-weight">—</div>
+        <div class="proof-cap">é o peso desta página — mais leve que uma foto de WhatsApp</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-val">0 plugins</div>
+        <div class="proof-cap">nada de tema comprado, construtor ou página que trava</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 QUEM FAZ ============ -->
+<section class="sec wm-about" id="sobre">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-eyebrow"><span class="dot"></span>A Jumper</div>
+        <div class="sec-eyebrow mono-eyebrow"><span class="num">07</span>Quem faz</div>
         <h2 class="sec-title">Quem <em>constrói</em> seu site.</h2>
       </div>
       <p class="sec-lede">
-        A Jumper Studio é uma empresa de tecnologia e performance digital. Em 10 anos, construímos infraestrutura de marketing para mais de 50 empresas em 3 países — movimentando mais de R$ 30 milhões em tráfego digital no último ano. Usamos a mesma tecnologia dos nossos clientes premium pra construir seu site.
+        A Jumper Studio é uma empresa de tecnologia e performance digital. Em 10 anos,
+        construímos infraestrutura de marketing para mais de 50 empresas em 3 países —
+        movimentando mais de R$ 30 milhões em tráfego digital no último ano.
+        Usamos a mesma tecnologia dos nossos clientes premium pra construir seu site.
       </p>
     </div>
 
-    <div class="about-metrics">
+    <div class="about-metrics rv">
       <div class="metric-block">
         <div class="metric-val">50+</div>
         <div class="metric-lbl">empresas atendidas</div>
@@ -401,101 +349,99 @@
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
+<!-- ============ 08 FAQ ============ -->
 <section class="sec faq" id="faq">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="sec-eyebrow"><span class="dot"></span>Perguntas frequentes</div>
-        <h2 class="sec-title">Tudo que você precisa <em>saber</em>.</h2>
+        <div class="sec-eyebrow mono-eyebrow"><span class="num">08</span>Perguntas frequentes</div>
+        <h2 class="sec-title">Tudo que você precisa <em>saber.</em></h2>
       </div>
     </div>
 
-    <div class="faq-list">
-
+    <div class="faq-list rv">
       <details class="faq-item">
         <summary>Quanto tempo leva de verdade?</summary>
         <div class="faq-a"><p>14 dias corridos a partir do contrato assinado. Mas depende de uma coisa: você precisa nos enviar os dados em até 7 dias. Se mandar tudo no primeiro dia, seu site pode estar no ar em 8.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>E se eu não tiver fotos nem textos profissionais?</summary>
         <div class="faq-a"><p>Tudo bem. Usamos bancos de imagem premium (incluído, sem custo) e redigimos os textos com base numa conversa rápida com você. Se não tiver logo, criamos um simples sem cobrar a mais.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>E se eu não gostar do resultado?</summary>
         <div class="faq-a"><p>Você tem direito a 2 rodadas de revisão inclusas no preço. Se após as revisões não atender, devolvemos o sinal — desde que você tenha cumprido sua parte: enviado os dados no prazo e fornecido feedback específico.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>Vocês cobram mensalidade ou taxa de manutenção?</summary>
         <div class="faq-a"><p>Não. A hospedagem é gratuita (Vercel/Cloudflare). O domínio (R$ 40 a R$ 50 por ano) é por sua conta. Se quiser que a gente cuide de atualizações e mudanças depois, oferecemos manutenção opcional por R$ 300/mês.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>O site é meu? Posso editar depois?</summary>
         <div class="faq-a"><p>Sim. O código é seu. Você recebe tudo na entrega. Se quiser editar sozinho, pode. Se preferir que a gente cuide, é só contratar a manutenção.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>Como funciona o pagamento?</summary>
         <div class="faq-a"><p>50% na assinatura do contrato (pra reservar sua vaga no lote). 50% na entrega do site no ar. PIX ou cartão. O valor é R$ 2.980 + 12% de impostos (R$ 3.337,60 no total).</p></div>
       </details>
-
       <details class="faq-item">
         <summary>Por que R$ 2.980 e não R$ 7.000?</summary>
         <div class="faq-a"><p>Honesto: estamos montando portfólio. Queremos 50 sites prontos pra mostrar. Em troca de você nos deixar usar seu site como referência, fazemos por menos da metade. Quando o lote de 50 acabar, volta para R$ 7.000.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>O que meu site vai ter?</summary>
         <div class="faq-a"><p>De 3 a 5 páginas: Home, Sobre, Serviços ou Produtos, Contato, e opcionalmente Galeria ou Depoimentos. Design responsivo (funciona em celular), SEO básico configurado, integração com WhatsApp e redes sociais.</p></div>
       </details>
-
       <details class="faq-item">
         <summary>Posso adicionar mais páginas ou funcionalidades depois?</summary>
         <div class="faq-a"><p>Sim. Páginas adicionais custam R$ 500 cada. Se precisar de algo fora do escopo (e-commerce, sistema de agendamento, área logada), falamos separadamente — esses são outros produtos.</p></div>
       </details>
-
     </div>
   </div>
 </section>
 
-<!-- ============ CTA FINAL ============ -->
-<section class="sec final-cta" id="cta-final">
-  <div class="wrap">
-    <div class="final-inner">
-      <div class="sec-eyebrow"><span class="dot"></span>Últimas vagas</div>
-      <h2 class="sec-title">Restam poucas vagas <em>neste lote</em>.</h2>
+<!-- ============ 09 CTA FINAL — bipartido vertical ============ -->
+<section class="wm-final" id="cta-final">
+  <div class="wm-final-content">
+    <div class="wrap">
+      <div class="sec-eyebrow mono-eyebrow"><span class="num">09</span>Últimas vagas</div>
+      <h2 class="sec-title">Restam poucas vagas <em>neste lote.</em></h2>
+
+      <div class="lot rv">
+        <div class="lot-pair">
+          <div class="lot-num"><b class="js-vagas">47</b><span class="lot-of">/ 50</span></div>
+          <div class="lot-cap">vagas disponíveis no lote de portfólio</div>
+        </div>
+        <div class="lot-bar" aria-hidden="true"><span class="lot-fill js-lot-fill"></span></div>
+      </div>
+
       <p class="sec-lede">
         50 sites. 50 dias. Quando acaba, o preço volta para R$ 7.000.
-        Cada site contratado reserva uma vaga. Cada vaga preenchida é uma a menos.
-        Se o seu negócio precisa de um site profissional, este é o momento.
+        Fechando hoje, seu site entra no ar em <b class="js-d14">—</b>.
       </p>
-      <div class="final-cta-btn">
-        <a class="btn btn-primary btn-lg"
-           href="https://wa.me/5521964369191?text=Ol%C3%A1%21%20Vi%20o%20Jumper%20Webmaster%20e%20quero%20meu%20site%20por%20R%24%202.980.%20Tenho%20um%20%5Btipo%20de%20neg%C3%B3cio%5D."
-           target="_blank" rel="noopener" data-cta>
-          Reservar minha vaga — R$ 2.980
-          <svg viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+
+      <div class="wm-ctas">
+        <a class="btn btn-primary btn-lg js-wa" href="#" target="_blank" rel="noopener" data-cta="final">
+          Reservar minha vaga — R$ 2.980*
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
-      <p class="final-fineprint">
+      <p class="wm-fineprint">
         50% na assinatura · 50% na entrega · 14 dias do contrato ao site no ar<br>
         *R$ 2.980,00 + impostos (12%). Total: R$ 3.337,60.
       </p>
     </div>
   </div>
+  <div class="wm-final-cut" role="presentation"></div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <a class="brand" href="../index.html"><img src="../assets/logos/jumper-white.png" alt="Jumper"></a>
+    <img class="footer-logo" src="../assets/logos/jumper-white.png" alt="Jumper">
     <p class="footer-tagline">Jumper Studio · Tecnologia e performance digital</p>
     <div class="footer-links">
-      <a href="jumper.studio">jumper.studio</a>
+      <a href="https://jumper.studio">jumper.studio</a>
       <span class="sep">·</span>
       <a href="mailto:contato@jumper.studio">contato@jumper.studio</a>
     </div>
@@ -507,27 +453,323 @@
   </div>
 </footer>
 
-<!-- ============ JS — gradient + counter ============ -->
+<!-- ============ MINI-SITES (protótipos vivos dos 6 modelos) ============ -->
+
+<template id="mini-food">
+  <div class="mini mini-food">
+    <div class="mini-scroll">
+      <div class="m-top"><span class="m-logo">Braseiro</span><span class="m-nav"><i></i><i></i><i></i></span></div>
+      <div class="m-hero">
+        <p class="m-kick">Cozinha de fogo · desde 2011</p>
+        <h4 class="m-h">Churrasco de verdade, sem pressa.</h4>
+        <span class="m-cta">Reservar mesa</span>
+      </div>
+      <div class="m-art m-art-food"></div>
+      <div class="m-strip">Aberto hoje até 23h · Av. Central, 210</div>
+      <div class="m-cards">
+        <div class="m-card"><b>Costela 12h</b><span>R$ 89</span></div>
+        <div class="m-card"><b>Picanha na brasa</b><span>R$ 119</span></div>
+        <div class="m-card"><b>Menu do fogo</b><span>R$ 149</span></div>
+      </div>
+      <div class="m-quote">"A melhor costela da zona sul." — Guia da cidade</div>
+      <div class="m-foot"><span>Braseiro</span><span>WhatsApp · Instagram</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="mini-clean">
+  <div class="mini mini-clean">
+    <div class="mini-scroll">
+      <div class="m-top"><span class="m-logo">Vitalis</span><span class="m-nav"><i></i><i></i><i></i></span></div>
+      <div class="m-hero">
+        <p class="m-kick">Clínica de fisioterapia</p>
+        <h4 class="m-h">Cuidar do corpo é um projeto de longo prazo.</h4>
+        <span class="m-cta">Agendar avaliação</span>
+      </div>
+      <div class="m-art m-art-clean"></div>
+      <div class="m-strip">Atendimento com hora marcada · Seg a sáb</div>
+      <div class="m-cards">
+        <div class="m-card"><b>Fisioterapia ortopédica</b><span>Sessão</span></div>
+        <div class="m-card"><b>Pilates clínico</b><span>Plano mensal</span></div>
+        <div class="m-card"><b>RPG</b><span>Avaliação</span></div>
+      </div>
+      <div class="m-quote">"Voltei a correr sem dor em 3 meses." — Paciente desde 2023</div>
+      <div class="m-foot"><span>Vitalis</span><span>Agendar · Como chegar</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="mini-fit">
+  <div class="mini mini-fit">
+    <div class="mini-scroll">
+      <div class="m-top"><span class="m-logo">FORJA</span><span class="m-nav"><i></i><i></i><i></i></span></div>
+      <div class="m-hero">
+        <p class="m-kick">Treino de força · box 240m²</p>
+        <h4 class="m-h">O SEU RECORDE NÃO SE FAZ SOZINHO.</h4>
+        <span class="m-cta">Aula experimental grátis</span>
+      </div>
+      <div class="m-art m-art-fit"></div>
+      <div class="m-strip">Aberta 5h30 — 23h · Todos os níveis</div>
+      <div class="m-cards">
+        <div class="m-card"><b>Cross</b><span>18x/semana</span></div>
+        <div class="m-card"><b>LPO</b><span>Turmas 6 pessoas</span></div>
+        <div class="m-card"><b>Open box</b><span>Livre</span></div>
+      </div>
+      <div class="m-quote">"Melhor comunidade da cidade." — Aluno há 2 anos</div>
+      <div class="m-foot"><span>FORJA</span><span>Planos · Localização</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="mini-legal">
+  <div class="mini mini-legal">
+    <div class="mini-scroll">
+      <div class="m-top"><span class="m-logo">Athos&nbsp;Advocacia</span><span class="m-nav"><i></i><i></i><i></i></span></div>
+      <div class="m-hero">
+        <p class="m-kick">Direito empresarial e tributário</p>
+        <h4 class="m-h">Decisões seguras começam com bom conselho.</h4>
+        <span class="m-cta">Agendar consulta</span>
+      </div>
+      <div class="m-art m-art-legal"></div>
+      <div class="m-strip">OAB/RJ · Atendimento presencial e remoto</div>
+      <div class="m-cards">
+        <div class="m-card"><b>Tributário</b><span>Planejamento</span></div>
+        <div class="m-card"><b>Societário</b><span>Contratos</span></div>
+        <div class="m-card"><b>Trabalhista</b><span>Preventivo</span></div>
+      </div>
+      <div class="m-quote">"Clareza rara num assunto árido." — Cliente corporativo</div>
+      <div class="m-foot"><span>Athos</span><span>Equipe · Contato</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="mini-shop">
+  <div class="mini mini-shop">
+    <div class="mini-scroll">
+      <div class="m-top"><span class="m-logo">Casa Norte</span><span class="m-nav"><i></i><i></i><i></i></span></div>
+      <div class="m-hero">
+        <p class="m-kick">Design e utilidades · loja física</p>
+        <h4 class="m-h">Coisas bonitas pra casa de todo dia.</h4>
+        <span class="m-cta">Ver o catálogo</span>
+      </div>
+      <div class="m-art m-art-shop"></div>
+      <div class="m-strip">Retire na loja · Entrega no bairro no mesmo dia</div>
+      <div class="m-cards">
+        <div class="m-card"><b>Cerâmicas</b><span>R$ 49+</span></div>
+        <div class="m-card"><b>Madeira</b><span>R$ 89+</span></div>
+        <div class="m-card"><b>Têxteis</b><span>R$ 39+</span></div>
+      </div>
+      <div class="m-quote">"Impossível sair de mãos vazias." — Cliente do bairro</div>
+      <div class="m-foot"><span>Casa Norte</span><span>Loja · Instagram</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="mini-beauty">
+  <div class="mini mini-beauty">
+    <div class="mini-scroll">
+      <div class="m-top"><span class="m-logo">Ateliê&nbsp;Flor</span><span class="m-nav"><i></i><i></i><i></i></span></div>
+      <div class="m-hero">
+        <p class="m-kick">Estética e bem-estar</p>
+        <h4 class="m-h">Um tempo só seu, marcado na agenda.</h4>
+        <span class="m-cta">Reservar horário</span>
+      </div>
+      <div class="m-art m-art-beauty"></div>
+      <div class="m-strip">Ter a sáb, 9h — 20h · Agenda online</div>
+      <div class="m-cards">
+        <div class="m-card"><b>Limpeza de pele</b><span>60 min</span></div>
+        <div class="m-card"><b>Massagem</b><span>50 min</span></div>
+        <div class="m-card"><b>Dia da noiva</b><span>Pacote</span></div>
+      </div>
+      <div class="m-quote">"Saio de lá outra pessoa." — Cliente há 4 anos</div>
+      <div class="m-foot"><span>Ateliê Flor</span><span>Agenda · WhatsApp</span></div>
+    </div>
+  </div>
+</template>
+
+<!-- ============ JS — nichos, datas, slider, prova, tracking ============ -->
 <script src="../js/gradient.js"></script>
 <script>
-  // Contador de vagas — atualizar manualmente conforme sites são vendidos
-  // Valor padrão: 47 (3 já reservados)
-  (function() {
-    var el = document.getElementById('vagas-restantes');
-    if (!el) return;
-    // valor pode ser sobrescrito via query string ?vagas=45
-    var params = new URLSearchParams(window.location.search);
-    var vagas = params.get('vagas');
-    if (vagas && !isNaN(vagas)) { el.textContent = vagas; }
+(function () {
+  'use strict';
+
+  /* ---------- nichos ---------- */
+  var NICHES = {
+    food:   { chip: 'Restaurante', term: 'um restaurante',           search: 'um restaurante',        model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery' },
+    clean:  { chip: 'Clínica',     term: 'uma clínica',              search: 'uma clínica',           model: 'Clean Service', modelFor: 'pra clínicas e consultórios' },
+    fit:    { chip: 'Academia',    term: 'uma academia',             search: 'uma academia',          model: 'Fit Studio',    modelFor: 'pra academias, estúdios e personais' },
+    legal:  { chip: 'Advocacia',   term: 'um escritório de advocacia', search: 'um advogado',         model: 'Pro Legal',     modelFor: 'pra advogados, contadores e consultores' },
+    shop:   { chip: 'Loja',        term: 'uma loja',                 search: 'uma loja',              model: 'Shop Front',    modelFor: 'pra lojas físicas e comércio' },
+    beauty: { chip: 'Beleza',      term: 'um espaço de estética',    search: 'um salão',              model: 'Beauty Clinic', modelFor: 'pra estética, clínicas e salões' }
+  };
+  var ORDER = ['food', 'clean', 'fit', 'legal', 'shop', 'beauty'];
+  var current = 'food';
+
+  function cloneMini(key) {
+    var t = document.getElementById('mini-' + key);
+    return t ? t.content.firstElementChild.cloneNode(true) : null;
+  }
+
+  /* ---------- UTM → código curto na mensagem ---------- */
+  var utm = (function () {
+    var p = new URLSearchParams(window.location.search);
+    var bits = [p.get('utm_source'), p.get('utm_campaign')].filter(Boolean);
+    return bits.length ? ' [' + bits.join('/') + ']' : '';
   })();
 
-  // Tracking de CTA (substituir por Pixel evento real quando publicar)
-  document.querySelectorAll('[data-cta]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      if (typeof fbq === 'function') { fbq('track', 'Lead'); }
-      if (typeof gtag === 'function') { gtag('event', 'click_cta', { id: 'webmaster_cta' }); }
+  function waHref(niche, model) {
+    var msg = 'Olá! Vi o Jumper Webmaster e quero meu site por R$ 2.980*. Tenho ' + NICHES[niche].term + '.';
+    if (model) msg += ' Quero começar com o modelo ' + model + '.';
+    msg += utm;
+    return 'https://wa.me/5521964369191?text=' + encodeURIComponent(msg);
+  }
+
+  function refreshWaLinks() {
+    document.querySelectorAll('.js-wa').forEach(function (a) {
+      a.href = waHref(current, a.getAttribute('data-model') || null);
     });
+  }
+
+  /* ---------- troca de nicho ---------- */
+  var heroScreen = document.getElementById('hero-screen');
+  var baAfter = document.getElementById('ba-after');
+
+  function setNiche(key) {
+    current = key;
+    document.body.setAttribute('data-niche', key);
+
+    document.querySelectorAll('[data-niche-btn]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-niche-btn') === key));
+    });
+
+    [heroScreen, baAfter].forEach(function (mount) {
+      if (!mount) return;
+      mount.classList.add('swap');
+      var mini = cloneMini(key);
+      setTimeout(function () {
+        mount.innerHTML = '';
+        if (mini) mount.appendChild(mini);
+        mount.classList.remove('swap');
+      }, 180);
+    });
+
+    document.querySelectorAll('.js-model-name').forEach(function (el) { el.textContent = NICHES[key].model; });
+    document.querySelectorAll('.js-model-for').forEach(function (el) { el.textContent = NICHES[key].modelFor; });
+    document.querySelectorAll('.js-niche-search').forEach(function (el) { el.textContent = NICHES[key].search; });
+
+    document.querySelectorAll('.model-card').forEach(function (c) {
+      c.classList.toggle('is-active', c.getAttribute('data-model-key') === key);
+    });
+
+    refreshWaLinks();
+  }
+
+  document.querySelectorAll('[data-niche-btn]').forEach(function (b) {
+    b.addEventListener('click', function () { setNiche(b.getAttribute('data-niche-btn')); });
   });
+
+  /* ---------- grid de modelos ---------- */
+  var grid = document.getElementById('models-grid');
+  if (grid) {
+    ORDER.forEach(function (key) {
+      var card = document.createElement('div');
+      card.className = 'model-card';
+      card.setAttribute('data-model-key', key);
+      var screen = document.createElement('div');
+      screen.className = 'model-screen';
+      var mini = cloneMini(key);
+      if (mini) screen.appendChild(mini);
+      var info = document.createElement('div');
+      info.className = 'model-info';
+      info.innerHTML =
+        '<h3>' + NICHES[key].model + '</h3>' +
+        '<p>' + NICHES[key].modelFor + '</p>' +
+        '<a class="model-cta js-wa" data-model="' + NICHES[key].model + '" data-cta="modelo-' + key + '" target="_blank" rel="noopener" href="#">Começar com este modelo</a>';
+      card.appendChild(screen);
+      card.appendChild(info);
+      grid.appendChild(card);
+    });
+  }
+
+  /* ---------- datas reais (7 + 7) ---------- */
+  function fmtLong(d) {
+    return d.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
+  }
+  var d0 = new Date();
+  var d7 = new Date(d0.getTime() + 7 * 864e5);
+  var d14 = new Date(d0.getTime() + 14 * 864e5);
+  function fill(cls, txt) {
+    document.querySelectorAll('.' + cls).forEach(function (el) { el.textContent = txt; });
+  }
+  fill('js-d0', fmtLong(d0));
+  fill('js-d7', fmtLong(d7));
+  fill('js-d14', fmtLong(d14));
+  fill('js-d0-day', String(d0.getDate()).padStart(2, '0'));
+  fill('js-d7-day', String(d7.getDate()).padStart(2, '0'));
+  fill('js-d14-day', String(d14.getDate()).padStart(2, '0'));
+
+  /* ---------- contador de vagas (?vagas=N) ---------- */
+  var vagas = 47;
+  var qs = new URLSearchParams(window.location.search).get('vagas');
+  if (qs && !isNaN(qs)) vagas = Math.max(0, Math.min(50, parseInt(qs, 10)));
+  fill('js-vagas', String(vagas));
+  document.querySelectorAll('.js-lot-fill').forEach(function (el) {
+    el.style.width = ((50 - vagas) / 50 * 100) + '%';
+  });
+
+  /* ---------- antes/depois ---------- */
+  var range = document.getElementById('ba-range');
+  var before = document.getElementById('ba-before');
+  var handle = document.getElementById('ba-handle');
+  if (range && before && handle) {
+    var setBa = function (v) {
+      before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+      handle.style.left = v + '%';
+    };
+    range.addEventListener('input', function () { setBa(range.value); });
+    setBa(50);
+  }
+
+  /* ---------- prova ao vivo: tempo de carga + peso ---------- */
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      try {
+        var nav = performance.getEntriesByType('navigation')[0];
+        if (nav && nav.loadEventEnd > 0) {
+          var s = (nav.loadEventEnd / 1000).toFixed(1).replace('.', ',');
+          fill('js-load', s + 's');
+        }
+        var bytes = performance.getEntriesByType('resource').reduce(function (sum, r) {
+          return sum + (r.transferSize || 0);
+        }, 0) + (nav ? (nav.transferSize || 0) : 0);
+        if (bytes > 0) fill('js-weight', Math.max(1, Math.round(bytes / 1024)) + ' KB');
+      } catch (e) { /* medidores são cosméticos — nunca quebrar a página */ }
+    }, 0);
+  });
+
+  /* ---------- reveal on scroll (só arma o estado escondido se houver IO) ---------- */
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-anim');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+    document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- tracking (Pixel/GA4 — plugar IDs ao publicar) ---------- */
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest('[data-cta]');
+    if (!el) return;
+    var pos = el.getAttribute('data-cta') || 'cta';
+    if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'webmaster_' + pos });
+    if (typeof gtag === 'function') gtag('event', 'click_cta', { id: 'webmaster_' + pos, niche: current });
+  });
+
+  /* ---------- init ---------- */
+  setNiche('food');
+})();
 </script>
 
 </body>
