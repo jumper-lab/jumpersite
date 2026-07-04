@@ -45,8 +45,9 @@
       </h1>
 
       <div class="wm-price-pair">
-        <div class="wm-price"><span class="cur">R$</span>2.980<span class="ast">*</span></div>
-        <div class="wm-price-cap">em vez dos R$ 7.000 de tabela — enquanto durar o lote de portfólio</div>
+        <div class="wm-price-was">preço de tabela — R$ 7.000</div>
+        <div class="wm-price"><span class="cur">R$</span><span class="wm-price-num">2.980</span><span class="ast">*</span></div>
+        <div class="wm-price-cap">enquanto durar o lote de portfólio</div>
       </div>
 
       <p class="wm-claim">
@@ -164,20 +165,66 @@
   </div>
 </section>
 
-<!-- ============ 03 COMO FUNCIONA — três datas reais ============ -->
+<!-- ============ 03 COMO FUNCIONA — a construção em um scroll ============ -->
 <section class="sec wm-how" id="como-funciona">
   <div class="wrap">
     <div class="sec-head">
       <div>
         <div class="sec-eyebrow mono-eyebrow"><span class="num">03</span>Como funciona</div>
-        <h2 class="sec-title">Três datas. <em>Sem complicação.</em></h2>
+        <h2 class="sec-title">Role e assista aos <em>14 dias.</em></h2>
       </div>
       <p class="sec-lede">
-        Não é uma promessa vaga de "duas semanas". São datas no calendário —
-        contando a partir de hoje.
+        Não é uma promessa vaga de "duas semanas". São datas no calendário,
+        contando a partir de hoje — e o processo inteiro cabe num scroll.
       </p>
     </div>
+  </div>
 
+  <!-- showpiece pinado (desktop) — no mobile, o calendário abaixo assume -->
+  <div class="build-pin">
+    <div class="build-inner">
+      <div class="build-copy">
+        <div class="build-step"><h3>Contrato</h3><p>Você escolhe um modelo, assina e paga 50% de entrada. Sua vaga no lote está reservada.</p></div>
+        <div class="build-step"><h3>Seus dados</h3><p>Logo, fotos, textos, contatos. Você tem 7 dias — um formulário organiza tudo.</p></div>
+        <div class="build-step"><h3>A IA constrói</h3><p>O time dirige, a inteligência artificial executa: estrutura, design, textos, SEO.</p></div>
+        <div class="build-step"><h3>No ar</h3><p>Site publicado. Você paga os outros 50% quando vê tudo funcionando.</p></div>
+      </div>
+
+      <div class="build-stage">
+        <div class="wm-phone build-phone">
+          <div class="wm-phone-notch"></div>
+          <div class="build-wire" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="wm-phone-screen build-screen" id="build-screen"><!-- mini injetado por JS --></div>
+        </div>
+        <div class="build-files" aria-hidden="true">
+          <span class="bfile">logo.png</span>
+          <span class="bfile">fotos (12).zip</span>
+          <span class="bfile">sobre-nos.mp3</span>
+          <span class="bfile">contatos.txt</span>
+          <span class="bfile">@instagram</span>
+        </div>
+        <div class="build-done">No ar · <span class="js-d14">—</span></div>
+      </div>
+
+      <div class="build-meter">
+        <div class="build-day" aria-hidden="true"><span class="build-d">DIA</span><b id="build-day-num">00</b></div>
+        <div class="build-date" id="build-date">—</div>
+        <div class="build-phasebar" aria-hidden="true"><span id="build-fill"></span></div>
+        <div class="build-log" aria-hidden="true">
+          <span>&gt; lendo briefing do cliente… ok</span>
+          <span>&gt; estrutura: home · serviços · sobre · contato</span>
+          <span>&gt; aplicando identidade e tipografia</span>
+          <span>&gt; escrevendo textos a partir do seu áudio</span>
+          <span>&gt; otimizando pra mobile e SEO</span>
+          <span>&gt; deploy: publicado ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="cal rv">
       <div class="cal-card">
         <div class="cal-when">Hoje · <span class="js-d0">—</span></div>
@@ -589,188 +636,10 @@
 
 <!-- ============ JS — nichos, datas, slider, prova, tracking ============ -->
 <script src="../js/gradient.js"></script>
-<script>
-(function () {
-  'use strict';
-
-  /* ---------- nichos ---------- */
-  var NICHES = {
-    food:   { chip: 'Restaurante', term: 'um restaurante',           search: 'um restaurante',        model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery' },
-    clean:  { chip: 'Clínica',     term: 'uma clínica',              search: 'uma clínica',           model: 'Clean Service', modelFor: 'pra clínicas e consultórios' },
-    fit:    { chip: 'Academia',    term: 'uma academia',             search: 'uma academia',          model: 'Fit Studio',    modelFor: 'pra academias, estúdios e personais' },
-    legal:  { chip: 'Advocacia',   term: 'um escritório de advocacia', search: 'um advogado',         model: 'Pro Legal',     modelFor: 'pra advogados, contadores e consultores' },
-    shop:   { chip: 'Loja',        term: 'uma loja',                 search: 'uma loja',              model: 'Shop Front',    modelFor: 'pra lojas físicas e comércio' },
-    beauty: { chip: 'Beleza',      term: 'um espaço de estética',    search: 'um salão',              model: 'Beauty Clinic', modelFor: 'pra estética, clínicas e salões' }
-  };
-  var ORDER = ['food', 'clean', 'fit', 'legal', 'shop', 'beauty'];
-  var current = 'food';
-
-  function cloneMini(key) {
-    var t = document.getElementById('mini-' + key);
-    return t ? t.content.firstElementChild.cloneNode(true) : null;
-  }
-
-  /* ---------- UTM → código curto na mensagem ---------- */
-  var utm = (function () {
-    var p = new URLSearchParams(window.location.search);
-    var bits = [p.get('utm_source'), p.get('utm_campaign')].filter(Boolean);
-    return bits.length ? ' [' + bits.join('/') + ']' : '';
-  })();
-
-  function waHref(niche, model) {
-    var msg = 'Olá! Vi o Jumper Webmaster e quero meu site por R$ 2.980*. Tenho ' + NICHES[niche].term + '.';
-    if (model) msg += ' Quero começar com o modelo ' + model + '.';
-    msg += utm;
-    return 'https://wa.me/5521964369191?text=' + encodeURIComponent(msg);
-  }
-
-  function refreshWaLinks() {
-    document.querySelectorAll('.js-wa').forEach(function (a) {
-      a.href = waHref(current, a.getAttribute('data-model') || null);
-    });
-  }
-
-  /* ---------- troca de nicho ---------- */
-  var heroScreen = document.getElementById('hero-screen');
-  var baAfter = document.getElementById('ba-after');
-
-  function setNiche(key) {
-    current = key;
-    document.body.setAttribute('data-niche', key);
-
-    document.querySelectorAll('[data-niche-btn]').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-niche-btn') === key));
-    });
-
-    [heroScreen, baAfter].forEach(function (mount) {
-      if (!mount) return;
-      mount.classList.add('swap');
-      var mini = cloneMini(key);
-      setTimeout(function () {
-        mount.innerHTML = '';
-        if (mini) mount.appendChild(mini);
-        mount.classList.remove('swap');
-      }, 180);
-    });
-
-    document.querySelectorAll('.js-model-name').forEach(function (el) { el.textContent = NICHES[key].model; });
-    document.querySelectorAll('.js-model-for').forEach(function (el) { el.textContent = NICHES[key].modelFor; });
-    document.querySelectorAll('.js-niche-search').forEach(function (el) { el.textContent = NICHES[key].search; });
-
-    document.querySelectorAll('.model-card').forEach(function (c) {
-      c.classList.toggle('is-active', c.getAttribute('data-model-key') === key);
-    });
-
-    refreshWaLinks();
-  }
-
-  document.querySelectorAll('[data-niche-btn]').forEach(function (b) {
-    b.addEventListener('click', function () { setNiche(b.getAttribute('data-niche-btn')); });
-  });
-
-  /* ---------- grid de modelos ---------- */
-  var grid = document.getElementById('models-grid');
-  if (grid) {
-    ORDER.forEach(function (key) {
-      var card = document.createElement('div');
-      card.className = 'model-card';
-      card.setAttribute('data-model-key', key);
-      var screen = document.createElement('div');
-      screen.className = 'model-screen';
-      var mini = cloneMini(key);
-      if (mini) screen.appendChild(mini);
-      var info = document.createElement('div');
-      info.className = 'model-info';
-      info.innerHTML =
-        '<h3>' + NICHES[key].model + '</h3>' +
-        '<p>' + NICHES[key].modelFor + '</p>' +
-        '<a class="model-cta js-wa" data-model="' + NICHES[key].model + '" data-cta="modelo-' + key + '" target="_blank" rel="noopener" href="#">Começar com este modelo</a>';
-      card.appendChild(screen);
-      card.appendChild(info);
-      grid.appendChild(card);
-    });
-  }
-
-  /* ---------- datas reais (7 + 7) ---------- */
-  function fmtLong(d) {
-    return d.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
-  }
-  var d0 = new Date();
-  var d7 = new Date(d0.getTime() + 7 * 864e5);
-  var d14 = new Date(d0.getTime() + 14 * 864e5);
-  function fill(cls, txt) {
-    document.querySelectorAll('.' + cls).forEach(function (el) { el.textContent = txt; });
-  }
-  fill('js-d0', fmtLong(d0));
-  fill('js-d7', fmtLong(d7));
-  fill('js-d14', fmtLong(d14));
-  fill('js-d0-day', String(d0.getDate()).padStart(2, '0'));
-  fill('js-d7-day', String(d7.getDate()).padStart(2, '0'));
-  fill('js-d14-day', String(d14.getDate()).padStart(2, '0'));
-
-  /* ---------- contador de vagas (?vagas=N) ---------- */
-  var vagas = 47;
-  var qs = new URLSearchParams(window.location.search).get('vagas');
-  if (qs && !isNaN(qs)) vagas = Math.max(0, Math.min(50, parseInt(qs, 10)));
-  fill('js-vagas', String(vagas));
-  document.querySelectorAll('.js-lot-fill').forEach(function (el) {
-    el.style.width = ((50 - vagas) / 50 * 100) + '%';
-  });
-
-  /* ---------- antes/depois ---------- */
-  var range = document.getElementById('ba-range');
-  var before = document.getElementById('ba-before');
-  var handle = document.getElementById('ba-handle');
-  if (range && before && handle) {
-    var setBa = function (v) {
-      before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
-      handle.style.left = v + '%';
-    };
-    range.addEventListener('input', function () { setBa(range.value); });
-    setBa(50);
-  }
-
-  /* ---------- prova ao vivo: tempo de carga + peso ---------- */
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      try {
-        var nav = performance.getEntriesByType('navigation')[0];
-        if (nav && nav.loadEventEnd > 0) {
-          var s = (nav.loadEventEnd / 1000).toFixed(1).replace('.', ',');
-          fill('js-load', s + 's');
-        }
-        var bytes = performance.getEntriesByType('resource').reduce(function (sum, r) {
-          return sum + (r.transferSize || 0);
-        }, 0) + (nav ? (nav.transferSize || 0) : 0);
-        if (bytes > 0) fill('js-weight', Math.max(1, Math.round(bytes / 1024)) + ' KB');
-      } catch (e) { /* medidores são cosméticos — nunca quebrar a página */ }
-    }, 0);
-  });
-
-  /* ---------- reveal on scroll (só arma o estado escondido se houver IO) ---------- */
-  if ('IntersectionObserver' in window) {
-    document.documentElement.classList.add('js-anim');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
-    document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---------- tracking (Pixel/GA4 — plugar IDs ao publicar) ---------- */
-  document.addEventListener('click', function (ev) {
-    var el = ev.target.closest('[data-cta]');
-    if (!el) return;
-    var pos = el.getAttribute('data-cta') || 'cta';
-    if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'webmaster_' + pos });
-    if (typeof gtag === 'function') gtag('event', 'click_cta', { id: 'webmaster_' + pos, niche: current });
-  });
-
-  /* ---------- init ---------- */
-  setNiche('food');
-})();
-</script>
+<script src="../js/vendor/gsap.min.js"></script>
+<script src="../js/vendor/ScrollTrigger.min.js"></script>
+<script src="../js/vendor/lenis.min.js"></script>
+<script src="js/webmaster.js"></script>
 
 </body>
 </html>
