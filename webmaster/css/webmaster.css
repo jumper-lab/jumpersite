@@ -1204,3 +1204,94 @@ body.has-track .model-card { width: 380px; flex: 0 0 auto; }
 
 @keyframes build-wait { 50% { opacity: 0.4; } }
 @media (prefers-reduced-motion: reduce) { .build-wire::before { animation: none; } }
+
+/* ============================================
+   O SOBREVOO — scroll-video (image sequence no canvas)
+   Dois cortes: [data-cut="flagship"] scruba os frames;
+   [data-cut="traffic"] mostra só o poster estático (leve, mobile-safe).
+   ============================================ */
+
+.wm-sobrevoo {
+  position: relative;
+  background: #040404;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* corte traffic (padrão): banda curta com poster estático, sem pin, sem download de frames */
+.sv-pin {
+  position: relative;
+  height: clamp(320px, 56vw, 620px);
+  overflow: hidden;
+}
+.sv-canvas { display: none; }
+.sv-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.sv-chrome {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(20px, 4vw, 40px) clamp(24px, 4vw, 48px);
+  pointer-events: none;
+}
+.sv-chrome .sec-eyebrow { margin: 0; }
+.sv-hint {
+  align-self: flex-end;
+  font-family: var(--wm-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  display: none;
+}
+
+/* corte flagship: o pin ocupa a viewport e o canvas scruba os 46 frames */
+[data-cut="flagship"] .wm-sobrevoo.is-live .sv-pin {
+  height: 100vh;
+}
+[data-cut="flagship"] .wm-sobrevoo.is-live .sv-canvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+[data-cut="flagship"] .wm-sobrevoo.is-live .sv-poster { opacity: 0; }
+[data-cut="flagship"] .wm-sobrevoo.is-live .sv-hint { display: block; }
+[data-cut="flagship"] .wm-sobrevoo.is-live .sv-hint.gone { opacity: 0; transition: opacity 0.4s var(--ease-jumper); }
+
+/* alternador de corte (só demonstração — remover em produção) */
+.cut-switch {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 90;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid var(--wm-border);
+  backdrop-filter: blur(12px);
+  font-family: var(--wm-mono);
+  font-size: 11px;
+}
+.cut-switch button {
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+.cut-switch button[aria-pressed="true"] { background: var(--jumper-orange); color: #fff; }
+@media (max-width: 720px) { .cut-switch { display: none; } }

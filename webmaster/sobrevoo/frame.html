@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobrevoo — gerador de frames</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../css/webmaster.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #040404; overflow: hidden; }
+  /* palco: parede de dispositivos vista em perspectiva; a "câmera" é um pan em X */
+  .scene {
+    position: fixed; inset: 0; overflow: hidden;
+    background:
+      radial-gradient(120% 80% at 50% 120%, rgba(250,71,33,0.10), transparent 60%),
+      #040404;
+    perspective: 1700px;
+    perspective-origin: 50% 45%;
+  }
+  /* luz laranja que varre a cena conforme o voo */
+  .sweep {
+    position: absolute; top: -20%; bottom: -20%; width: 60%;
+    left: calc(var(--sweep, 0.5) * 140% - 40%);
+    background: radial-gradient(closest-side, rgba(250,71,33,0.20), transparent 70%);
+    filter: blur(20px);
+    pointer-events: none;
+  }
+  .rail {
+    position: absolute; top: 50%; left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) rotateY(-24deg)
+               translateX(calc(50% - var(--cam, 0.5) * 100%));
+    display: flex; gap: 96px;
+  }
+  .dev {
+    position: relative;
+    width: 300px; height: 632px;
+    flex: 0 0 auto;
+    border-radius: 42px;
+    background: #101011;
+    border: 1px solid #2a2a2c;
+    padding: 10px;
+    box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+    transform: rotateY(20deg) translateZ(0);
+  }
+  .dev::after { /* reflexo de vidro */
+    content: ""; position: absolute; inset: 10px; border-radius: 32px;
+    background: linear-gradient(115deg, rgba(255,255,255,0.12), transparent 42%);
+    pointer-events: none; z-index: 5;
+  }
+  .dev .notch {
+    position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+    width: 86px; height: 20px; background: #101011; border-radius: 999px; z-index: 4;
+  }
+  .dev .screen {
+    position: absolute; inset: 10px; border-radius: 32px; overflow: hidden; background: #000;
+  }
+  .dev .screen .mini { position: absolute; inset: 0; }
+  /* frames determinísticos: congela o auto-scroll dos mini-sites */
+  .dev .screen .mini-scroll { animation: none !important; }
+  .caplabel {
+    position: absolute; left: 50%; bottom: -34px; transform: translateX(-50%);
+    font-family: var(--wm-mono, monospace); font-size: 12px; letter-spacing: 0.06em;
+    color: #fff; white-space: nowrap;
+  }
+  .caplabel b { color: #fa4721; }
+
+  /* overlay de texto do "trailer" */
+  .titlecard {
+    position: absolute; inset: 0; display: flex; align-items: center;
+    padding: 0 7vw; pointer-events: none;
+  }
+  .titlecard.end { justify-content: flex-end; text-align: right; }
+  .titlecard h2 {
+    font-family: var(--font-sans); color: #fff;
+    font-size: clamp(40px, 5vw, 76px); line-height: 1.02; letter-spacing: -0.03em;
+    font-variation-settings: 'wght' 780; margin: 0; max-width: 16ch;
+    text-shadow: 0 8px 60px rgba(0,0,0,0.9), 0 2px 12px rgba(0,0,0,0.8);
+  }
+  .titlecard h2 em { font-style: normal; color: rgba(255,255,255,0.5); }
+  .titlecard h2 mark { background: transparent; color: #fa4721; }
+  .vignette {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(130% 90% at 50% 50%, transparent 55%, rgba(0,0,0,0.72));
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="sweep"></div>
+  <div class="rail" id="rail"></div>
+  <div class="vignette"></div>
+  <div class="titlecard" id="titlecard"><h2 id="titletext"></h2></div>
+</div>
+
+<script>
+(function () {
+  var p = parseFloat(new URLSearchParams(location.search).get('p') || '0'); // 0..1
+  p = Math.max(0, Math.min(1, p));
+
+  var CARDS = [
+    { key: 'food',   name: 'Food Menu',     off: 40 },
+    { key: 'clean',  name: 'Clean Service', off: 120 },
+    { key: 'fit',    name: 'Fit Studio',    off: 60 },
+    { key: 'legal',  name: 'Pro Legal',     off: 180 },
+    { key: 'shop',   name: 'Shop Front',    off: 90 },
+    { key: 'beauty', name: 'Beauty Clinic', off: 140 }
+  ];
+
+  document.documentElement.style.setProperty('--cam', p);
+  document.documentElement.style.setProperty('--sweep', p);
+
+  /* trailer: a legenda muda em 3 atos */
+  var t = document.getElementById('titletext');
+  var card = document.getElementById('titlecard');
+  if (p < 0.30) { t.innerHTML = 'Cada site,<br><mark>construído pela mesma IA.</mark>'; card.classList.remove('end'); }
+  else if (p < 0.70) { t.innerHTML = ''; }
+  else { t.innerHTML = 'O seu é<br><mark>o próximo.</mark>'; card.classList.add('end'); }
+  card.style.opacity = (p < 0.30 || p >= 0.70) ? '1' : '0';
+
+  /* reusa os mini-sites REAIS da LP: busca os <template> do index e clona */
+  fetch('../index.html').then(function (r) { return r.text(); }).then(function (html) {
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var rail = document.getElementById('rail');
+    CARDS.forEach(function (c) {
+      var tpl = doc.getElementById('mini-' + c.key);
+      var dev = document.createElement('div');
+      dev.className = 'dev';
+      dev.innerHTML = '<div class="notch"></div><div class="screen"></div>' +
+                      '<div class="caplabel">' + c.name + '</div>';
+      if (tpl) {
+        var mini = tpl.content.firstElementChild.cloneNode(true);
+        var scroll = mini.querySelector('.mini-scroll');
+        if (scroll) scroll.style.transform = 'translateY(-' + c.off + 'px)';
+        dev.querySelector('.screen').appendChild(mini);
+      }
+      rail.appendChild(dev);
+    });
+    return document.fonts ? document.fonts.ready : null;
+  }).then(function () {
+    /* sinaliza pro Playwright que o frame está pronto pra captura */
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { window.__frameReady = true; document.title = 'READY'; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

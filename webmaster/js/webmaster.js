@@ -168,6 +168,30 @@
 
   setNiche('food');
 
+  /* ---------- dois cortes: traffic (leve, padrão) × flagship (pirotécnico) ---------- */
+  var params = new URLSearchParams(window.location.search);
+  var CUT = params.get('cut') === 'flagship' ? 'flagship' : 'traffic';
+  document.body.setAttribute('data-cut', CUT);
+
+  (function cutSwitch() {
+    var box = document.createElement('div');
+    box.className = 'cut-switch';
+    box.setAttribute('aria-label', 'Alternar versão da página');
+    [['traffic', 'Tráfego'], ['flagship', 'Flagship']].forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = c[1];
+      b.setAttribute('aria-pressed', String(CUT === c[0]));
+      b.addEventListener('click', function () {
+        var p = new URLSearchParams(window.location.search);
+        p.set('cut', c[0]);
+        window.location.search = p.toString();
+      });
+      box.appendChild(b);
+    });
+    document.body.appendChild(box);
+  })();
+
   /* ================= CAMADA 2 — CINEMATOGRAFIA ================= */
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -205,6 +229,75 @@
       });
     });
   }
+
+  /* ---------- O SOBREVOO: scroll-video (image sequence no canvas) ----------
+     Técnica AirPods: os 46 frames são desenhados no canvas conforme o scroll.
+     Só no corte flagship + desktop; traffic/mobile ficam no poster estático. */
+  (function sobrevoo() {
+    if (CUT !== 'flagship' || window.innerWidth < 900) return;
+    var sec = document.querySelector('.wm-sobrevoo');
+    var canvas = document.getElementById('sv-canvas');
+    if (!sec || !canvas) return;
+    var ctx = canvas.getContext('2d');
+    var FRAMES = 46;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var imgs = [];
+    var state = { i: 0 };
+    var pad = function (n) { return ('00' + n).slice(-3); };
+
+    function sizeCanvas() {
+      var r = canvas.getBoundingClientRect();
+      canvas.width = Math.round(r.width * dpr);
+      canvas.height = Math.round(r.height * dpr);
+      draw(state.i);
+    }
+    function draw(i) {
+      var img = imgs[Math.max(0, Math.min(FRAMES - 1, Math.round(i)))];
+      if (!img || !img.complete || !img.naturalWidth) return;
+      var cw = canvas.width, ch = canvas.height;
+      var ir = img.naturalWidth / img.naturalHeight, cr = cw / ch;
+      var dw, dh, dx, dy;
+      if (cr > ir) { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
+      else { dh = ch; dw = ch * ir; dy = 0; dx = (cw - dw) / 2; }
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.drawImage(img, dx, dy, dw, dh);
+    }
+
+    var booted = false;
+    function boot() {
+      if (booted) return;
+      booted = true;
+      sec.classList.add('is-live');   /* .sv-pin passa a 100vh → refresh obrigatório */
+      sizeCanvas();
+      gsap.to(state, {
+        i: FRAMES - 1,
+        ease: 'none',
+        onUpdate: function () { draw(state.i); },
+        scrollTrigger: {
+          trigger: sec,
+          start: 'top top',
+          end: '+=260%',
+          pin: '.sv-pin',
+          scrub: 0.5,
+          anticipatePin: 1,
+          onEnter: function () { var h = sec.querySelector('.sv-hint'); if (h) h.classList.add('gone'); }
+        }
+      });
+      ST.refresh();
+    }
+
+    for (var i = 0; i < FRAMES; i++) {
+      (function (idx) {
+        var im = new Image();
+        im.decoding = 'async';
+        im.onload = function () { if (idx === 0) boot(); };
+        im.src = 'sobrevoo/frames/frame-' + pad(idx) + '.jpg';
+        imgs[idx] = im;
+      })(i);
+    }
+    if (imgs[0] && imgs[0].complete) boot();
+    window.addEventListener('resize', sizeCanvas);
+  })();
 
   /* ---------- util: quebrar texto em palavras preservando <b>/<em> ---------- */
   function splitWords(el) {
