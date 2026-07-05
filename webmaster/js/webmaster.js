@@ -170,27 +170,10 @@
 
   /* ---------- dois cortes: traffic (leve, padrão) × flagship (pirotécnico) ---------- */
   var params = new URLSearchParams(window.location.search);
+  /* corte padrão = traffic (leve, mobile-safe, roda o tráfego pago).
+     O corte flagship (scroll-video do Sobrevoo) é acessível por ?cut=flagship. */
   var CUT = params.get('cut') === 'flagship' ? 'flagship' : 'traffic';
   document.body.setAttribute('data-cut', CUT);
-
-  (function cutSwitch() {
-    var box = document.createElement('div');
-    box.className = 'cut-switch';
-    box.setAttribute('aria-label', 'Alternar versão da página');
-    [['traffic', 'Tráfego'], ['flagship', 'Flagship']].forEach(function (c) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = c[1];
-      b.setAttribute('aria-pressed', String(CUT === c[0]));
-      b.addEventListener('click', function () {
-        var p = new URLSearchParams(window.location.search);
-        p.set('cut', c[0]);
-        window.location.search = p.toString();
-      });
-      box.appendChild(b);
-    });
-    document.body.appendChild(box);
-  })();
 
   /* ================= CAMADA 2 — CINEMATOGRAFIA ================= */
 

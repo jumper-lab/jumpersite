@@ -1268,33 +1268,6 @@ body.has-track .model-card { width: 380px; flex: 0 0 auto; }
 [data-cut="flagship"] .wm-sobrevoo.is-live .sv-hint { display: block; }
 [data-cut="flagship"] .wm-sobrevoo.is-live .sv-hint.gone { opacity: 0; transition: opacity 0.4s var(--ease-jumper); }
 
-/* alternador de corte (só demonstração — remover em produção) */
-.cut-switch {
-  position: fixed;
-  right: 14px;
-  bottom: 14px;
-  z-index: 90;
-  display: flex;
-  gap: 2px;
-  padding: 4px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.72);
-  border: 1px solid var(--wm-border);
-  backdrop-filter: blur(12px);
-  font-family: var(--wm-mono);
-  font-size: 11px;
-}
-.cut-switch button {
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 6px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  letter-spacing: 0.04em;
-}
-.cut-switch button[aria-pressed="true"] { background: var(--jumper-orange); color: #fff; }
-@media (max-width: 720px) { .cut-switch { display: none; } }
 
 /* ============ SOBREVOO — captions HTML sobrepostas (não baked no vídeo) ============ */
 .sv-caption {
