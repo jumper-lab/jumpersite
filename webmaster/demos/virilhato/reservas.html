@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/webmaster/demos/virilhato/">
+<title>Reservas — Virilhato's</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="virilhato.css">
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="logo" href="index.html">VIRILHATO<b>'S</b></a>
+  <nav>
+    <a href="menu.html">Menu</a>
+    <a href="anfitriao.html">O Anfitrião</a>
+    <a href="reservas.html" class="active">Reservas</a>
+  </nav>
+  <a class="book" href="reservas.html">Reservar mesa</a>
+</div></header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <div class="eyebrow">Reservas</div>
+    <h1>Reserve <em style="font-style:italic;color:var(--gold)">sua noite</em></h1>
+    <p>São trinta lugares e uma grelha só. Reserve com antecedência — confirmamos por WhatsApp em minutos.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="resv wrap">
+    <form class="form" onsubmit="event.preventDefault();this.querySelector('.done').hidden=false;this.querySelector('.btn').textContent='Pedido enviado ✓'">
+      <div class="field-row">
+        <div class="field"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Seu nome" required></div>
+        <div class="field"><label for="tel">WhatsApp</label><input id="tel" type="tel" placeholder="(21) 9 0000-0000" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="data">Data</label><input id="data" type="date" required></div>
+        <div class="field"><label for="hora">Horário</label>
+          <select id="hora"><option>19:00</option><option>19:30</option><option>20:00</option><option selected>20:30</option><option>21:00</option><option>21:30</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="pessoas">Pessoas</label>
+          <select id="pessoas"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+        <div class="field"><label for="ocasiao">Ocasião</label>
+          <select id="ocasiao"><option>Jantar</option><option>Aniversário</option><option>Comemoração</option><option>Negócios</option></select></div>
+      </div>
+      <div class="field"><label for="obs">Observações</label><textarea id="obs" rows="3" placeholder="Restrições, preferência de mesa, algo que devemos saber…"></textarea></div>
+      <button class="btn" type="submit">Solicitar reserva</button>
+      <p class="done" hidden style="color:var(--gold);font-family:var(--serif);font-style:italic;font-size:19px;margin-top:18px">Recebido. O Henri confirma no seu WhatsApp em instantes.</p>
+    </form>
+
+    <aside class="resv-aside">
+      <div class="eyebrow">A casa</div>
+      <h2>Boa mesa <em style="font-style:italic;color:var(--gold)">pede tempo</em>.</h2>
+      <p>Preparamos cada corte na hora e no ponto. Chegue com fome e sem pressa — a noite é sua.</p>
+      <div class="info-list">
+        <div><span class="k">Jantar</span><span class="v">Ter a Dom · 19h–23h</span></div>
+        <div><span class="k">Almoço</span><span class="v">Sáb e Dom · 12h–15h</span></div>
+        <div><span class="k">Endereço</span><span class="v">Av. Central, 210</span></div>
+        <div><span class="k">Telefone</span><span class="v">(21) 9 9436-9191</span></div>
+        <div><span class="k">Dress code</span><span class="v">Casual elegante</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <a class="logo" href="index.html">VIRILHATO<b style="color:var(--gold)">'S</b></a>
+  <nav><a href="menu.html">Menu</a><a href="anfitriao.html">O Anfitrião</a><a href="reservas.html">Reservas</a></nav>
+  <div>Av. Central, 210 · Aberto hoje até 23h · @virilhatos · (21) 9 9436-9191</div>
+</div></footer>
+</body>
+</html>
