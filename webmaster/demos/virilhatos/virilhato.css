@@ -113,6 +113,11 @@ footer nav{justify-content:center;margin:8px 0 20px}
 /* ---------- responsive ---------- */
 @media (max-width:820px){
   .wrap{padding:0 24px}
+  /* hero: fluxo natural (conteúdo → horários), sem sobreposição do bloco absoluto */
+  .hero{min-height:auto;display:block;padding-top:104px}
+  .hero-in{padding:0 24px}
+  .hero .hours{position:relative;z-index:2;margin-top:40px}
+  .hero .hours .wrap{flex-direction:column;gap:12px;align-items:flex-start}
   .menu-toggle{display:flex}
   .nav-wrap{display:none}
   header.open{background:rgba(14,11,9,.98);backdrop-filter:blur(14px)}
