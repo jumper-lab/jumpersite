@@ -284,7 +284,7 @@
         var im = new Image();
         im.decoding = 'async';
         im.onload = function () { if (idx === 0) boot(); };
-        im.src = 'sobrevoo/frames/frame-' + pad(idx) + '.jpg';
+        im.src = '/webmaster/sobrevoo/frames/frame-' + pad(idx) + '.jpg';
         imgs[idx] = im;
       })(i);
     }
