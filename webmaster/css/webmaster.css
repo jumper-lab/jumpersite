@@ -723,6 +723,45 @@
 .model-screen .mini-scroll { animation-duration: 22s; }
 .model-card:nth-child(2n) .mini-scroll { animation-delay: 4s; }
 .model-card:nth-child(3n) .mini-scroll { animation-delay: 7s; }
+
+/* vitrine acesa: iframe do site real, renderizado em largura desktop (400% do card)
+   e escalado a 0.25 → miniatura de navegador fiel, responsiva ao card */
+.model-screen.has-preview { background: #0b0b0c; }
+.model-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  border: 0;
+  transform: scale(0.25);
+  transform-origin: top left;
+  pointer-events: none;
+}
+.model-preview-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  background: linear-gradient(180deg, rgba(15, 15, 16, 0) 58%, rgba(15, 15, 16, 0.6) 100%);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease-jumper);
+}
+.model-card:hover .model-preview-link,
+.model-preview-link:focus-visible { opacity: 1; }
+.model-preview-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  font-family: var(--wm-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
 .model-info { padding: 18px 20px 22px; }
 .model-info h3 {
   font-size: 17px;
