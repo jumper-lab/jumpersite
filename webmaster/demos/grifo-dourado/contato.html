@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/webmaster/demos/grifo-dourado/">
+  <title>Contato — O Grifo Dourado</title>
+  <meta name="description" content="Fale com o Grifo Dourado. Reserve jogos, tire dúvidas sobre planos ou apareça no Batel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="brand-grifo">G</span> O Grifo Dourado</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list"><span></span><span></span><span></span></button>
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="acervo.html" class="nav-link">Acervo</a></li>
+          <li><a href="planos.html" class="nav-link">Planos</a></li>
+          <li><a href="contato.html" class="nav-link active">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section section--papel" style="padding-top: var(--s-8);">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-caps">Fala com a gente</span>
+        <h1>Contato</h1>
+        <p class="lead">Reserva um jogo, tira dúvida sobre planos ou aparece sem avisar — a porta tá sempre aberta.</p>
+      </div>
+
+      <div class="location-block">
+        <div>
+          <div class="form-message" id="form-success" role="status" aria-live="polite">Mensagem enviada! O Marcelo responde em até 24 horas.</div>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control" required placeholder="Como te chamo?">
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" name="telefone" class="form-control" required placeholder="(41) 99999-9999">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto" class="form-control" required>
+                <option value="">Escolhe um assunto</option>
+                <option value="reserva">Reservar um jogo</option>
+                <option value="planos">Dúvida sobre planos</option>
+                <option value="visita">Agendar visita</option>
+                <option value="evento">Evento ou grupo fechado</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" class="form-control" required placeholder="Conte o que precisa. Se for reserva, diz quais jogos e quando."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Enviar mensagem</button>
+          </form>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom: var(--s-5);">Onde nos achar</h3>
+          <dl style="display: grid; grid-template-columns: auto 1fr; gap: var(--s-3) var(--s-5); margin-bottom: var(--s-6);">
+            <dt style="font-weight: 600; font-size: var(--fs-small); color: var(--grafite);">Endereço</dt>
+            <dd style="color: #555;">Rua Mateus Leme, 482<br>Batel — Curitiba, PR</dd>
+            <dt style="font-weight: 600; font-size: var(--fs-small); color: var(--grafite);">Horário</dt>
+            <dd style="color: #555;">Terça a sexta: 14h — 23h<br>Sábado e domingo: 11h — 00h<br>Segunda: fechado</dd>
+            <dt style="font-weight: 600; font-size: var(--fs-small); color: var(--grafite);">WhatsApp</dt>
+            <dd style="color: #555;">(41) 3333-4567</dd>
+            <dt style="font-weight: 600; font-size: var(--fs-small); color: var(--grafite);">Email</dt>
+            <dd style="color: #555;">contato@grifodourado.com.br</dd>
+          </dl>
+          <div class="map-placeholder">
+            <span style="font-family: var(--font-display); font-size: var(--fs-small); color: var(--grafite); opacity: 0.5;">Mapa: Rua Mateus Leme, 482 — Batel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><div class="footer-brand"><span class="footer-grifo">G</span> O Grifo Dourado</div><p style="max-width: 36ch; font-size: var(--fs-small); color: var(--creme-suave);">Café e ludoteca de jogos de tabuleiro no Batel. Mais de 500 jogos pra alugar, jogar e se perder numa tarde.</p></div>
+      <div class="footer-col"><h4>Navegação</h4><ul><li><a href="index.html">Início</a></li><li><a href="acervo.html">Acervo</a></li><li><a href="planos.html">Planos</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h4>Visite</h4><ul><li><span style="color: var(--creme-suave);">Rua Mateus Leme, 482</span></li><li><span style="color: var(--creme-suave);">Batel — Curitiba</span></li><li><span style="color: var(--creme-suave);">(41) 3333-4567</span></li></ul></div>
+      <div class="footer-bottom"><p>© 2026 O Grifo Dourado · Café & Ludoteca de Jogos de Tabuleiro · Curitiba, PR</p></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    (function() {
+      var form = document.getElementById('contact-form');
+      var msg = document.getElementById('form-success');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        msg.classList.add('visible');
+        form.reset();
+        setTimeout(function() { msg.classList.remove('visible'); }, 5000);
+      });
+    })();
+  </script>
+</body>
+</html>

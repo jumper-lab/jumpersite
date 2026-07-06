@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/webmaster/demos/grifo-dourado/">
+  <title>Planos & Membros — O Grifo Dourado</title>
+  <meta name="description" content="Planos de aluguel e empréstimo de jogos de tabuleiro em Curitiba. Aventureiro, Membro ou Mesa Redonda — escolha o seu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="brand-grifo">G</span> O Grifo Dourado</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list"><span></span><span></span><span></span></button>
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="acervo.html" class="nav-link">Acervo</a></li>
+          <li><a href="planos.html" class="nav-link active">Planos</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section section--papel" style="padding-top: var(--s-8);">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-caps">Planos</span>
+        <h1>Como você quer jogar?</h1>
+        <p class="lead">Jogue uma vez ou todo mês. Os planos são pra quem quer ter o acervo à mão sem lotar a estante de casa.</p>
+      </div>
+
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-name">Aventureiro</div>
+          <div class="plan-price">R$ 0<small> /mês</small></div>
+          <div class="plan-desc">Pra quem joga de vez em quando. Sem assinatura.</div>
+          <ul class="plan-features">
+            <li>Aluguel avulso — paga só pelo que levar</li>
+            <li>Reserva pelo WhatsApp</li>
+            <li>Acesso ao espaço (mesa avulsa: R$ 15/dia)</li>
+            <li>Devolução em 72h</li>
+            <li>Sem fidelidade</li>
+          </ul>
+          <a href="contato.html" class="btn btn--secondary">Começar grátis</a>
+        </div>
+
+        <div class="plan-card plan-card--featured">
+          <div class="plan-badge">Mais escolhido</div>
+          <div class="plan-name">Membro</div>
+          <div class="plan-price">R$ 49<small> /mês</small></div>
+          <div class="plan-desc">Pra quem joga toda semana. Melhor custo-benefício.</div>
+          <ul class="plan-features">
+            <li>Até 3 jogos emprestados ao mesmo tempo</li>
+            <li>14 dias de prazo por jogo</li>
+            <li>Trocas ilimitadas dentro do mês</li>
+            <li>Mesas do espaço grátis (2 visitas/mês)</li>
+            <li>10% off em eventos e torneios</li>
+            <li>Reserva prioritária</li>
+          </ul>
+          <a href="contato.html" class="btn btn--primary">Virar membro</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Mesa Redonda</div>
+          <div class="plan-price">R$ 89<small> /mês</small></div>
+          <div class="plan-desc">Pra grupos, famílias e frequentadores assíduos.</div>
+          <ul class="plan-features">
+            <li>Até 6 jogos emprestados ao mesmo tempo</li>
+            <li>21 dias de prazo por jogo</li>
+            <li>Trocas ilimitadas</li>
+            <li>Mesas do espaço ilimitadas</li>
+            <li>Sala privada reservável (2x/mês)</li>
+            <li>20% off em eventos</li>
+            <li>Acesso antecipado ao acervo novo</li>
+          </ul>
+          <a href="contato.html" class="btn btn--secondary">Quero a Mesa Redonda</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--s-9);">
+        <p style="font-size: var(--fs-small); color: #666; max-width: 50ch; margin: 0 auto;">Todos os planos incluem indicação personalizada do Marcelo, acesso ao grupo do WhatsApp e participação nas noites de jogos abertos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-caps" style="color: var(--dourado);">Como funciona</span>
+        <h2>Regras do empréstimo</h2>
+      </div>
+      <div class="card-grid">
+        <div class="card"><div class="card-icon">1</div><h3>Escolhe e reserva</h3><p>Seleciona os jogos pelo catálogo ou aparece no espaço. Membros reservam pelo WhatsApp com 48h de antecedência.</p></div>
+        <div class="card"><div class="card-icon">2</div><h3>Retira no balcão</h3><p>Todo jogo passa por conferência na retirada e na devolução. As peças são contadas junto com você.</p></div>
+        <div class="card"><div class="card-icon">3</div><h3>Joga sem pressa</h3><p>Aproveita o prazo do seu plano. Precisa de mais tempo? Avisa — somos flexíveis com quem avisa.</p></div>
+        <div class="card"><div class="card-icon">4</div><h3>Devolve e troca</h3><p>Traz de volta e leva outro. Peça faltante tem reposição com tabela transparente — sem surpresa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--papel">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-caps">Dúvidas</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="card-grid" style="max-width: 800px; margin: 0 auto;">
+        <div class="card"><h3>Posso cancelar quando quiser?</h3><p>Sim. Sem fidelidade. O cancelamento vale no ciclo seguinte. Você mantém o acesso até o fim do período pago.</p></div>
+        <div class="card"><h3>E se eu perder uma peça?</h3><p>Temos tabela de reposição por jogo. Na maioria dos casos é simbólico. Sempre confira na retirada e devolução.</p></div>
+        <div class="card"><h3>Posso levar pra outra cidade?</h3><p>Membros podem. Aventureiros ficam em Curitiba. Pra retiradas longas, fala com o Marcelo.</p></div>
+        <div class="card"><h3>Tem desconto pra grupo?</h3><p>Grupos de 4 ou mais podem dividir o plano Mesa Redonda. Cada um recebe um cartão individual.</p></div>
+        <div class="card"><h3>Vocês ensinam a jogar?</h3><p>Sempre. O Marcelo ou alguém da casa explica as regras da primeira partida. Sem custo extra.</p></div>
+        <div class="card"><h3>Tem como reservar online?</h3><p>Membros recebem o link de reservas. Aventureiros reservam pelo WhatsApp ou pessoalmente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><div class="footer-brand"><span class="footer-grifo">G</span> O Grifo Dourado</div><p style="max-width: 36ch; font-size: var(--fs-small); color: var(--creme-suave);">Café e ludoteca de jogos de tabuleiro no Batel. Mais de 500 jogos pra alugar, jogar e se perder numa tarde.</p></div>
+      <div class="footer-col"><h4>Navegação</h4><ul><li><a href="index.html">Início</a></li><li><a href="acervo.html">Acervo</a></li><li><a href="planos.html">Planos</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h4>Visite</h4><ul><li><span style="color: var(--creme-suave);">Rua Mateus Leme, 482</span></li><li><span style="color: var(--creme-suave);">Batel — Curitiba</span></li><li><span style="color: var(--creme-suave);">(41) 3333-4567</span></li></ul></div>
+      <div class="footer-bottom"><p>© 2026 O Grifo Dourado · Café & Ludoteca de Jogos de Tabuleiro · Curitiba, PR</p></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
