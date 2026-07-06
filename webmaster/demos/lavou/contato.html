@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/webmaster/demos/lavou/">
+    <title>Contato | Lavou</title>
+    <meta
+      name="description"
+      content="Fale com a Lavou para agendar coleta, tirar dúvidas ou pedir orçamento de lavanderia em Pinheiros."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="Lavou, página inicial">
+        <span class="brand-mark">L</span>
+        <span>Lavou</span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" data-nav aria-label="Navegação principal">
+        <a href="index.html">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+        <a class="active" href="contato.html" aria-current="page">Contato</a>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section class="page-hero section-band">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h1>Chama a Lavou e libera espaço no cesto.</h1>
+          <p>
+            Agende uma coleta, tire dúvida de tecido ou peça orçamento. A gente responde no horário
+            de funcionamento, sem robô fazendo rodeio.
+          </p>
+        </div>
+        <figure class="image-frame page-visual">
+          <img
+            src="assets/lavou-entrada.webp"
+            alt="Entrada da Lavou vista da calçada, com vitrine aberta para o bairro"
+          >
+        </figure>
+      </section>
+
+      <section class="contact-layout section">
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required>
+          </div>
+          <div class="form-row">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(11) 99999-9999" required>
+          </div>
+          <div class="form-row">
+            <label for="servico">Serviço</label>
+            <select id="servico" name="servico" required>
+              <option value="">Escolha uma opção</option>
+              <option>Self-service</option>
+              <option>Lava-e-dobra</option>
+              <option>Delivery</option>
+              <option>Lavagem a seco</option>
+              <option>Tênis ou edredom</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Conte o que você precisa"></textarea>
+          </div>
+          <button class="button primary form-button" type="submit">Enviar mensagem</button>
+        </form>
+
+        <aside class="contact-card">
+          <h2>Rua Artur de Azevedo, 412</h2>
+          <p>Pinheiros · São Paulo</p>
+          <dl>
+            <div>
+              <dt>Segunda a sexta</dt>
+              <dd>8h às 21h</dd>
+            </div>
+            <div>
+              <dt>Sábado</dt>
+              <dd>9h às 19h</dd>
+            </div>
+            <div>
+              <dt>Domingo</dt>
+              <dd>10h às 16h</dd>
+            </div>
+          </dl>
+          <div class="map-placeholder" role="img" aria-label="mapa placeholder: localização da Lavou em Pinheiros">
+            <span>mapa: Pinheiros · perto do metrô Fradique Coutinho</span>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="index.html" aria-label="Lavou, página inicial">
+          <span class="brand-mark">L</span>
+          <span>Lavou</span>
+        </a>
+        <p>Lavanderia self-service, lava-e-dobra e delivery em Pinheiros.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

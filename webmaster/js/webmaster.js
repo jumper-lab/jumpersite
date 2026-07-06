@@ -10,14 +10,15 @@
   /* ================= CAMADA 1 — PRODUTO ================= */
 
   var NICHES = {
-    food:   { chip: 'Restaurante', term: 'um restaurante',             search: 'um restaurante', model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery', demo: '/webmaster/demos/virilhatos/' },
-    clean:  { chip: 'Clínica',     term: 'uma clínica',                search: 'uma clínica',    model: 'Clean Service', modelFor: 'pra clínicas e consultórios', demo: '/webmaster/demos/salles/' },
-    fit:    { chip: 'Academia',    term: 'uma academia',               search: 'uma academia',   model: 'Fit Studio',    modelFor: 'pra academias, estúdios e personais' },
+    food:   { chip: 'Restaurante', term: 'um restaurante',             search: 'um restaurante', model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery', demo: '/webmaster/demos/virilhatos/',    demoName: "Virilhato's",      demoFor: 'restaurante · brasa & técnica francesa' },
+    clean:  { chip: 'Clínica',     term: 'uma clínica',                search: 'uma clínica',    model: 'Clean Service', modelFor: 'pra clínicas e consultórios', demo: '/webmaster/demos/salles/',        demoName: 'Clínica Salles',    demoFor: 'dermatologia · Pinheiros, SP' },
+    shop:   { chip: 'Loja',        term: 'uma loja',                   search: 'uma loja',       model: 'Shop Front',    modelFor: 'pra lojas físicas e comércio', demo: '/webmaster/demos/grifo-dourado/', demoName: 'O Grifo Dourado',   demoFor: 'locadora de jogos · Curitiba' },
+    fit:    { chip: 'Academia',    term: 'uma academia',               search: 'uma academia',   model: 'Fit Studio',    modelFor: 'pra academias, estúdios e personais', demo: '/webmaster/demos/lavou/',         demoName: 'Lavou',             demoFor: 'lavanderia urbana · Pinheiros' },
     legal:  { chip: 'Advocacia',   term: 'um escritório de advocacia', search: 'um advogado',    model: 'Pro Legal',     modelFor: 'pra advogados, contadores e consultores' },
-    shop:   { chip: 'Loja',        term: 'uma loja',                   search: 'uma loja',       model: 'Shop Front',    modelFor: 'pra lojas físicas e comércio', demo: '/webmaster/demos/grifo-dourado/' },
     beauty: { chip: 'Beleza',      term: 'um espaço de estética',      search: 'um salão',       model: 'Beauty Clinic', modelFor: 'pra estética, clínicas e salões' }
   };
-  var ORDER = ['food', 'clean', 'fit', 'legal', 'shop', 'beauty'];
+  /* demos reais primeiro; nichos ainda sem site (mockup) por último */
+  var ORDER = ['food', 'clean', 'shop', 'fit', 'legal', 'beauty'];
   var current = 'food';
 
   function cloneMini(key) {
@@ -119,9 +120,12 @@
       var demoLink = NICHES[key].demo
         ? '<a class="model-demo" data-cta="demo-' + key + '" target="_blank" rel="noopener" href="' + NICHES[key].demo + '">Ver demo ao vivo</a>'
         : '';
+      /* card com demo mostra o negócio REAL; sem demo, o nome do modelo-base */
+      var title = NICHES[key].demoName || NICHES[key].model;
+      var subtitle = NICHES[key].demoFor || NICHES[key].modelFor;
       info.innerHTML =
-        '<h3>' + NICHES[key].model + '</h3>' +
-        '<p>' + NICHES[key].modelFor + '</p>' +
+        '<h3>' + title + '</h3>' +
+        '<p>' + subtitle + '</p>' +
         '<div class="model-actions">' +
           '<a class="model-cta js-wa" data-model="' + NICHES[key].model + '" data-cta="modelo-' + key + '" target="_blank" rel="noopener" href="#">Começar com este modelo</a>' +
           demoLink +
