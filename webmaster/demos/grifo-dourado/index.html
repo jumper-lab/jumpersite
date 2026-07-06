@@ -36,8 +36,14 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero">
-    <div class="container">
+    <video class="hero-media" autoplay muted loop playsinline preload="metadata"
+           poster="images/hero.jpg" aria-hidden="true">
+      <source src="images/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-inner container">
       <div class="hero-content">
+        <p class="label-caps hero-eyebrow">Locadora &amp; Ludoteca · Batel, Curitiba</p>
         <h1>Senta. Escolhe um jogo. <span class="accent">Pede uma cerveja.</span></h1>
         <p class="lead">Mais de 500 jogos de tabuleiro pra alugar, jogar no espaço ou levar pra casa. Um café no Batel onde a mesa tá sempre livre.</p>
         <div class="hero-cta">
@@ -45,8 +51,12 @@
           <a href="planos.html" class="btn btn--secondary btn--lg">Ver planos</a>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="images/hero.jpg" alt="Mesa de bar com jogos de tabuleiro, copos de cerveja e pessoas jogando no café O Grifo Dourado" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-strip">
+      <div class="container hero-strip-inner">
+        <span><b>Aberto ter–dom</b> · segunda fechado</span>
+        <span>Rua Mateus Leme, 482 — Batel</span>
+        <span>(41) 3333-4567</span>
       </div>
     </div>
   </section>
@@ -87,36 +97,40 @@
         <h2>O que tá saindo mais</h2>
         <p class="lead">Os favoritos da casa, escolhidos a dedo pelo Marcelo e pela turma que frequenta.</p>
       </div>
-      <div class="game-list">
-        <div class="game-card">
-          <span class="game-tag">Estratégia</span>
-          <h3>Catan</h3>
-          <p>O clássico que ensinou o Brasil a negociar madeira por minério. Colonize uma ilha, trapaceie seus amigos.</p>
-          <div class="game-meta"><span>2-4 jog · 60-90 min</span></div>
-          <div class="game-price">R$ 15/diária</div>
-        </div>
-        <div class="game-card">
-          <span class="game-tag">Party</span>
-          <h3>Codenames</h3>
-          <p>Um jogo de palavras que separa os amigos dos inimigos. Dica única: a pista certa muda tudo.</p>
-          <div class="game-meta"><span>4-8 jog · 15 min</span></div>
-          <div class="game-price">R$ 8/diária</div>
-        </div>
-        <div class="game-card">
-          <span class="game-tag">Cooperativo</span>
-          <h3>Pandemic</h3>
-          <p>O mundo numa crise e vocês são o time. Salvem a humanidade juntos — ou sofram juntos, também rola.</p>
-          <div class="game-meta"><span>2-4 jog · 45 min</span></div>
-          <div class="game-price">R$ 12/diária</div>
-        </div>
-        <div class="game-card">
-          <span class="game-tag">Família</span>
-          <h3>Azul</h3>
-          <p>Pedras portuguesas, lógica e aquela satisfação de encaixar tudo certinho. Premiadíssimo, merecidíssimo.</p>
-          <div class="game-meta"><span>2-4 jog · 30-45 min</span></div>
-          <div class="game-price">R$ 10/diária</div>
-        </div>
-      </div>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <div class="menu-head">
+            <span class="menu-name">Catan</span>
+            <span class="menu-dots" aria-hidden="true"></span>
+            <span class="menu-price">R$ 15<small>/diária</small></span>
+          </div>
+          <p class="menu-sub">Estratégia · 2–4 jogadores · 60–90 min</p>
+        </li>
+        <li class="menu-row">
+          <div class="menu-head">
+            <span class="menu-name">Codenames</span>
+            <span class="menu-dots" aria-hidden="true"></span>
+            <span class="menu-price">R$ 8<small>/diária</small></span>
+          </div>
+          <p class="menu-sub">Party · 4–8 jogadores · 15 min</p>
+        </li>
+        <li class="menu-row">
+          <div class="menu-head">
+            <span class="menu-name">Pandemic</span>
+            <span class="menu-dots" aria-hidden="true"></span>
+            <span class="menu-price">R$ 12<small>/diária</small></span>
+          </div>
+          <p class="menu-sub">Cooperativo · 2–4 jogadores · 45 min</p>
+        </li>
+        <li class="menu-row">
+          <div class="menu-head">
+            <span class="menu-name">Azul</span>
+            <span class="menu-dots" aria-hidden="true"></span>
+            <span class="menu-price">R$ 10<small>/diária</small></span>
+          </div>
+          <p class="menu-sub">Família · 2–4 jogadores · 30–45 min</p>
+        </li>
+      </ul>
       <div style="text-align: center; margin-top: var(--s-7);">
         <a href="acervo.html" class="btn btn--secondary btn--lg">Ver acervo completo</a>
       </div>
@@ -141,6 +155,13 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ═══ FAIXA (respiro) ═══ -->
+  <section class="band" aria-label="O ambiente do Grifo Dourado">
+    <img src="images/lareira.jpg" alt="Canto aconchegante com lareira e poltronas de couro no café O Grifo Dourado" loading="lazy" decoding="async">
+    <div class="band-scrim" aria-hidden="true"></div>
+    <p class="band-text">A mesa tá livre. A cerveja, gelada. <span>O próximo jogo é seu.</span></p>
   </section>
 
   <!-- ═══ O ESPAÇO ═══ -->
