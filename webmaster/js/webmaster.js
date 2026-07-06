@@ -89,8 +89,31 @@
       card.setAttribute('data-model-key', key);
       var screen = document.createElement('div');
       screen.className = 'model-screen';
-      var mini = cloneMini(key);
-      if (mini) screen.appendChild(mini);
+      if (NICHES[key].demo) {
+        /* vitrine acesa: o card mostra o SITE REAL (iframe escalado como miniatura) */
+        screen.className += ' has-preview';
+        var frame = document.createElement('iframe');
+        frame.className = 'model-preview';
+        frame.src = NICHES[key].demo;
+        frame.loading = 'lazy';
+        frame.tabIndex = -1;
+        frame.setAttribute('scrolling', 'no');
+        frame.setAttribute('aria-hidden', 'true');
+        frame.setAttribute('title', 'Prévia do site ' + NICHES[key].model);
+        screen.appendChild(frame);
+        var over = document.createElement('a');
+        over.className = 'model-preview-link';
+        over.href = NICHES[key].demo;
+        over.target = '_blank';
+        over.rel = 'noopener';
+        over.setAttribute('data-cta', 'preview-' + key);
+        over.setAttribute('aria-label', 'Ver o site ' + NICHES[key].model + ' ao vivo');
+        over.innerHTML = '<span class="model-preview-badge">Ver ao vivo ↗</span>';
+        screen.appendChild(over);
+      } else {
+        var mini = cloneMini(key);
+        if (mini) screen.appendChild(mini);
+      }
       var info = document.createElement('div');
       info.className = 'model-info';
       var demoLink = NICHES[key].demo
