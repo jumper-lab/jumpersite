@@ -10,10 +10,10 @@
   /* ================= CAMADA 1 — PRODUTO ================= */
 
   var NICHES = {
-    food:      { chip: 'Restaurante', term: 'um restaurante',             search: 'um restaurante',        model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery',       demo: '/webmaster/demos/virilhatos/',    demoName: "Virilhato's",     demoFor: 'restaurante · brasa & técnica francesa', shot: '/webmaster/img/hero-food.webp' },
-    laundry:   { chip: 'Lavanderia',  term: 'uma lavanderia',             search: 'uma lavanderia',        model: 'Wash & Fold',   modelFor: 'pra lavanderias e serviços de bairro',        demo: '/webmaster/demos/lavou/',         demoName: 'Lavou',           demoFor: 'lavanderia urbana · Pinheiros',          shot: '/webmaster/img/hero-laundry.webp' },
-    clinic:    { chip: 'Clínica',     term: 'uma clínica',                search: 'uma clínica',           model: 'Clean Service', modelFor: 'pra clínicas e consultórios',                 demo: '/webmaster/demos/salles/',        demoName: 'Clínica Salles',  demoFor: 'dermatologia · Pinheiros, SP',           shot: '/webmaster/img/hero-clinic.webp' },
-    gamehouse: { chip: 'Locadora',    term: 'uma locadora de jogos',      search: 'uma locadora de jogos', model: 'Play Space',    modelFor: 'pra locadoras, ludotecas e espaços de lazer', demo: '/webmaster/demos/grifo-dourado/', demoName: 'O Grifo Dourado', demoFor: 'locadora de jogos · Curitiba',           shot: '/webmaster/img/hero-gamehouse.webp' },
+    food:      { chip: 'Restaurante', term: 'um restaurante',             search: 'um restaurante',        model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery',       demo: '/webmaster/demos/virilhatos/',    demoName: "Virilhato's",     demoFor: 'restaurante · brasa & técnica francesa', shot: '/webmaster/img/hero-food.webp', shotWide: '/webmaster/img/site-food.webp' },
+    laundry:   { chip: 'Lavanderia',  term: 'uma lavanderia',             search: 'uma lavanderia',        model: 'Wash & Fold',   modelFor: 'pra lavanderias e serviços de bairro',        demo: '/webmaster/demos/lavou/',         demoName: 'Lavou',           demoFor: 'lavanderia urbana · Pinheiros',          shot: '/webmaster/img/hero-laundry.webp', shotWide: '/webmaster/img/site-laundry.webp' },
+    clinic:    { chip: 'Clínica',     term: 'uma clínica',                search: 'uma clínica',           model: 'Clean Service', modelFor: 'pra clínicas e consultórios',                 demo: '/webmaster/demos/salles/',        demoName: 'Clínica Salles',  demoFor: 'dermatologia · Pinheiros, SP',           shot: '/webmaster/img/hero-clinic.webp', shotWide: '/webmaster/img/site-clinic.webp' },
+    gamehouse: { chip: 'Locadora',    term: 'uma locadora de jogos',      search: 'uma locadora de jogos', model: 'Play Space',    modelFor: 'pra locadoras, ludotecas e espaços de lazer', demo: '/webmaster/demos/grifo-dourado/', demoName: 'O Grifo Dourado', demoFor: 'locadora de jogos · Curitiba',           shot: '/webmaster/img/hero-gamehouse.webp', shotWide: '/webmaster/img/site-gamehouse.webp' },
     legal:     { chip: 'Advocacia',   term: 'um escritório de advocacia', search: 'um advogado',           model: 'Pro Legal',     modelFor: 'pra advogados, contadores e consultores' },
     beauty:    { chip: 'Beleza',      term: 'um espaço de estética',      search: 'um salão',              model: 'Beauty Clinic', modelFor: 'pra estética, clínicas e salões' }
   };
@@ -22,11 +22,12 @@
   var current = 'food';
 
   /* o que mostrar no telefone do hero: screenshot do site real (demo) ou mockup CSS */
-  function screenFor(key) {
-    if (NICHES[key].shot) {
+  function screenFor(key, variant) {
+    var src = variant === 'wide' ? NICHES[key].shotWide : NICHES[key].shot;
+    if (src) {
       var img = document.createElement('img');
       img.className = 'wm-shot';
-      img.src = NICHES[key].shot;
+      img.src = src;
       img.alt = 'Prévia do site ' + (NICHES[key].demoName || NICHES[key].model);
       return img;
     }
@@ -63,6 +64,7 @@
   var heroScreen = document.getElementById('hero-screen');
   var baAfter = document.getElementById('ba-after');
   var buildScreen = document.getElementById('build-screen');
+  var phoneTag = document.getElementById('phone-tag');
 
   function setNiche(key) {
     current = key;
@@ -72,11 +74,11 @@
       b.setAttribute('aria-pressed', String(b.getAttribute('data-niche-btn') === key));
     });
 
-    /* hero = screenshot do site real; antes/depois e build = mockup CSS (landscape) */
+    /* hero e build (telefone) = screenshot mobile; antes/depois (landscape) = screenshot desktop */
     [
       [heroScreen, screenFor(key)],
-      [baAfter, cloneMini(key)],
-      [buildScreen, cloneMini(key)]
+      [baAfter, screenFor(key, 'wide')],
+      [buildScreen, screenFor(key)]
     ].forEach(function (pair) {
       var mount = pair[0], node = pair[1];
       if (!mount) return;
@@ -91,6 +93,12 @@
     document.querySelectorAll('.js-model-name').forEach(function (el) { el.textContent = NICHES[key].model; });
     document.querySelectorAll('.js-model-for').forEach(function (el) { el.textContent = NICHES[key].modelFor; });
     document.querySelectorAll('.js-niche-search').forEach(function (el) { el.textContent = NICHES[key].search; });
+    /* tarjinha do telefone: nome real do negócio (demos) ou nome do modelo (mockups) */
+    if (phoneTag) {
+      phoneTag.innerHTML = NICHES[key].demoName
+        ? '<b>' + NICHES[key].demoName + '</b> · ' + NICHES[key].demoFor
+        : 'Modelo <b>' + NICHES[key].model + '</b> · ponto de partida ' + NICHES[key].modelFor;
+    }
     document.querySelectorAll('.model-card').forEach(function (c) {
       c.classList.toggle('is-active', c.getAttribute('data-model-key') === key);
     });
