@@ -17,8 +17,8 @@
     legal:  { chip: 'Advocacia',   term: 'um escritório de advocacia', search: 'um advogado',    model: 'Pro Legal',     modelFor: 'pra advogados, contadores e consultores' },
     beauty: { chip: 'Beleza',      term: 'um espaço de estética',      search: 'um salão',       model: 'Beauty Clinic', modelFor: 'pra estética, clínicas e salões' }
   };
-  /* demos reais primeiro; nichos ainda sem site (mockup) por último */
-  var ORDER = ['food', 'clean', 'shop', 'fit', 'legal', 'beauty'];
+  /* ordem: Virilhato's, Lavou, Salles, Grifo (demos reais); mockups por último */
+  var ORDER = ['food', 'fit', 'clean', 'shop', 'legal', 'beauty'];
   var current = 'food';
 
   function cloneMini(key) {
