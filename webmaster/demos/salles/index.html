@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/webmaster/demos/salles/">
+  <meta name="description" content="Clínica Salles — dermatologia clínica e estética em Pinheiros, São Paulo. Consulta de quarenta minutos, prescrição sob medida e o protocolo Repouso, de recuperação da barreira da pele." />
+  <meta name="theme-color" content="#FBFAF7" />
+  <title>Clínica Salles · dermatologia — Pinheiros, São Paulo</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='5'%20fill='%233A1F2B'/%3E%3Ctext%20x='16'%20y='23'%20font-family='Georgia,serif'%20font-size='21'%20font-style='italic'%20font-weight='700'%20fill='%23FBFAF7'%20text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Reveal fail-open: só esconde pra animar se JS roda E o usuário aceita movimento.
+       Sem JS (ou reduced-motion) a classe nunca entra → conteúdo visível por padrão. -->
+  <script>
+    (function () {
+      try {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            && 'IntersectionObserver' in window) {
+          document.documentElement.className += ' js-anim';
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header" id="topo">
+  <div class="wrap head-row">
+    <a class="logo" href="#topo" aria-label="Clínica Salles — início">
+      Salles<small>dermatologia · Pinheiros</small>
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+        <span class="sr-only">Abrir menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <ul class="nav-list" id="navList">
+        <li><a href="#tese">A tese</a></li>
+        <li><a href="#fundadora">A dermatologista</a></li>
+        <li><a href="#tratamentos">Tratamentos</a></li>
+        <li><a href="#clinica">A clínica</a></li>
+        <li><a href="#visitar">Visitar</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-primary" href="#visitar">Agendar</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ====================== HERO ====================== -->
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Dermatologia clínica e estética · Pinheiros, SP</p>
+      <h1 class="reveal" id="hero-title">
+        A pele tem um tempo.<br>
+        A gente <em>respeita</em>.
+      </h1>
+      <p class="lede reveal">Dermatologia sem pressa — consulta longa, diagnóstico antes de qualquer prescrição. Cada tratamento começa por entender a sua pele, não por repetir o que funcionou pra outra.</p>
+      <div class="ctas reveal">
+        <a class="btn btn-primary" href="#visitar">Agendar avaliação</a>
+        <a class="btn btn-line" href="#tratamentos">Ver tratamentos</a>
+      </div>
+    </div>
+
+    <div class="hero-media reveal">
+      <img src="img/pele-textura.jpg" alt="Close abstrato da textura de pele de uma mulher, iluminado para revelar detalhe — a tese visual da Clínica Salles: pele deixada em paz." loading="eager" decoding="async" />
+    </div>
+  </section>
+
+  <!-- ====================== TESE (faixa curta, princípios) ====================== -->
+  <section class="thesis" id="tese" aria-labelledby="thesis-title">
+    <div class="wrap thesis-inner">
+      <p class="eyebrow reveal">Como pensamos</p>
+      <h2 class="reveal" id="thesis-title">
+        Pele é individual. Tratamento também.
+      </h2>
+      <div class="thesis-body reveal">
+        <p>Não acreditamos em protocolo de pacote, ativo da vez ou receita pronta. Acreditamos em consulta sem pressa, prescrição criteriosa e no princípio de que <strong>menos, bem indicado, costuma fazer mais</strong> pela pele ao longo do tempo.</p>
+        <p>É por isso que a primeira consulta aqui dura quarenta minutos. Antes de propor qualquer coisa, precisamos entender o que a sua pele pede — e o que ela não precisa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FUNDADORA ====================== -->
+  <section class="founder wrap" id="fundadora" aria-labelledby="founder-title">
+    <div class="founder-grid">
+      <div class="ph-found reveal">
+        <img src="img/beatriz-retrato.jpg" alt="Retrato editorial da Dra. Beatriz Salles, dermatologista, em luz natural, com jaleco branco sobre um ombro." loading="lazy" decoding="async" />
+      </div>
+      <div class="founder-copy">
+        <p class="eyebrow reveal">A dermatologista</p>
+        <h2 class="reveal" id="founder-title">Dez anos entre formulação e ambulatório me ensinaram a ler cada pele de outro jeito.</h2>
+        <p class="reveal">Antes da medicina, formulei dermocosméticos por oito anos numa farmácia de manipulação em Higienópolis. Esse tempo ao lado das fórmulas me deu um olhar diferente sobre como cada pele responde — e sobre a distância entre o que se vende e o que de fato funciona.</p>
+        <p class="reveal">Fui pra medicina e pra dermatologia depois. Hoje divido minha semana entre o ambulatório do HC, onde atendo e sou preceptora voluntária, e a Salles, que abri em 2019 numa sala pequena na Cardeal Arcoverde.</p>
+        <p class="reveal">No consultório, levo o tempo que cada pele pede. Gosto de explicar o que estou prescrevendo — e por quê. A maioria das minhas pacientes entende o próprio protocolo.</p>
+        <p class="sig reveal">"Boa dermatologia é, antes de tudo, escuta. O diagnóstico começa na conversa, não na receita."</p>
+        <p class="name reveal">— Dra. Beatriz Salles · dermatologista, CRM-SP 142.908 · preceptora voluntária no ambulatório de dermatologia do HC</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TRATAMENTOS ====================== -->
+  <section class="treatments" id="tratamentos" aria-labelledby="trat-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div>
+          <p class="eyebrow">Tratamentos</p>
+          <h2 id="trat-title">Procedimentos e protocolos,<br>sempre sob medida.</h2>
+        </div>
+        <p>Cada tratamento começa por uma consulta de quarenta minutos. Os preços abaixo são referência — o protocolo final é desenhado a partir do diagnóstico da sua pele.</p>
+      </header>
+
+      <!-- Protocolo Repouso em destaque -->
+      <article class="repouso reveal">
+        <div class="repouso-label">
+          <span class="tag">Protocolo assinatura</span>
+          <span class="repouso-n">01 / 06</span>
+        </div>
+        <div class="repouso-body">
+          <h3>Repouso · 90 dias</h3>
+          <p class="repouso-lede">Um protocolo de três meses dedicado à recuperação da barreira cutânea. Indicado para peles sensibilizadas por uso excessivo de ativos ao longo do tempo.</p>
+          <p>A proposta é restaurar a função de barreira antes de qualquer procedimento — o princípio da dermatologia clínica aplicado ao estético. Inclui consultoria de rotina, acompanhamento mensal e reavaliação ao final.</p>
+          <div class="repouso-foot">
+            <span class="price">R$ 1.200 · acompanhamento trimestral</span>
+            <a class="link-arrow" href="#visitar">Marcar conversa <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="ph-repouso">
+          <img src="img/repouso-kit.jpg" alt="Três frascos apothecary sem rótulo do protocolo Repouso sobre bancada de madeira clara, com espaço negativo generoso." loading="lazy" decoding="async" />
+        </div>
+      </article>
+
+      <ul class="grid-trat" role="list">
+        <li class="cell reveal">
+          <span class="n">02</span>
+          <h3>Consulta dermatológica</h3>
+          <p>Quarenta minutos de anamnese, exame e mapeamento da pele. É o ponto de partida de qualquer protocolo — e, muitas vezes, da própria decisão de não tratar.</p>
+          <div class="price">R$ 480</div>
+        </li>
+        <li class="cell reveal">
+          <span class="n">03</span>
+          <h3>Limpeza de pele</h3>
+          <p>Extração e limpeza profunda, feita pela dermatologista em ambiente clínico. Indicada conforme o ciclo da pele, normalmente uma vez por estação.</p>
+          <div class="price">R$ 520</div>
+        </li>
+        <li class="cell reveal">
+          <span class="n">04</span>
+          <h3>Bioestimulador de colágeno</h3>
+          <p>Ácido polilático em técnica de fã, indicado para sustentação e firmeza a partir da avaliação clínica. Resultado progressivo em até 90 dias.</p>
+          <div class="price">R$ 1.900</div>
+        </li>
+        <li class="cell reveal">
+          <span class="n">05</span>
+          <h3>LED terapêutico + peel superficial</h3>
+          <p>Fotobiomodulação combinada a peel superficial para manejo de oleosidade, acne e renovação celular. Indicado por sessão ou em ciclos.</p>
+          <div class="price">R$ 390</div>
+        </li>
+        <li class="cell reveal">
+          <span class="n">06</span>
+          <h3>Microagulhamento facial</h3>
+          <p>Indicado para cicatrizes de acne e textura irregular. Protocolo de três sessões com intervalo de trinta dias, sob anestesia tópica.</p>
+          <div class="price">R$ 780</div>
+        </li>
+        <li class="cell cell-note reveal">
+          <span class="n" aria-hidden="true">·</span>
+          <h3>Tratamentos sob avaliação</h3>
+          <p>Realizamos também procedimentos como toxina botulínica, preenchimentos e laseres, sempre após avaliação e discussão de expectativas.</p>
+          <a class="link-arrow" href="#visitar">Conversar com a Dra. Beatriz <span aria-hidden="true">→</span></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====================== FAIXA VISUAL (consultório) ====================== -->
+  <section class="room-band" aria-label="Interior do consultório da Clínica Salles em Pinheiros">
+    <img src="img/clinica-consultorio.jpg" alt="Interior do consultório da Clínica Salles em Pinheiros: bancada de madeira clara, frascos âmbar, luz de fim de tarde pela janela." loading="lazy" decoding="async" />
+    <p class="room-caption">Rua Cardeal Arcoverde, 1.201 · Pinheiros, São Paulo</p>
+  </section>
+
+  <!-- ====================== PROVA / NÚMEROS ====================== -->
+  <section class="proof wrap" id="clinica" aria-labelledby="proof-title">
+    <p class="eyebrow reveal">A clínica em números</p>
+    <h2 class="reveal" id="proof-title">Sete anos de consultório, contados em pele.</h2>
+
+    <dl class="nums">
+      <div class="num reveal">
+        <dt><strong>4,8</strong></dt>
+        <dd>no Google · 266 avaliações</dd>
+      </div>
+      <div class="num reveal">
+        <dt><strong>~2,1 mil</strong></dt>
+        <dd>peles atendidas desde 2019</dd>
+      </div>
+      <div class="num reveal">
+        <dt><strong>6 em 10</strong></dt>
+        <dd>primeiras consultas saem sem nova prescrição</dd>
+      </div>
+      <div class="num reveal">
+        <dt><strong>40 min</strong></dt>
+        <dd>toda primeira consulta</dd>
+      </div>
+    </dl>
+
+    <figure class="quote reveal">
+      <blockquote>"Foi a primeira dermatologista que realmente me explicou o que estava acontecendo com a minha pele. Saí da consulta entendendo o motivo de cada prescrição — e da escolha de não tratar o que eu achava que precisava."</blockquote>
+      <figcaption>
+        <span class="ph-quote" role="img" aria-label="Foto: Luisa M., paciente">L·M</span>
+        <span class="quote-who"><strong>Luisa M.</strong> · paciente desde 2022</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ====================== VISITAR / CTA ====================== -->
+  <section class="closing" id="visitar" aria-labelledby="closing-title">
+    <div class="wrap closing-inner">
+      <p class="eyebrow reveal">Visitar / agendar</p>
+      <h2 class="reveal" id="closing-title">Vamos conversar<br>sobre a sua pele.</h2>
+      <p class="reveal">Atendimento com hora marcada, de terça a sábado. A primeira consulta dura quarenta minutos — tempo de entender sua pele e responder às suas perguntas.</p>
+      <a class="btn btn-accent reveal" href="https://wa.me/551140028920?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20primeira%20consulta%20na%20Cl%C3%ADnica%20Salles." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+
+      <dl class="meta-row reveal">
+        <div>
+          <dt>Endereço</dt>
+          <dd>Rua Cardeal Arcoverde, 1.201<br>Pinheiros · São Paulo</dd>
+        </div>
+        <div>
+          <dt>Horário</dt>
+          <dd>Ter–Sex · 9h às 19h<br>Sáb · 9h às 13h</dd>
+        </div>
+        <div>
+          <dt>Contato</dt>
+          <dd>+55 11 4002-8920<br>beatriz@clinicasalles.com.br</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#topo">Salles<small>dermatologia · Pinheiros</small></a>
+        <p>Dermatologia clínica e estética com escuta e critério. Uma sala em Pinheiros, São Paulo, desde 2019.</p>
+      </div>
+      <nav aria-label="Navegação do rodapé">
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="#tese">A tese</a></li>
+          <li><a href="#fundadora">A dermatologista</a></li>
+          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#clinica">A clínica</a></li>
+          <li><a href="#visitar">Agendar</a></li>
+        </ul>
+      </nav>
+      <div class="foot-contact">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+551140028920">+55 11 4002-8920</a></li>
+          <li><a href="mailto:beatriz@clinicasalles.com.br">beatriz@clinicasalles.com.br</a></li>
+          <li><a href="#" rel="noopener">@clinica.salles</a></li>
+          <li>Rua Cardeal Arcoverde, 1.201 — Pinheiros, SP</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Clínica Salles dermatologia ltda. · CNPJ 00.000.000/0001-00</span>
+      <span>Responsável técnica: Dra. Beatriz Salles · CRM-SP 142.908</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Menu mobile
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var list = document.getElementById('navList');
+    if (!toggle || !list) return;
+    toggle.addEventListener('click', function () {
+      var open = list.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.querySelector('.sr-only').textContent = open ? 'Fechar menu' : 'Abrir menu';
+    });
+    list.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        list.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.querySelector('.sr-only').textContent = 'Abrir menu';
+      });
+    });
+  })();
+
+  // Reveal na entrada. O gate (.js-anim no <html>) já foi decidido no <head>:
+  // se ele não está presente (JS off ou reduced-motion), o CSS deixa tudo visível — fail-open.
+  (function () {
+    if (!document.documentElement.classList.contains('js-anim')) return;
+    var items = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

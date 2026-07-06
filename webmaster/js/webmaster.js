@@ -10,11 +10,11 @@
   /* ================= CAMADA 1 — PRODUTO ================= */
 
   var NICHES = {
-    food:   { chip: 'Restaurante', term: 'um restaurante',             search: 'um restaurante', model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery' },
-    clean:  { chip: 'Clínica',     term: 'uma clínica',                search: 'uma clínica',    model: 'Clean Service', modelFor: 'pra clínicas e consultórios' },
+    food:   { chip: 'Restaurante', term: 'um restaurante',             search: 'um restaurante', model: 'Food Menu',     modelFor: 'pra restaurantes, padarias e delivery', demo: '/webmaster/demos/virilhatos/' },
+    clean:  { chip: 'Clínica',     term: 'uma clínica',                search: 'uma clínica',    model: 'Clean Service', modelFor: 'pra clínicas e consultórios', demo: '/webmaster/demos/salles/' },
     fit:    { chip: 'Academia',    term: 'uma academia',               search: 'uma academia',   model: 'Fit Studio',    modelFor: 'pra academias, estúdios e personais' },
     legal:  { chip: 'Advocacia',   term: 'um escritório de advocacia', search: 'um advogado',    model: 'Pro Legal',     modelFor: 'pra advogados, contadores e consultores' },
-    shop:   { chip: 'Loja',        term: 'uma loja',                   search: 'uma loja',       model: 'Shop Front',    modelFor: 'pra lojas físicas e comércio' },
+    shop:   { chip: 'Loja',        term: 'uma loja',                   search: 'uma loja',       model: 'Shop Front',    modelFor: 'pra lojas físicas e comércio', demo: '/webmaster/demos/grifo-dourado/' },
     beauty: { chip: 'Beleza',      term: 'um espaço de estética',      search: 'um salão',       model: 'Beauty Clinic', modelFor: 'pra estética, clínicas e salões' }
   };
   var ORDER = ['food', 'clean', 'fit', 'legal', 'shop', 'beauty'];
@@ -93,10 +93,16 @@
       if (mini) screen.appendChild(mini);
       var info = document.createElement('div');
       info.className = 'model-info';
+      var demoLink = NICHES[key].demo
+        ? '<a class="model-demo" data-cta="demo-' + key + '" target="_blank" rel="noopener" href="' + NICHES[key].demo + '">Ver demo ao vivo</a>'
+        : '';
       info.innerHTML =
         '<h3>' + NICHES[key].model + '</h3>' +
         '<p>' + NICHES[key].modelFor + '</p>' +
-        '<a class="model-cta js-wa" data-model="' + NICHES[key].model + '" data-cta="modelo-' + key + '" target="_blank" rel="noopener" href="#">Começar com este modelo</a>';
+        '<div class="model-actions">' +
+          '<a class="model-cta js-wa" data-model="' + NICHES[key].model + '" data-cta="modelo-' + key + '" target="_blank" rel="noopener" href="#">Começar com este modelo</a>' +
+          demoLink +
+        '</div>';
       card.appendChild(screen);
       card.appendChild(info);
       grid.appendChild(card);

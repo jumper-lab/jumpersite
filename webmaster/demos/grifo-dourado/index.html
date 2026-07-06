@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/webmaster/demos/grifo-dourado/">
+  <title>O Grifo Dourado — Locadora & Ludoteca de Jogos de Tabuleiro em Curitiba</title>
+  <meta name="description" content="Mais de 500 jogos de tabuleiro pra alugar, jogar no espaço ou levar pra casa. Um café no Batel, Curitiba, onde a mesa tá sempre livre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-grifo">G</span>
+        <span>O Grifo Dourado</span>
+      </a>
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html" class="nav-link active">Início</a></li>
+          <li><a href="acervo.html" class="nav-link">Acervo</a></li>
+          <li><a href="planos.html" class="nav-link">Planos</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Senta. Escolhe um jogo. <span class="accent">Pede uma cerveja.</span></h1>
+        <p class="lead">Mais de 500 jogos de tabuleiro pra alugar, jogar no espaço ou levar pra casa. Um café no Batel onde a mesa tá sempre livre.</p>
+        <div class="hero-cta">
+          <a href="acervo.html" class="btn btn--primary btn--lg">Explorar o acervo</a>
+          <a href="planos.html" class="btn btn--secondary btn--lg">Ver planos</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero.jpg" alt="Mesa de bar com jogos de tabuleiro, copos de cerveja e pessoas jogando no café O Grifo Dourado" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMO FUNCIONA ═══ -->
+  <section class="section section--papel">
+    <div class="container">
+      <div class="section-header">
+        <p class="label-caps">Como funciona</p>
+        <h2>Três jeitos de jogar</h2>
+        <p class="lead">Não tem certo ou errado. Tem o que funciona pra você hoje.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3>Aluguel avulso</h3>
+          <p>Escolhe o jogo, paga a diária e leva pra casa. Devolução em 72 horas. Simples assim, sem fidelidade.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">2</div>
+          <h3>Membro</h3>
+          <p>Trocas ilimitadas por uma mensalidade. Pega um jogo, joga no seu tempo, devolve e pega outro. Por 14 dias sem pressa.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">3</div>
+          <h3>Jogue no espaço</h3>
+          <p>Mesas livres de terça a domingo. Senta, pede uma cerveja, escolhe um jogo da estante e joga aqui mesmo. Sem custo além do consumo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ JOGOS EM DESTAQUE ═══ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <p class="label-caps">Em destaque</p>
+        <h2>O que tá saindo mais</h2>
+        <p class="lead">Os favoritos da casa, escolhidos a dedo pelo Marcelo e pela turma que frequenta.</p>
+      </div>
+      <div class="game-list">
+        <div class="game-card">
+          <span class="game-tag">Estratégia</span>
+          <h3>Catan</h3>
+          <p>O clássico que ensinou o Brasil a negociar madeira por minério. Colonize uma ilha, trapaceie seus amigos.</p>
+          <div class="game-meta"><span>2-4 jog · 60-90 min</span></div>
+          <div class="game-price">R$ 15/diária</div>
+        </div>
+        <div class="game-card">
+          <span class="game-tag">Party</span>
+          <h3>Codenames</h3>
+          <p>Um jogo de palavras que separa os amigos dos inimigos. Dica única: a pista certa muda tudo.</p>
+          <div class="game-meta"><span>4-8 jog · 15 min</span></div>
+          <div class="game-price">R$ 8/diária</div>
+        </div>
+        <div class="game-card">
+          <span class="game-tag">Cooperativo</span>
+          <h3>Pandemic</h3>
+          <p>O mundo numa crise e vocês são o time. Salvem a humanidade juntos — ou sofram juntos, também rola.</p>
+          <div class="game-meta"><span>2-4 jog · 45 min</span></div>
+          <div class="game-price">R$ 12/diária</div>
+        </div>
+        <div class="game-card">
+          <span class="game-tag">Família</span>
+          <h3>Azul</h3>
+          <p>Pedras portuguesas, lógica e aquela satisfação de encaixar tudo certinho. Premiadíssimo, merecidíssimo.</p>
+          <div class="game-meta"><span>2-4 jog · 30-45 min</span></div>
+          <div class="game-price">R$ 10/diária</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: var(--s-7);">
+        <a href="acervo.html" class="btn btn--secondary btn--lg">Ver acervo completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ O MARCELO ═══ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="master-block">
+        <div class="master-image">
+          <img src="images/marcelo.jpg" alt="Marcelo Tavares, fundador do O Grifo Dourado, sentado numa mesa do café com jogos de tabuleiro ao fundo" loading="lazy">
+        </div>
+        <div class="master-text">
+          <p class="label-caps">O fundador</p>
+          <h2>Marcelo Tavares</h2>
+          <p class="lead">Curitibano de nascença, tabuleiro por opção. Abriu o Grifo Dourado em 2022 num sobrado do Batel porque não encontrou o lugar que queria frequentar.</p>
+          <p>Depois de anos jogando em mesas improvisadas — mesa de cozinha, mesa de bar, chão de sala — percebeu que faltava um lugar com bom acervo, boa cerveja e gente pra jogar. Então montou um.</p>
+          <blockquote class="master-quote">
+            "Eu queria um lugar onde pudesse sentar, jogar, pedir uma cerveja e não precisar ir embora. Como não existia, abri um."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ O ESPAÇO ═══ -->
+  <section class="section section--papel">
+    <div class="container">
+      <div class="section-header">
+        <p class="label-caps">O espaço</p>
+        <h2>Sobrado no Batel, mesas sempre livres</h2>
+        <p class="lead">Dois andares, estantes cheias e uma lareira pra quando Curitiba decide esfriar.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/prateleiras.jpg" alt="Prateleiras de madeira com caixas de jogos de tabuleiro organizadas no café" loading="lazy">
+          <div class="gallery-caption">Prateleiras</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/mesa.jpg" alt="Mesa de madeira com um jogo de tabuleiro em andamento e copos ao lado" loading="lazy">
+          <div class="gallery-caption">Mesa principal</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/lareira.jpg" alt="Lareira acesa no canto do salão, com poltronas e mesa ao redor" loading="lazy">
+          <div class="gallery-caption">Lareira</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/sala-privada.jpg" alt="Sala privada com porta fechada, ideal para grupos e campanhas de RPG" loading="lazy">
+          <div class="gallery-caption">Sala privada</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/estante-rpg.jpg" alt="Estante dedicada a livros e dados de RPG, com materiais coloridos e manuais" loading="lazy">
+          <div class="gallery-caption">Estante de RPG</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/entrada.jpg" alt="Entrada do sobrado do O Grifo Dourado com placa dourada na Rua Mateus Leme" loading="lazy">
+          <div class="gallery-caption">Entrada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROVA SOCIAL ═══ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <p class="label-caps">Prova social</p>
+        <h2>Quem já sentou na mesa</h2>
+      </div>
+      <div class="stats-bar" style="margin-bottom: var(--s-8);">
+        <div>
+          <div class="stat-number">500+</div>
+          <div class="stat-label">jogos no acervo</div>
+        </div>
+        <div>
+          <div class="stat-number">150</div>
+          <div class="stat-label">membros ativos</div>
+        </div>
+        <div>
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">no Google</div>
+        </div>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"Fui num sábado pra conhecer e saí com três jogos alugados e uma turma nova de amigos. O Marcelo entende tudo, recomenda na lata."</p>
+          <div class="testimonial-author">— Júlia M., membro desde 2023</div>
+        </div>
+        <div class="testimonial">
+          <p>"O melhor é que não precisa comprar jogo caro e encostar no armário. Pego, jogo, devolvo. A lareira no inverno é um diferencial absurdo."</p>
+          <div class="testimonial-author">— Rafael K., jogador de fim de semana</div>
+        </div>
+        <div class="testimonial">
+          <p>"Levo meu grupo de RPG pra sala privada toda quinzena. Cerveja gelada, mesa boa, silêncio. Achamos nosso cantinho."</p>
+          <div class="testimonial-author">— Patrícia L., mestra de mesa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LOCALIZAÇÃO ═══ -->
+  <section class="section section--papel">
+    <div class="container">
+      <div class="section-header">
+        <p class="label-caps">Onde fica</p>
+        <h2>No coração do Batel</h2>
+      </div>
+      <div class="location-block">
+        <div class="location-info">
+          <h3>Vem nos visitar</h3>
+          <dl>
+            <dt>Endereço</dt>
+            <dd>Rua Mateus Leme, 482 — Batel, Curitiba – PR</dd>
+            <dt>Horário</dt>
+            <dd>Terça a sexta, 14h às 23h. Sábado e domingo, 11h às 00h. Segunda fechado.</dd>
+            <dt>Telefone</dt>
+            <dd><a href="tel:+4133334567">(41) 3333-4567</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:contato@grifodourado.com.br">contato@grifodourado.com.br</a></dd>
+          </dl>
+          <a href="contato.html" class="btn btn--primary">Falar com a gente</a>
+        </div>
+        <div class="map-placeholder">
+          <p style="color: var(--grafite); font-size: var(--fs-small); opacity: 0.6;">Mapa: Rua Mateus Leme, 482 — Batel, Curitiba</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="footer-grifo">G</span>
+          <span>O Grifo Dourado</span>
+        </div>
+        <p style="max-width: 40ch;">Locadora & Ludoteca de jogos de tabuleiro. Um café no Batel, Curitiba, onde a mesa tá sempre livre.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="planos.html">Planos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li>Rua Mateus Leme, 482 — Batel, Curitiba – PR</li>
+          <li><a href="tel:+4133334567">(41) 3333-4567</a></li>
+          <li><a href="mailto:contato@grifodourado.com.br">contato@grifodourado.com.br</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        © 2026 O Grifo Dourado — Locadora & Ludoteca de Jogos de Tabuleiro
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/webmaster/demos/grifo-dourado/">
+  <title>Acervo — O Grifo Dourado | Jogos de Tabuleiro em Curitiba</title>
+  <meta name="description" content="Mais de 500 jogos de tabuleiro pra alugar: estratégia, party, RPG, família, cooperativo. Filtre por categoria e encontre o próximo jogo da sua mesa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-grifo">G</span>
+        <span>O Grifo Dourado</span>
+      </a>
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="acervo.html" class="nav-link active">Acervo</a></li>
+          <li><a href="planos.html" class="nav-link">Planos</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══ HERO DO ACERVO ═══ -->
+  <section class="section section--papel" style="padding-bottom: var(--s-5);">
+    <div class="container">
+      <div class="section-header">
+        <h1>Acervo</h1>
+        <p class="lead">Mais de 500 jogos de tabuleiro. Filtre por categoria, escolhe o seu e vem buscar. Ou joga aqui mesmo, a mesa tá pronta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FILTROS + LISTA ═══ -->
+  <section class="section section--papel" style="padding-top: 0;">
+    <div class="container">
+      <div class="game-filter" id="game-filter">
+        <button class="filter-chip active" data-filter="todos">Todos</button>
+        <button class="filter-chip" data-filter="estrategia">Estratégia</button>
+        <button class="filter-chip" data-filter="party">Party</button>
+        <button class="filter-chip" data-filter="rpg">RPG</button>
+        <button class="filter-chip" data-filter="familia">Família</button>
+        <button class="filter-chip" data-filter="cooperativo">Cooperativo</button>
+      </div>
+
+      <div class="game-list" id="game-list">
+
+        <div class="game-card" data-category="estrategia">
+          <span class="game-tag">Estratégia</span>
+          <h3>Catan</h3>
+          <p>O clássico. Colonize uma ilha, negocie madeira por minério e trapaceie seus amigos.</p>
+          <div class="game-meta"><span>2-4 jog · 60-90 min</span></div>
+          <div class="game-price">R$ 15/diária</div>
+        </div>
+
+        <div class="game-card" data-category="estrategia">
+          <span class="game-tag">Estratégia</span>
+          <h3>Terraforming Mars</h3>
+          <p>Transforme Marte num lugar habitável. Gestão de recursos, empresas rivais e muita carta.</p>
+          <div class="game-meta"><span>1-5 jog · 120-180 min</span></div>
+          <div class="game-price">R$ 22/diária</div>
+        </div>
+
+        <div class="game-card" data-category="estrategia">
+          <span class="game-tag">Estratégia</span>
+          <h3>Wingspan</h3>
+          <p>Construa o melhor aviário. Cartas lindas, mecânica fluida e aquele prazer de montar engine.</p>
+          <div class="game-meta"><span>1-5 jog · 40-70 min</span></div>
+          <div class="game-price">R$ 18/diária</div>
+        </div>
+
+        <div class="game-card" data-category="estrategia">
+          <span class="game-tag">Estratégia</span>
+          <h3>7 Wonders</h3>
+          <p>Sete maravilhas, cartas que passam de mão em mão. Rápido, viciante, cabe num after-work.</p>
+          <div class="game-meta"><span>3-7 jog · 30 min</span></div>
+          <div class="game-price">R$ 12/diária</div>
+        </div>
+
+        <div class="game-card" data-category="party">
+          <span class="game-tag">Party</span>
+          <h3>Codenames</h3>
+          <p>Dica única, palavras na mesa. O jogo de associação que nunca envelhece.</p>
+          <div class="game-meta"><span>4-8 jog · 15 min</span></div>
+          <div class="game-price">R$ 8/diária</div>
+        </div>
+
+        <div class="game-card" data-category="party">
+          <span class="game-tag">Party</span>
+          <h3>Dixit</h3>
+          <p>Cartas surrealistas, interpretação livre. Ganha quem pensa parecido com o grupo — mas nem tanto.</p>
+          <div class="game-meta"><span>3-6 jog · 30 min</span></div>
+          <div class="game-price">R$ 10/diária</div>
+        </div>
+
+        <div class="game-card" data-category="party">
+          <span class="game-tag">Party</span>
+          <h3>Just One</h3>
+          <p>Cooperativo de festa. Escreve uma pista cada um, sem repetir. Simples e genial.</p>
+          <div class="game-meta"><span>3-7 jog · 20 min</span></div>
+          <div class="game-price">R$ 8/diária</div>
+        </div>
+
+        <div class="game-card" data-category="rpg">
+          <span class="game-tag">RPG</span>
+          <h3>Dungeons & Dragons: Starter Set</h3>
+          <p>O kit que introduz o mundo de D&D. Livros, dados e uma aventura pronta pra mestrar.</p>
+          <div class="game-meta"><span>3-5 jog · 120+ min</span></div>
+          <div class="game-price">R$ 20/diária</div>
+        </div>
+
+        <div class="game-card" data-category="rpg">
+          <span class="game-tag">RPG</span>
+          <h3>Tormenta RPG: Kit do Aventureiro</h3>
+          <p>RPG nacional de fantasia. Arton, deuses e perigos. Bom pra começar a campanha de vez.</p>
+          <div class="game-meta"><span>3-6 jog · 120+ min</span></div>
+          <div class="game-price">R$ 18/diária</div>
+        </div>
+
+        <div class="game-card" data-category="familia">
+          <span class="game-tag">Família</span>
+          <h3>Azul</h3>
+          <p>Pedras portuguesas e lógica. Encaixe tudo certinho e ganhe pontos. Premiadíssimo.</p>
+          <div class="game-meta"><span>2-4 jog · 30-45 min</span></div>
+          <div class="game-price">R$ 10/diária</div>
+        </div>
+
+        <div class="game-card" data-category="familia">
+          <span class="game-tag">Família</span>
+          <h3>Ticket to Ride</h3>
+          <p>Construa rotas de trem pelo mapa. Fácil de aprender, difícil de parar de jogar.</p>
+          <div class="game-meta"><span>2-5 jog · 30-60 min</span></div>
+          <div class="game-price">R$ 14/diária</div>
+        </div>
+
+        <div class="game-card" data-category="cooperativo">
+          <span class="game-tag">Cooperativo</span>
+          <h3>Pandemic</h3>
+          <p>Salvem o mundo juntos. Trabalho em equipe, decisões difíceis, derrota com sabor de aprendizado.</p>
+          <div class="game-meta"><span>2-4 jog · 45 min</span></div>
+          <div class="game-price">R$ 12/diária</div>
+        </div>
+
+      </div>
+
+      <div class="section-header" style="margin-top: var(--s-9);">
+        <h2>Não sabe o que escolher?</h2>
+        <p class="lead">Conta pro Marcelo quantos jogadores, quanto tempo e o clima. Ele recomenda.</p>
+        <a href="contato.html" class="btn btn--primary btn--lg">Pedir recomendação</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="footer-grifo">G</span>
+          <span>O Grifo Dourado</span>
+        </div>
+        <p style="max-width: 40ch;">Locadora & Ludoteca de jogos de tabuleiro. Um café no Batel, Curitiba, onde a mesa tá sempre livre.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="planos.html">Planos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li>Rua Mateus Leme, 482 — Batel, Curitiba – PR</li>
+          <li><a href="tel:+4133334567">(41) 3333-4567</a></li>
+          <li><a href="mailto:contato@grifodourado.com.br">contato@grifodourado.com.br</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        © 2026 O Grifo Dourado — Locadora & Ludoteca de Jogos de Tabuleiro
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var chips = document.querySelectorAll('#game-filter .filter-chip');
+      var cards = document.querySelectorAll('#game-list .game-card');
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var filter = chip.getAttribute('data-filter');
+
+          chips.forEach(function (c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+
+          cards.forEach(function (card) {
+            var cat = card.getAttribute('data-category');
+            if (filter === 'todos' || cat === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -748,6 +748,18 @@
 .model-cta:hover { border-color: var(--jumper-orange); background: rgba(250, 71, 33, 0.08); }
 .model-card.is-active .model-cta { border-color: rgba(250, 71, 33, 0.5); }
 
+.model-actions { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; }
+.model-demo {
+  font-size: 13px;
+  font-variation-settings: 'wght' 600;
+  color: var(--jumper-orange);
+  border-bottom: 1px solid rgba(250, 71, 33, 0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.2s var(--ease-jumper);
+}
+.model-demo::after { content: " ↗"; }
+.model-demo:hover { border-color: var(--jumper-orange); }
+
 .models-note {
   margin-top: 20px;
   font-size: 13px;
