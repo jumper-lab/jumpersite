@@ -19,7 +19,7 @@
 <link rel="icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../colors_and_type.css?v=2">
 <link rel="stylesheet" href="../css/site.css?v=2">
-<link rel="stylesheet" href="/webmaster/css/webmaster.css?v=7">
+<link rel="stylesheet" href="/webmaster/css/webmaster.css?v=105">
 
 <!-- Meta Pixel — substituir PIXEL_ID antes de publicar -->
 <!-- <script>...pixel...</script> -->
@@ -35,7 +35,7 @@
       Lote de portfólio · <b class="js-vagas">47</b> de 50 vagas
     </div>
     <div class="cta-row">
-      <a class="btn btn-primary js-wa" href="#" target="_blank" rel="noopener" data-cta="header">Quero meu site</a>
+      <a class="btn btn-primary wm-header-cta js-wa" href="#" target="_blank" rel="noopener" data-cta="header"><span>Quero meu site</span></a>
     </div>
   </div>
 </header>
@@ -57,11 +57,11 @@
       </div>
 
       <p class="wm-claim">
-        Site profissional construído pela Jumper com inteligência artificial.
-        Você envia os dados em 7 dias. O time entrega em mais 7.
+        Site profissional construído pela Jumper com IA.<br>
+        Você envia os dados em 7 dias. Entregamos em mais 7.
       </p>
 
-      <div class="wm-picker" role="group" aria-label="Escolha o tipo do seu negócio">
+      <div class="wm-picker wm-picker-desktop" role="group" aria-label="Escolha o tipo do seu negócio">
         <span class="wm-picker-label">O seu negócio:</span>
         <div class="wm-chips">
           <button class="chip" data-niche-btn="food" type="button" aria-pressed="true">Restaurante</button>
@@ -95,8 +95,19 @@
     </div>
   </div>
 
-  <div class="wm-hero-visual" aria-hidden="true">
-    <canvas data-jumper-gradient></canvas>
+  <div class="wm-hero-visual">
+    <canvas data-jumper-gradient aria-hidden="true"></canvas>
+    <div class="wm-picker wm-picker-mobile" role="group" aria-label="Escolha o tipo do seu negócio">
+      <span class="wm-picker-label">O seu negócio:</span>
+      <div class="wm-chips">
+        <button class="chip" data-niche-btn="food" type="button" aria-pressed="true">Restaurante</button>
+        <button class="chip" data-niche-btn="laundry" type="button" aria-pressed="false">Lavanderia</button>
+        <button class="chip" data-niche-btn="clinic" type="button" aria-pressed="false">Clínica</button>
+        <button class="chip" data-niche-btn="gamehouse" type="button" aria-pressed="false">Locadora</button>
+        <button class="chip" data-niche-btn="legal" type="button" aria-pressed="false">Advocacia</button>
+        <button class="chip" data-niche-btn="beauty" type="button" aria-pressed="false">Beleza</button>
+      </div>
+    </div>
     <div class="wm-phone">
       <div class="wm-phone-notch"></div>
       <div class="wm-phone-screen" id="hero-screen"><!-- mini-site injetado por JS --></div>
@@ -199,7 +210,7 @@
       <div class="build-stage">
         <div class="wm-phone build-phone">
           <div class="wm-phone-notch"></div>
-          <div class="build-wire" aria-hidden="true">
+          <div class="build-wire" data-status="aguardando seus dados_" aria-hidden="true">
             <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>
           <div class="wm-phone-screen build-screen" id="build-screen"><!-- mini injetado por JS --></div>
@@ -264,24 +275,72 @@
   </div>
 </section>
 
-<!-- ============ O SOBREVOO — scroll-video (frames no canvas) ============ -->
-<!-- Corte flagship: canvas scrubado. Corte traffic: poster estático leve. -->
+<!-- ============ O PORTFÓLIO — cena viva em HTML, sem vídeo pesado ============ -->
 <section class="wm-sobrevoo" id="sobrevoo" aria-label="O portfólio da Jumper">
-  <div class="sv-pin">
-    <canvas class="sv-canvas" id="sv-canvas" aria-hidden="true"></canvas>
-    <img class="sv-poster" id="sv-poster"
-         src="/webmaster/sobrevoo/frames/frame-000.jpg"
-         alt="Sites profissionais construídos pela Jumper com IA">
-    <!-- copy sobreposta em HTML real (Haffer nítida, editável) — não baked no vídeo -->
-    <div class="sv-caption sv-caption-in" id="sv-cap-in" aria-hidden="true">
-      Cada site,<br><span class="hot">construído pela mesma IA.</span>
-    </div>
-    <div class="sv-caption sv-caption-out" id="sv-cap-out" aria-hidden="true">
-      O seu é<br><span class="hot">o próximo.</span>
-    </div>
-    <div class="sv-chrome">
+  <div class="pf-pin">
+    <div class="pf-chrome">
       <div class="sec-eyebrow"><span class="dot"></span>O portfólio</div>
-      <div class="sv-hint" aria-hidden="true">role para sobrevoar</div>
+      <div class="pf-hint" aria-hidden="true">briefing · arquitetura · deploy</div>
+    </div>
+
+    <div class="pf-copy">
+      Cada site,<br><span class="hot">construído pela mesma IA.</span>
+      <small>Do mesmo motor saem marcas diferentes: briefing vira arquitetura, texto ganha voz, SEO entra junto e o deploy fecha a entrega.</small>
+    </div>
+
+    <div class="pf-lab" aria-hidden="true">
+      <div class="pf-board">
+        <div class="pf-pipeline">
+          <div class="pf-inputs">
+            <span>briefing</span>
+            <span>fotos</span>
+            <span>tom de voz</span>
+            <span>serviços</span>
+          </div>
+
+          <div class="pf-engine">
+            <span>IA</span>
+            <i>arquitetura<br>texto<br>SEO<br>deploy</i>
+          </div>
+
+          <div class="pf-proof">
+            <b>1 motor</b>
+            <span>4 marcas diferentes</span>
+          </div>
+
+          <div class="pf-terminal">
+            <span>&gt; briefing recebido</span>
+            <span>&gt; identidade aplicada</span>
+            <span>&gt; páginas publicadas</span>
+          </div>
+        </div>
+
+        <div class="pf-site-wall">
+          <article class="pf-site pf-site-food">
+            <div class="pf-bar"><i></i><i></i><i></i><b>virilhatos.site</b></div>
+            <img src="/webmaster/img/site-food.webp" alt="">
+            <span>restaurante</span>
+          </article>
+
+          <article class="pf-site pf-site-laundry">
+            <div class="pf-bar"><i></i><i></i><i></i><b>lavou.site</b></div>
+            <img src="/webmaster/img/site-laundry.webp" alt="">
+            <span>lavanderia</span>
+          </article>
+
+          <article class="pf-site pf-site-clinic">
+            <div class="pf-bar"><i></i><i></i><i></i><b>salles.site</b></div>
+            <img src="/webmaster/img/site-clinic.webp" alt="">
+            <span>clínica</span>
+          </article>
+
+          <article class="pf-site pf-site-game">
+            <div class="pf-bar"><i></i><i></i><i></i><b>grifodourado.site</b></div>
+            <img src="/webmaster/img/site-gamehouse.webp" alt="">
+            <span>locadora</span>
+          </article>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -300,7 +359,11 @@
       </p>
     </div>
 
-    <div class="models-grid rv" id="models-grid"><!-- cards injetados por JS --></div>
+    <div class="models-carousel rv" aria-label="Carrossel de modelos de site">
+      <button class="models-nav models-prev" type="button" aria-label="Ver modelos anteriores"><span aria-hidden="true"></span></button>
+      <div class="models-grid" id="models-grid" tabindex="0"><!-- cards injetados por JS --></div>
+      <button class="models-nav models-next" type="button" aria-label="Ver próximos modelos"><span aria-hidden="true"></span></button>
+    </div>
     <p class="models-note">Estruturas de referência — cada site do lote é construído sob a identidade do cliente.</p>
   </div>
 </section>
@@ -328,33 +391,33 @@
         <tbody>
           <tr>
             <td class="row-label">Preço</td>
-            <td>R$ 7.000 — R$ 15.000</td>
-            <td>R$ 500 — R$ 1.500 + seu tempo</td>
-            <td class="col-highlight"><strong>R$ 2.980*</strong></td>
+            <td data-col="Agência tradicional">R$ 7.000 — R$ 15.000</td>
+            <td data-col="WIX / WordPress sozinho">R$ 500 — R$ 1.500 + seu tempo</td>
+            <td class="col-highlight" data-col="Jumper Webmaster"><strong>R$ 2.980*</strong></td>
           </tr>
           <tr>
             <td class="row-label">Prazo</td>
-            <td>30 — 60 dias</td>
-            <td>Indefinido</td>
-            <td class="col-highlight"><strong>14 dias</strong></td>
+            <td data-col="Agência tradicional">30 — 60 dias</td>
+            <td data-col="WIX / WordPress sozinho">Indefinido</td>
+            <td class="col-highlight" data-col="Jumper Webmaster"><strong>14 dias</strong></td>
           </tr>
           <tr>
             <td class="row-label">Hospedagem</td>
-            <td>R$ 50 — R$ 150/mês</td>
-            <td>R$ 30 — R$ 80/mês</td>
-            <td class="col-highlight"><strong>Grátis</strong></td>
+            <td data-col="Agência tradicional">R$ 50 — R$ 150/mês</td>
+            <td data-col="WIX / WordPress sozinho">R$ 30 — R$ 80/mês</td>
+            <td class="col-highlight" data-col="Jumper Webmaster"><strong>Grátis</strong></td>
           </tr>
           <tr>
             <td class="row-label">Manutenção</td>
-            <td>R$ 200 — R$ 500/mês</td>
-            <td>Você faz</td>
-            <td class="col-highlight"><strong>Opcional: R$ 300/mês</strong></td>
+            <td data-col="Agência tradicional">R$ 200 — R$ 500/mês</td>
+            <td data-col="WIX / WordPress sozinho">Você faz</td>
+            <td class="col-highlight" data-col="Jumper Webmaster"><strong>Opcional: R$ 300/mês</strong></td>
           </tr>
           <tr>
             <td class="row-label">Sua participação</td>
-            <td>Várias reuniões</td>
-            <td>Tudo você</td>
-            <td class="col-highlight"><strong>Enviar dados. Pronto.</strong></td>
+            <td data-col="Agência tradicional">Várias reuniões</td>
+            <td data-col="WIX / WordPress sozinho">Tudo você</td>
+            <td class="col-highlight" data-col="Jumper Webmaster"><strong>Enviar dados. Pronto.</strong></td>
           </tr>
         </tbody>
       </table>
@@ -667,7 +730,7 @@
 <script src="../js/vendor/gsap.min.js"></script>
 <script src="../js/vendor/ScrollTrigger.min.js"></script>
 <script src="../js/vendor/lenis.min.js"></script>
-<script src="/webmaster/js/webmaster.js?v=7"></script>
+<script src="/webmaster/js/webmaster.js?v=93"></script>
 
 </body>
 </html>
