@@ -64,7 +64,7 @@
       </section>
 
       <section class="contact-layout section">
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" data-contact-form>
           <div class="form-row">
             <label for="nome">Nome</label>
             <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required>
@@ -89,6 +89,7 @@
             <textarea id="mensagem" name="mensagem" rows="6" placeholder="Conte o que você precisa"></textarea>
           </div>
           <button class="button primary form-button" type="submit">Enviar mensagem</button>
+          <p class="form-status" hidden data-form-status>Mensagem recebida. A equipe da Lavou responde em alguns minutos.</p>
         </form>
 
         <aside class="contact-card">
@@ -108,7 +109,7 @@
               <dd>10h às 16h</dd>
             </div>
           </dl>
-          <div class="map-placeholder" role="img" aria-label="mapa placeholder: localização da Lavou em Pinheiros">
+          <div class="map-placeholder" role="img" aria-label="Mapa ilustrativo da localização da Lavou em Pinheiros">
             <span>mapa: Pinheiros · perto do metrô Fradique Coutinho</span>
           </div>
         </aside>

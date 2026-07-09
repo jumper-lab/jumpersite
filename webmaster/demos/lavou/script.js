@@ -30,3 +30,19 @@ if (toggle && nav) {
     }
   });
 }
+
+document.querySelectorAll("[data-contact-form]").forEach((form) => {
+  const status = form.querySelector("[data-form-status]");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (status) status.hidden = false;
+    form.reset();
+  });
+});
