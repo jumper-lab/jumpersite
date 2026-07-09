@@ -314,8 +314,8 @@
       if (NICHES[key].demo) {
         /* vitrine viva: iframe real, carregado só quando o card chega perto da tela */
         screen.className += ' has-preview';
-        var poster = screenFor(key, 'wide');
-        if (poster) {
+        var poster = NICHES[key].shotWide ? screenFor(key, 'wide') : null;
+        if (poster && poster.tagName !== 'DIV') {
           poster.className += ' model-live-poster';
           screen.appendChild(poster);
         }
